@@ -1,0 +1,66 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\VictorBalbo\OneDrive\Documentos\Cefet\4\laoc2\parte3\teste\simulation\modelsim
+vcache
+!i10b 1
+!s100 :eM2cB5@W^iRif<GK:lJR3
+IlAFaAic:U]1H96WYl[Qoi3
+Vl`j3W50^[k=6<iT^XHI6B1
+Z1 dC:\Users\VictorBalbo\OneDrive\Documentos\Cefet\4\laoc2\parte3\teste\simulation\modelsim
+Z2 w1489370168
+Z3 8C:/Users/VictorBalbo/OneDrive/Documentos/Cefet/4/laoc2/parte3/teste/cache.v
+Z4 FC:/Users/VictorBalbo/OneDrive/Documentos/Cefet/4/laoc2/parte3/teste/cache.v
+L0 101
+Z5 OV;L;10.1d;51
+r1
+!s85 0
+31
+Z6 !s108 1489370397.317000
+Z7 !s107 C:/Users/VictorBalbo/OneDrive/Documentos/Cefet/4/laoc2/parte3/teste/cache.v|
+Z8 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/VictorBalbo/OneDrive/Documentos/Cefet/4/laoc2/parte3/teste|C:/Users/VictorBalbo/OneDrive/Documentos/Cefet/4/laoc2/parte3/teste/cache.v|
+!s101 -O0
+Z9 o-vlog01compat -work work -O0
+Z10 !s92 -vlog01compat -work work +incdir+C:/Users/VictorBalbo/OneDrive/Documentos/Cefet/4/laoc2/parte3/teste -O0
+vdisplay
+!i10b 1
+!s100 >z938M1h=0mPi2>9Km0T30
+I[4@3f^olOZKLhf^24>=hS0
+VzJBZ<?]CEFRZ2XCVzO[m40
+R1
+R2
+R3
+R4
+L0 6
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!s101 -O0
+R9
+R10
+vmemoriaCache
+!i10b 1
+!s100 4RFGDS3ZzS;gni`LX<oP`0
+I]cAmkJ;bWcWL]1>GmP^D20
+Vh:iBUGSRj802<GDkjoC@o3
+R1
+R2
+R3
+R4
+L0 31
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!s101 -O0
+R9
+R10
+nmemoria@cache

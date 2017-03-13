@@ -1,0 +1,122 @@
+# Reading C:/Program Files/Altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do cache_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\Program Files\Altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\Program Files\Altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/VictorBalbo/OneDrive/Documentos/Cefet/4/laoc2/parte3/teste {C:/Users/VictorBalbo/OneDrive/Documentos/Cefet/4/laoc2/parte3/teste/cache.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module display
+# -- Compiling module memoriaCache
+# -- Compiling module cache
+# 
+# Top level modules:
+# 	cache
+# 
+# ERROR: No extended dataflow license exists
+vsim work.cache
+# vsim work.cache 
+# Loading work.cache
+# Loading work.memoriaCache
+# Loading work.display
+add wave -position end  sim:/cache/SW
+add wave -position end  sim:/cache/HEX0
+add wave -position end  sim:/cache/HEX1
+add wave -position end  sim:/cache/HEX2
+add wave -position end  sim:/cache/HEX3
+add wave -position end  sim:/cache/HEX4
+add wave -position end  sim:/cache/HEX5
+add wave -position end  sim:/cache/LEDG
+add wave -position end  sim:/cache/clock
+add wave -position end  sim:/cache/write
+add wave -position end  sim:/cache/address
+add wave -position end  sim:/cache/dataIn
+add wave -position end  sim:/cache/dataOut
+add wave -position end  sim:/cache/hit
+force -freeze sim:/cache/dataIn 10 0
+force -freeze sim:/cache/address 01 0
+force -freeze sim:/cache/write 0 0
+force -freeze sim:/cache/clock 1 0, 0 {50 ps} -r 100
+run
+run
+force -freeze sim:/cache/write 1 0
+run
+run
+run
+force -freeze sim:/cache/write 0 0
+run
+run
+run
+run
+force -freeze sim:/cache/write 1 0
+force -freeze sim:/cache/dataIn 00000011 0
+run
+run
+run
+force -freeze sim:/cache/write 0 0
+run
+run
+run
+run
+force -freeze sim:/cache/address 00000011 0
+run
+run
+force -freeze sim:/cache/address 00000001 0
+run
+run
+force -freeze sim:/cache/write 1 0
+run
+run
+run
+run
+force -freeze sim:/cache/address 00000011 0
+restart
+run
+run
+noforce sim:/cache/write
+force -freeze sim:/cache/write 0 0
+run
+run
+force -freeze sim:/cache/write 1 0
+force -freeze sim:/cache/address 00000101 0
+run
+run
+force -freeze sim:/cache/write 0 0
+run
+run
+run
+add wave -position end  sim:/cache/MCache1/MCache
+restart
+restart
+run
+force -freeze sim:/cache/address 01 0
+force -freeze sim:/cache/dataIn 01 0
+force -freeze sim:/cache/write 0 0
+force -freeze sim:/cache/clock 1 0, 0 {50 ps} -r 100
+run
+run
+force -freeze sim:/cache/address 00000100 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/cache/address 00000101 0
+run
+run
+force -freeze sim:/cache/address 00000001 0
+force -freeze sim:/cache/write 1 0
+run
+force -freeze sim:/cache/write 0 0
+run
+run

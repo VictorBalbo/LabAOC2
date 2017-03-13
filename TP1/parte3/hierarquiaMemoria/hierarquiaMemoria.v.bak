@@ -1,0 +1,29 @@
+//Endereços de memória de 8 bits e tamanho de palavra de 8 bits.
+
+module linhaCache();
+		reg [0:0]validity;//Bit de validade.
+		reg [0:0]dirty;//Bit de "sujeira" que indica inconsistência de dados na Cache e na RAM.
+		reg [4:0]tag;//Tag da cache.
+		reg [7:0]value;//Dado armazenado na linha de cache.
+endmodule
+
+modele cache();
+	memoriaCache [1:0]L1;//Declaração da memória cache de duas entradas.
+endmodule
+
+module linhaRAM();
+	reg [7:0] address;//Endereço físico de memória do dado.
+	reg [7:0] value;//Valor armazenado na linha de RAM
+endmodule
+
+module RAM();
+	reg [3:0]linhaRAM;//Declaração de uma memória RAM de 4 entradas.
+endmodule
+
+module hierarquiaMeoria();
+	
+	
+	initial begin: init
+		
+	end
+endmodule
