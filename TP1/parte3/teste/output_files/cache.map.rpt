@@ -1,5 +1,5 @@
 Analysis & Synthesis report for cache
-Sun Mar 12 22:56:20 2017
+Wed Mar 15 12:57:19 2017
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,13 +13,12 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Inverted Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Port Connectivity Checks: "memoriaCache:MCache1"
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Inverted Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Port Connectivity Checks: "memoriaCache:MCache1"
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -45,15 +44,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Mar 12 22:56:19 2017           ;
+; Analysis & Synthesis Status        ; Successful - Wed Mar 15 12:57:19 2017           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; cache                                           ;
 ; Top-level Entity Name              ; cache                                           ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 104                                             ;
-;     Total combinational functions  ; 86                                              ;
-;     Dedicated logic registers      ; 42                                              ;
-; Total registers                    ; 42                                              ;
+; Total logic elements               ; 111                                             ;
+;     Total combinational functions  ; 93                                              ;
+;     Dedicated logic registers      ; 44                                              ;
+; Total registers                    ; 44                                              ;
 ; Total pins                         ; 61                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -158,13 +157,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                              ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                ; Library ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------+---------+
-; cache.v                          ; yes             ; User Verilog HDL File  ; C:/Users/VictorBalbo/OneDrive/Documentos/Cefet/4/laoc2/parte3/teste/cache.v ;         ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                          ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                            ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+; cache.v                          ; yes             ; User Verilog HDL File  ; C:/Users/Aluno/Desktop/LabAOC2/TP1/parte3/teste/cache.v ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
 
 
 +------------------------------------------------------+
@@ -172,28 +171,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------+
 ; Resource                                    ; Usage  ;
 +---------------------------------------------+--------+
-; Estimated Total logic elements              ; 104    ;
+; Estimated Total logic elements              ; 111    ;
 ;                                             ;        ;
-; Total combinational functions               ; 86     ;
+; Total combinational functions               ; 93     ;
 ; Logic element usage by number of LUT inputs ;        ;
-;     -- 4 input functions                    ; 59     ;
-;     -- 3 input functions                    ; 19     ;
+;     -- 4 input functions                    ; 83     ;
+;     -- 3 input functions                    ; 2      ;
 ;     -- <=2 input functions                  ; 8      ;
 ;                                             ;        ;
 ; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 86     ;
+;     -- normal mode                          ; 93     ;
 ;     -- arithmetic mode                      ; 0      ;
 ;                                             ;        ;
-; Total registers                             ; 42     ;
-;     -- Dedicated logic registers            ; 42     ;
+; Total registers                             ; 44     ;
+;     -- Dedicated logic registers            ; 44     ;
 ;     -- I/O registers                        ; 0      ;
 ;                                             ;        ;
 ; I/O pins                                    ; 61     ;
 ; Embedded Multiplier 9-bit elements          ; 0      ;
 ; Maximum fan-out node                        ; SW[17] ;
-; Maximum fan-out                             ; 42     ;
-; Total fan-out                               ; 471    ;
-; Average fan-out                             ; 2.49   ;
+; Maximum fan-out                             ; 44     ;
+; Total fan-out                               ; 520    ;
+; Average fan-out                             ; 2.63   ;
 +---------------------------------------------+--------+
 
 
@@ -202,27 +201,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name         ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+--------------+
-; |cache                     ; 86 (0)            ; 42 (0)       ; 0           ; 0            ; 0       ; 0         ; 61   ; 0            ; |cache                      ; work         ;
+; |cache                     ; 93 (0)            ; 44 (0)       ; 0           ; 0            ; 0       ; 0         ; 61   ; 0            ; |cache                      ; work         ;
 ;    |display:dispAddress0|  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cache|display:dispAddress0 ; work         ;
 ;    |display:dispAddress1|  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cache|display:dispAddress1 ; work         ;
 ;    |display:dispDataIn0|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cache|display:dispDataIn0  ; work         ;
 ;    |display:dispDataIn1|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cache|display:dispDataIn1  ; work         ;
 ;    |display:dispDataOut0|  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cache|display:dispDataOut0 ; work         ;
 ;    |display:dispDataOut1|  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cache|display:dispDataOut1 ; work         ;
-;    |memoriaCache:MCache1|  ; 44 (44)           ; 42 (42)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cache|memoriaCache:MCache1 ; work         ;
+;    |memoriaCache:MCache1|  ; 51 (51)           ; 44 (44)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cache|memoriaCache:MCache1 ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; memoriaCache:MCache1|MCache[1][18]    ; Stuck at VCC due to stuck port data_in ;
-; memoriaCache:MCache1|MCache[0][18]    ; Stuck at VCC due to stuck port data_in ;
-; Total Number of Removed Registers = 2 ;                                        ;
-+---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -230,7 +218,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 42    ;
+; Total registers                              ; 44    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -240,21 +228,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; memoriaCache:MCache1|MCache[1][8]      ; 1       ;
-; memoriaCache:MCache1|MCache[1][10]     ; 1       ;
-; memoriaCache:MCache1|MCache[0][0]      ; 1       ;
-; memoriaCache:MCache1|MCache[1][0]      ; 1       ;
-; memoriaCache:MCache1|MCache[0][10]     ; 2       ;
-; memoriaCache:MCache1|MCache[1][1]      ; 1       ;
-; memoriaCache:MCache1|MCache[0][2]      ; 1       ;
-; memoriaCache:MCache1|MCache[1][16]     ; 2       ;
-; Total number of inverted registers = 8 ;         ;
-+----------------------------------------+---------+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; memoriaCache:MCache1|MCache[1][8]       ; 1       ;
+; memoriaCache:MCache1|MCache[1][10]      ; 1       ;
+; memoriaCache:MCache1|MCache[1][18]      ; 14      ;
+; memoriaCache:MCache1|MCache[1][0]       ; 1       ;
+; memoriaCache:MCache1|MCache[0][0]       ; 1       ;
+; memoriaCache:MCache1|MCache[0][18]      ; 16      ;
+; memoriaCache:MCache1|MCache[0][10]      ; 3       ;
+; memoriaCache:MCache1|MCache[1][1]       ; 1       ;
+; memoriaCache:MCache1|MCache[0][2]       ; 1       ;
+; memoriaCache:MCache1|MCache[1][16]      ; 3       ;
+; Total number of inverted registers = 10 ;         ;
++-----------------------------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -280,7 +270,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -290,7 +280,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sun Mar 12 22:56:09 2017
+    Info: Processing started: Wed Mar 15 12:57:18 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off cache -c cache
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 3 design units, including 3 entities, in source file cache.v
@@ -298,21 +288,21 @@ Info (12021): Found 3 design units, including 3 entities, in source file cache.v
     Info (12023): Found entity 2: memoriaCache
     Info (12023): Found entity 3: cache
 Info (12127): Elaborating entity "cache" for the top level hierarchy
-Warning (10030): Net "LEDG[0]" at cache.v(113) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "LEDG[0]" at cache.v(118) has no driver or initial value, using a default initial value '0'
 Info (12128): Elaborating entity "memoriaCache" for hierarchy "memoriaCache:MCache1"
 Info (12128): Elaborating entity "display" for hierarchy "display:dispAddress1"
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDG[0]" is stuck at GND
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 173 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 176 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 18 input pins
     Info (21059): Implemented 43 output pins
-    Info (21061): Implemented 112 logic cells
+    Info (21061): Implemented 115 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 490 megabytes
-    Info: Processing ended: Sun Mar 12 22:56:20 2017
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:08
+    Info: Peak virtual memory: 486 megabytes
+    Info: Processing ended: Wed Mar 15 12:57:19 2017
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 

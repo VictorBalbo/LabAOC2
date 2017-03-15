@@ -1,5 +1,5 @@
 Analysis & Synthesis report for hierarquiaMemoria
-Sun Mar 12 19:31:06 2017
+Wed Mar 15 13:45:15 2017
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -10,7 +10,15 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Port Connectivity Checks: "display:dispDataOut0"
+ 11. Port Connectivity Checks: "memoriaCache:MCache1"
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -36,20 +44,20 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Sun Mar 12 19:31:06 2017               ;
+; Analysis & Synthesis Status        ; Successful - Wed Mar 15 13:45:15 2017           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; hierarquiaMemoria                               ;
 ; Top-level Entity Name              ; hierarquiaMemoria                               ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; N/A until Partition Merge                       ;
-;     Total combinational functions  ; N/A until Partition Merge                       ;
-;     Dedicated logic registers      ; N/A until Partition Merge                       ;
-; Total registers                    ; N/A until Partition Merge                       ;
-; Total pins                         ; N/A until Partition Merge                       ;
-; Total virtual pins                 ; N/A until Partition Merge                       ;
-; Total memory bits                  ; N/A until Partition Merge                       ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
-; Total PLLs                         ; N/A until Partition Merge                       ;
+; Total logic elements               ; 124                                             ;
+;     Total combinational functions  ; 124                                             ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 66                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -149,13 +157,162 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                  ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                    ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------+---------+
+; hierarquiaMemoria.v              ; yes             ; User Verilog HDL File  ; C:/Users/Aluno/Desktop/LabAOC2/TP1/parte3/hierarquiaMemoria/hierarquiaMemoria.v ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                        ;
++---------------------------------------------+--------------------------------------+
+; Resource                                    ; Usage                                ;
++---------------------------------------------+--------------------------------------+
+; Estimated Total logic elements              ; 124                                  ;
+;                                             ;                                      ;
+; Total combinational functions               ; 124                                  ;
+; Logic element usage by number of LUT inputs ;                                      ;
+;     -- 4 input functions                    ; 71                                   ;
+;     -- 3 input functions                    ; 50                                   ;
+;     -- <=2 input functions                  ; 3                                    ;
+;                                             ;                                      ;
+; Logic elements by mode                      ;                                      ;
+;     -- normal mode                          ; 124                                  ;
+;     -- arithmetic mode                      ; 0                                    ;
+;                                             ;                                      ;
+; Total registers                             ; 0                                    ;
+;     -- Dedicated logic registers            ; 0                                    ;
+;     -- I/O registers                        ; 0                                    ;
+;                                             ;                                      ;
+; I/O pins                                    ; 66                                   ;
+; Embedded Multiplier 9-bit elements          ; 0                                    ;
+; Maximum fan-out node                        ; memoriaCache:MCache1|MCache[0][15]~2 ;
+; Maximum fan-out                             ; 16                                   ;
+; Total fan-out                               ; 483                                  ;
+; Average fan-out                             ; 2.54                                 ;
++---------------------------------------------+--------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                             ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                     ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+--------------+
+; |hierarquiaMemoria         ; 124 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 66   ; 0            ; |hierarquiaMemoria                      ; work         ;
+;    |display:dispAddress0|  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |hierarquiaMemoria|display:dispAddress0 ; work         ;
+;    |display:dispAddress1|  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |hierarquiaMemoria|display:dispAddress1 ; work         ;
+;    |display:dispDataIn0|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |hierarquiaMemoria|display:dispDataIn0  ; work         ;
+;    |display:dispDataIn1|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |hierarquiaMemoria|display:dispDataIn1  ; work         ;
+;    |display:dispDataOut0|  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |hierarquiaMemoria|display:dispDataOut0 ; work         ;
+;    |display:dispDataOut1|  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |hierarquiaMemoria|display:dispDataOut1 ; work         ;
+;    |memoriaCache:MCache1|  ; 82 (82)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |hierarquiaMemoria|memoriaCache:MCache1 ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                               ;
++-----------------------------------------------------+------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------------------+------------------------+
+; memoriaCache:MCache1|dataOut[2]                     ; memoriaCache:MCache1|dataOut[7]    ; yes                    ;
+; memoriaCache:MCache1|dataOut[1]                     ; memoriaCache:MCache1|dataOut[7]    ; yes                    ;
+; memoriaCache:MCache1|dataOut[3]                     ; memoriaCache:MCache1|dataOut[7]    ; yes                    ;
+; memoriaCache:MCache1|dataOut[4]                     ; memoriaCache:MCache1|dataOut[7]    ; yes                    ;
+; memoriaCache:MCache1|dataOut[5]                     ; memoriaCache:MCache1|dataOut[7]    ; yes                    ;
+; memoriaCache:MCache1|dataOut[6]                     ; memoriaCache:MCache1|dataOut[7]    ; yes                    ;
+; memoriaCache:MCache1|dataOut[7]                     ; memoriaCache:MCache1|dataOut[7]    ; yes                    ;
+; memoriaCache:MCache1|MCache[0][18]                  ; memoriaCache:MCache1|MCache[0][18] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][8]                   ; memoriaCache:MCache1|MCache[0][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][9]                   ; memoriaCache:MCache1|MCache[0][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][10]                  ; memoriaCache:MCache1|MCache[0][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][11]                  ; memoriaCache:MCache1|MCache[0][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][12]                  ; memoriaCache:MCache1|MCache[0][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][13]                  ; memoriaCache:MCache1|MCache[0][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][14]                  ; memoriaCache:MCache1|MCache[0][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][15]                  ; memoriaCache:MCache1|MCache[0][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][18]                  ; memoriaCache:MCache1|MCache[1][18] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][8]                   ; memoriaCache:MCache1|MCache[1][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][9]                   ; memoriaCache:MCache1|MCache[1][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][10]                  ; memoriaCache:MCache1|MCache[1][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][11]                  ; memoriaCache:MCache1|MCache[1][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][12]                  ; memoriaCache:MCache1|MCache[1][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][13]                  ; memoriaCache:MCache1|MCache[1][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][14]                  ; memoriaCache:MCache1|MCache[1][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][15]                  ; memoriaCache:MCache1|MCache[1][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][16]                  ; memoriaCache:MCache1|MCache[0][16] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][16]                  ; memoriaCache:MCache1|MCache[1][16] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][2]                   ; memoriaCache:MCache1|MCache[0][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][2]                   ; memoriaCache:MCache1|MCache[1][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][1]                   ; memoriaCache:MCache1|MCache[0][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][1]                   ; memoriaCache:MCache1|MCache[1][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][3]                   ; memoriaCache:MCache1|MCache[0][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][3]                   ; memoriaCache:MCache1|MCache[1][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][4]                   ; memoriaCache:MCache1|MCache[0][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][4]                   ; memoriaCache:MCache1|MCache[1][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][5]                   ; memoriaCache:MCache1|MCache[0][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][5]                   ; memoriaCache:MCache1|MCache[1][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][6]                   ; memoriaCache:MCache1|MCache[0][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][6]                   ; memoriaCache:MCache1|MCache[1][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][7]                   ; memoriaCache:MCache1|MCache[0][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][7]                   ; memoriaCache:MCache1|MCache[1][15] ; yes                    ;
+; Number of user-specified and inferred latches = 41  ;                                    ;                        ;
++-----------------------------------------------------+------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "display:dispDataOut0"                                                                                                                      ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; num  ; Input ; Warning  ; Input port expression (3 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "num[3..3]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "memoriaCache:MCache1"                                                                     ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; dataOut[0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sun Mar 12 19:31:02 2017
+    Info: Processing started: Wed Mar 15 13:45:06 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off hierarquiaMemoria -c hierarquiaMemoria
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 4 design units, including 4 entities, in source file hierarquiamemoria.v
@@ -164,13 +321,114 @@ Info (12021): Found 4 design units, including 4 entities, in source file hierarq
     Info (12023): Found entity 3: memoriaRAM
     Info (12023): Found entity 4: hierarquiaMemoria
 Info (12127): Elaborating entity "hierarquiaMemoria" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at hierarquiaMemoria.v(163): truncated value with size 9 to match size of target (8)
-Error (10285): Verilog HDL Module Instantiation error at hierarquiaMemoria.v(169): instance "MRAM1" specifies 6 actual port connections but module "memoriaRAM" only expects 5 File: C:/Users/VictorBalbo/OneDrive/Documentos/Cefet/4/laoc2/parte3/hierarquiaMemoria/hierarquiaMemoria.v Line: 169
-Error (12153): Can't elaborate top-level user hierarchy
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 2 errors, 2 warnings
-    Error: Peak virtual memory: 467 megabytes
-    Error: Processing ended: Sun Mar 12 19:31:07 2017
-    Error: Elapsed time: 00:00:05
-    Error: Total CPU time (on all processors): 00:00:04
+Warning (10230): Verilog HDL assignment warning at hierarquiaMemoria.v(171): truncated value with size 9 to match size of target (8)
+Warning (10034): Output port "LEDG" at hierarquiaMemoria.v(165) has no driver
+Warning (10034): Output port "hitR" at hierarquiaMemoria.v(167) has no driver
+Info (12128): Elaborating entity "memoriaCache" for hierarchy "memoriaCache:MCache1"
+Warning (10036): Verilog HDL or VHDL warning at hierarquiaMemoria.v(39): object "controle" assigned a value but never read
+Warning (10235): Verilog HDL Always Construct warning at hierarquiaMemoria.v(68): variable "write" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at hierarquiaMemoria.v(72): variable "address" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at hierarquiaMemoria.v(73): variable "dataIn" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at hierarquiaMemoria.v(81): variable "address" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at hierarquiaMemoria.v(89): variable "write" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at hierarquiaMemoria.v(92): variable "address" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at hierarquiaMemoria.v(97): variable "address" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at hierarquiaMemoria.v(67): inferring latch(es) for variable "hit", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at hierarquiaMemoria.v(67): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at hierarquiaMemoria.v(67): inferring latch(es) for variable "j", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at hierarquiaMemoria.v(67): inferring latch(es) for variable "k", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at hierarquiaMemoria.v(67): inferring latch(es) for variable "dataOut", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at hierarquiaMemoria.v(67): inferring latch(es) for variable "l", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "MCache[0][16]" at hierarquiaMemoria.v(89)
+Info (10041): Inferred latch for "MCache[1][16]" at hierarquiaMemoria.v(89)
+Info (10041): Inferred latch for "dataOut[0]" at hierarquiaMemoria.v(89)
+Info (10041): Inferred latch for "dataOut[1]" at hierarquiaMemoria.v(89)
+Info (10041): Inferred latch for "dataOut[2]" at hierarquiaMemoria.v(89)
+Info (10041): Inferred latch for "dataOut[3]" at hierarquiaMemoria.v(89)
+Info (10041): Inferred latch for "dataOut[4]" at hierarquiaMemoria.v(89)
+Info (10041): Inferred latch for "dataOut[5]" at hierarquiaMemoria.v(89)
+Info (10041): Inferred latch for "dataOut[6]" at hierarquiaMemoria.v(89)
+Info (10041): Inferred latch for "dataOut[7]" at hierarquiaMemoria.v(89)
+Info (10041): Inferred latch for "hit" at hierarquiaMemoria.v(89)
+Info (10041): Inferred latch for "MCache[0][0]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[0][1]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[0][2]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[0][3]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[0][4]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[0][5]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[0][6]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[0][7]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[0][8]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[0][9]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[0][10]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[0][11]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[0][12]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[0][13]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[0][14]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[0][15]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[0][18]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[1][0]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[1][1]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[1][2]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[1][3]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[1][4]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[1][5]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[1][6]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[1][7]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[1][8]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[1][9]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[1][10]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[1][11]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[1][12]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[1][13]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[1][14]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[1][15]" at hierarquiaMemoria.v(68)
+Info (10041): Inferred latch for "MCache[1][18]" at hierarquiaMemoria.v(68)
+Info (12128): Elaborating entity "display" for hierarchy "display:dispAddress1"
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "memoriaCache:MCache1|MCache[0][7]" merged with LATCH primitive "memoriaCache:MCache1|MCache[0][8]"
+    Info (13026): Duplicate LATCH primitive "memoriaCache:MCache1|MCache[1][7]" merged with LATCH primitive "memoriaCache:MCache1|MCache[1][8]"
+Warning (13012): Latch memoriaCache:MCache1|dataOut[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal memoriaCache:MCache1|MCache[1][18]
+Warning (13012): Latch memoriaCache:MCache1|dataOut[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal memoriaCache:MCache1|MCache[1][18]
+Warning (13012): Latch memoriaCache:MCache1|dataOut[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal memoriaCache:MCache1|MCache[1][18]
+Warning (13012): Latch memoriaCache:MCache1|dataOut[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal memoriaCache:MCache1|MCache[1][18]
+Warning (13012): Latch memoriaCache:MCache1|dataOut[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal memoriaCache:MCache1|MCache[1][18]
+Warning (13012): Latch memoriaCache:MCache1|dataOut[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal memoriaCache:MCache1|MCache[1][18]
+Warning (13012): Latch memoriaCache:MCache1|dataOut[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal memoriaCache:MCache1|MCache[0][8]
+Warning (13012): Latch memoriaCache:MCache1|MCache[0][18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal memoriaCache:MCache1|MCache[0][18]
+Warning (13012): Latch memoriaCache:MCache1|MCache[1][18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal memoriaCache:MCache1|MCache[0][18]
+Warning (13012): Latch memoriaCache:MCache1|MCache[0][16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[17]
+Warning (13012): Latch memoriaCache:MCache1|MCache[1][16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[17]
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDG[0]" is stuck at GND
+    Warning (13410): Pin "LEDG[1]" is stuck at GND
+    Warning (13410): Pin "LEDG[2]" is stuck at GND
+    Warning (13410): Pin "LEDG[3]" is stuck at GND
+    Warning (13410): Pin "hitR" is stuck at GND
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[16]"
+Info (21057): Implemented 190 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 18 input pins
+    Info (21059): Implemented 48 output pins
+    Info (21061): Implemented 124 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 49 warnings
+    Info: Peak virtual memory: 486 megabytes
+    Info: Processing ended: Wed Mar 15 13:45:15 2017
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:02
 
 

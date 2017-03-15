@@ -35,7 +35,8 @@ module memoriaCache(clock, address, dataIn, write, dataOut, hit);
 		input write;//Bit que indica leitura e escrita (0 habilita leitura e 1 habilita escrita). 
 		output reg [7:0]dataOut;//Dado de saída da cache.
 		output reg hit;//Valor de saída (0 para miss e 1 para hit).
-		integer i, j, k, l; //Variável contadora a ser utilizada dentro do laço for.
+		integer h, i, j, k, l; //Variável contadora a ser utilizada dentro do laço for.
+		reg controle = 1;
 		
 		//[18] -> Bit de validade (quando ALTO indica que o dado presente na linha de cache é válido).
 		//[17] -> Bit de sujeira (quando ALTO indica inconsistência entre o dado presente na cache e na memória RAM).
@@ -47,25 +48,25 @@ module memoriaCache(clock, address, dataIn, write, dataOut, hit);
 		//Carregamento da memória cache com os dados especificados no roteiro da prática.
 		initial begin
 			//Dados iniciais da primeira linha de cache
-			MCache[0][18] = 1'b1;//Bit de validade é igual a 1.
-			MCache[0][17] = 1'b0;//Bit de sujeira é igual a 0.
-			MCache[0][16] = 1'b0;//Bit de LRU é igual a 0.
-			MCache[0][15:8] = 8'b00000100;//Tag inicial do primeiro bloco de cache em binário.
-			MCache[0][7:0] = 8'b00000101;//Dado inicial do primeiro bloco de cache em binário.
+			MCache[0][18] <= 1'b1;//Bit de validade é igual a 1.
+			MCache[0][17] <= 1'b0;//Bit de sujeira é igual a 0.
+			MCache[0][16] <= 1'b0;//Bit de LRU é igual a 0.
+			MCache[0][15:8] <= 8'b00000100;//Tag inicial do primeiro bloco de cache em binário.
+			MCache[0][7:0] <= 8'b00000101;//Dado inicial do primeiro bloco de cache em binário.
 			
 			//Dados iniciais da segunda linha de cache
-			MCache[1][18] = 1'b1;//Bit de validade é igual a 1;
-			MCache[1][17] = 1'b0;//Bit de sujeira é igual a zero.
-			MCache[1][16] = 1'b1;//Bit de LRU é igual a 1.
-			MCache[1][15:8] = 8'b00000101;//Tag inicial do primeiro bloco de cache em binário.
-			MCache[1][7:0] = 8'b00000011;//Dado inicial da segunda linha de cache em binário.
+			MCache[1][18] <= 1'b1;//Bit de validade é igual a 1;
+			MCache[1][17] <= 1'b0;//Bit de sujeira é igual a zero.
+			MCache[1][16] <= 1'b1;//Bit de LRU é igual a 1.
+			MCache[1][15:8] <= 8'b00000101;//Tag inicial do primeiro bloco de cache em binário.
+			MCache[1][7:0] <= 8'b00000011;//Dado inicial da segunda linha de cache em binário.
 		end
 		
-		//Escritas são realizadas em borda negativa de clock.
+		//Escritas e leituras são realizadas quando temos uma mudança de clock. Bit write ativo indica escrita e desativo indica leitura.
 		//Primeiro pesquisa por um dado inválido, se não encontrar substitui o dado menos recentemente usado (LRU).
-		always @ (posedge clock) begin
-			if(write == 1'b1) begin
-				hit = 0;//Seta a variável "hit" inicialmente como 0 (miss);
+		always @ (clock) begin	
+			if(write) begin
+				hit = 0;//Seta a variável "hit" inicialmente como 0 (miss).
 				for(i=0; i<2 && hit==0; i=i+1) begin
 					if(MCache[i][18]==1'b0 || MCache[i][16]==1'b0) begin //Se o dado na cache for inválido.
 						MCache[i][15:8] = address;//Atualiza o endereço do dado na linha de cache.
@@ -85,22 +86,22 @@ module memoriaCache(clock, address, dataIn, write, dataOut, hit);
 					end
 				end
 			end
-			else begin
-				hit = 0;//Seta a variável "hit" inicialmente como 0 (miss);
-				for(k=0; k<2; k=k+1) begin
-					if(MCache[k][15:8]==address && MCache[k][18]==1'b1) begin
-						dataOut = MCache[k][7:0];//Encontrou o dado na cache.
-						MCache[k][16] = 1'b1;//Seta 1 no Bit de LRU, indica que o dado foi acessado recentemente.
-						hit = 1;//Hit (o dado foi lido da cache).
-						for(l=0; l<2; l=l+1) begin
-							if(MCache[l][15:8]!=address) begin
-								MCache[l][16] = 1'b0;//Atualiza o bit de LRU das outras posições da cache.
-							end
+		if(!write) begin	
+			hit = 0;//Seta a variável "hit" inicialmente como 0 (miss).
+			for(k=0; k<2; k=k+1) begin
+				if(MCache[k][15:8]==address && MCache[k][18]==1'b1) begin
+					dataOut = MCache[k][7:0];//Encontrou o dado na cache.
+					MCache[k][16] = 1'b1;//Seta 1 no Bit de LRU, indica que o dado foi acessado recentemente.
+					hit = 1;//Hit (o dado foi lido da cache).
+					for(l=0; l<2; l=l+1) begin
+						if(MCache[l][15:8]!=address) begin
+							MCache[l][16] = 1'b0;//Atualiza o bit de LRU das outras posições da cache.
 						end
 					end
 				end
 			end
 		end
+	end
 endmodule
 
 module memoriaRAM(clock, address, dataIn, write, dataOut);
@@ -173,7 +174,7 @@ module hierarquiaMemoria(SW, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, LEDG, hitC, hit
 
 	//Instanciação dos blocos de memória.
 	memoriaCache MCache1(clock, address, dataIn, write, dataOut, hitC);
-	memoriaRAM MRAM1(clock, address, dataIn, write, dataOut, hitC);
+	//memoriaRAM MRAM1(clock, address, dataIn, write, dataOut, hitC);
 	
 	
 	//Impressão do endereço de acesso no dislay de 7 segmentos.
