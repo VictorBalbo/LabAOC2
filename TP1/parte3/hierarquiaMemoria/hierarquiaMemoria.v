@@ -110,13 +110,14 @@ module memoriaCache(clock, address, dataIn, write, dataOut, hit);
 	end
 endmodule
 
-module memoriaRAM(clock, address, dataIn, write, dataOut);
+module memoriaRAM(clock, address, dataIn, write, dataOut, hit);
 	input clock;//Clock.
 	input [7:0]address;//Endereço de acesso à cache.
 	input [7:0]dataIn;//Dado de entrada da cache.
 	input write;//Bit que indica leitura e escrita (0 habilita leitura e 1 habilita escrita). 
 	output reg [7:0]dataOut;//Dado de saída da cache.
-	integer i;//Variável contadora a ser utilizada dentro do laço for.
+	output reg hit;//Valor de saída (0 para miss e 1 para hit).
+	integer i, j, l;//Variável contadora a ser utilizada dentro do laço for.
 	
 	//[15:8] -> Endereço de acesso à RAM.
 	//[7:0] -> Dado armazenado na linha de RAM.
@@ -125,7 +126,7 @@ module memoriaRAM(clock, address, dataIn, write, dataOut);
 	//Carregamento da memória RAM com os dados especificados no roteiro da prática.
 	initial begin
 		//Dados iniciais da primeira linha de RAM
-		MRAM[0][15:8] <= 8'b01100100;//Endereço da primeira linha de RAM (100 em decimal).
+		MRAM[0][15:8] <= 8'b00000000;//Endereço da primeira linha de RAM (100 em decimal).
 		MRAM[0][7:0] <= 8'b00000101;//Dado da primeira linha de RAM (5 em decimal).
 		
 		//Dados iniciais da segunda linha de RAM
@@ -145,14 +146,20 @@ module memoriaRAM(clock, address, dataIn, write, dataOut);
 	//A memória RAM é diretamente mapeada.
 	always @ (clock) begin
 		if(write) begin
-			for(i=0; i<4; i=i+1)
-			if(MRAM[i][15:8]==address)
+		  hit = 0;//Seta a variável "hit" inicialmente como 0 (miss).
+			for(i=0; i<4 && hit==0; i=i+1)
+			if(MRAM[i][15:8]==address) begin
 				MRAM[i][7:0] <= dataIn;//Atualiza o dado na linha de RAM.
+				hit = 1;
+			end
 		end
 		if(!write) begin
-			for(i=0; i<4; i=i+1)
-				if(MRAM[i][15:8]==address)
-					dataOut = MRAM[i][7:0];//Encontrou o dado na RAM.
+		  hit = 0;//Seta a variável "hit" inicialmente como 0 (miss).
+			for(l=0; l<4 && hit==0; l=l+1)
+				if(MRAM[l][15:8]==address) begin 
+					dataOut <= MRAM[l][7:0];//Encontrou o dado na RAM.
+					hit = 1;
+				end
 		end
 	end
 endmodule

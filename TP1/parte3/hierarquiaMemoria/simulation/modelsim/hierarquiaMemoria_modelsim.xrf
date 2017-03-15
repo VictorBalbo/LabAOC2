@@ -1,6 +1,6 @@
 vendor_name = ModelSim
-source_file = 1, C:/Users/Aluno/Desktop/LabAOC2/TP1/parte3/hierarquiaMemoria/hierarquiaMemoria.v
-source_file = 1, C:/Users/Aluno/Desktop/LabAOC2/TP1/parte3/hierarquiaMemoria/db/hierarquiaMemoria.cbx.xml
+source_file = 1, C:/Users/vinic/Desktop/LabAOC2/TP1/parte3/hierarquiaMemoria/hierarquiaMemoria.v
+source_file = 1, C:/Users/vinic/Desktop/LabAOC2/TP1/parte3/hierarquiaMemoria/db/hierarquiaMemoria.cbx.xml
 design_name = hierarquiaMemoria
 instance = comp, \MCache1|Equal0~3 , MCache1|Equal0~3, hierarquiaMemoria, 1
 instance = comp, \MCache1|Equal1~0 , MCache1|Equal1~0, hierarquiaMemoria, 1
