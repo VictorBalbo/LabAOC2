@@ -1,0 +1,44 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\13.0
+vcache
+!i10b 1
+!s100 X8YNemJ36<>iLZoUfl;o60
+IfdAPX>7;QW^:UOHhSDbR:1
+Z1 VzI@]7MQa<cfFXe5L9HC9b2
+Z2 dC:\Users\Aluno\Desktop\testeCache
+Z3 w1489593436
+Z4 8C:/Users/Aluno/Desktop/testeCache/cache.v
+Z5 FC:/Users/Aluno/Desktop/testeCache/cache.v
+L0 87
+Z6 OV;L;10.1d;51
+r1
+!s85 0
+31
+Z7 !s108 1489593436.937000
+Z8 !s107 C:/Users/Aluno/Desktop/testeCache/cache.v|
+Z9 !s90 -reportprogress|300|-work|work|C:/Users/Aluno/Desktop/testeCache/cache.v|
+!s101 -O0
+Z10 o-work work -O0
+vmemoriaCache
+!i10b 1
+Z11 !s100 BZjQiLn1G@W]LSKJiJi0f3
+Z12 I87L8bTz5c_J92=_FmZ:XJ1
+Z13 Vh:iBUGSRj802<GDkjoC@o3
+R2
+R3
+R4
+R5
+L0 5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!s101 -O0
+R10
+Z14 nmemoria@cache

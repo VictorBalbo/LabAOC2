@@ -67,6 +67,15 @@ module memoriaCache(clock, address, dataIn, write, dataOut, hit);
 		always @ (clock) begin	
 			if(write) begin
 				hit = 0;//Seta a variável "hit" inicialmente como 0 (miss).
+				for(h=0; h<2 && hit==0; h=h+1) begin
+					if(MCache[h][15:8]==address) begin
+							MCache[h][7:0] = dataIn;//Atualiza o dado na linha de cache; não precisa atualizar o endereço já que é o mesmo.
+							MCache[h][18] = 1'b1;//Seta 1 no bit de validade.
+							MCache[h][17] = 1'b1;//Seta 1 no bit de sujeira (indica que o dado deve ser escito na memória RAM).
+							MCache[h][16] = 1'b1;//Seta 1 no Bit de LRU, indica que o dado foi acessado recentemente.
+							hit = 1;
+						end
+				end
 				for(i=0; i<2 && hit==0; i=i+1) begin
 					if(MCache[i][18]==1'b0 || MCache[i][16]==1'b0) begin //Se o dado na cache for inválido.
 						MCache[i][15:8] = address;//Atualiza o endereço do dado na linha de cache.
@@ -78,9 +87,6 @@ module memoriaCache(clock, address, dataIn, write, dataOut, hit);
 						for(j=0; j<2; j=j+1) begin
 							if(j!=i) begin
 								MCache[j][16] = 1'b0;//Atualiza o bit de LRU das outras posições da cache.
-								if(MCache[j][15:8]==address) begin
-									MCache[j][18] = 1'b0; // Se existir outra posição com o mesmo endereço, Setar bit como inválido
-								end
 							end
 						end
 					end
