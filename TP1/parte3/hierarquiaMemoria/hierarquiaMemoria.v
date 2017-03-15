@@ -29,7 +29,7 @@ module display(num, disp);
 endmodule
 
 module memoriaCache(clock, address, dataIn, write, dataOut, hit);
-		input clock;//Clock;
+		input clock;//Clock.
 		input [7:0]address;//Endereço de acesso à cache.
 		input [7:0]dataIn;//Dado de entrada da cache.
 		input write;//Bit que indica leitura e escrita (0 habilita leitura e 1 habilita escrita). 
@@ -62,36 +62,36 @@ module memoriaCache(clock, address, dataIn, write, dataOut, hit);
 			MCache[1][7:0] <= 8'b00000011;//Dado inicial da segunda linha de cache em binário.
 		end
 		
-		//Escritas e leituras são realizadas quando temos uma mudança de clock. Bit write ativo indica escrita e desativo indica leitura.
+		//Escritas e leituras são realizadas quando temos uma mudança de clock; bit write 1 indica escrita e 0 indica leitura.
 		//Primeiro pesquisa por um dado inválido, se não encontrar substitui o dado menos recentemente usado (LRU).
-		always @ (clock) begin	
-			if(write) begin
-				hit = 0;//Seta a variável "hit" inicialmente como 0 (miss).
-				for(h=0; h<2 && hit==0; h=h+1) begin
-					if(MCache[h][15:8]==address) begin
-							MCache[h][7:0] = dataIn;//Atualiza o dado na linha de cache; não precisa atualizar o endereço já que é o mesmo.
-							MCache[h][18] = 1'b1;//Seta 1 no bit de validade.
-							MCache[h][17] = 1'b1;//Seta 1 no bit de sujeira (indica que o dado deve ser escito na memória RAM).
-							MCache[h][16] = 1'b1;//Seta 1 no Bit de LRU, indica que o dado foi acessado recentemente.
+	always @ (clock) begin	
+		if(write) begin
+			hit = 0;//Seta a variável "hit" inicialmente como 0 (miss).
+			for(h=0; h<2 && hit==0; h=h+1) begin
+				if(MCache[h][15:8]==address) begin
+					MCache[h][7:0] = dataIn;//Atualiza o dado na linha de cache; não precisa atualizar o endereço já que é o mesmo.
+					MCache[h][18] = 1'b1;//Seta 1 no bit de validade.
+					MCache[h][17] = 1'b1;//Seta 1 no bit de sujeira (indica que o dado deve ser escito na memória RAM).
+					MCache[h][16] = 1'b1;//Seta 1 no Bit de LRU, indica que o dado foi acessado recentemente.
 							hit = 1;
-						end
 				end
-				for(i=0; i<2 && hit==0; i=i+1) begin
-					if(MCache[i][18]==1'b0 || MCache[i][16]==1'b0) begin //Se o dado na cache for inválido.
-						MCache[i][15:8] = address;//Atualiza o endereço do dado na linha de cache.
-						MCache[i][7:0] = dataIn;//Atualiza o dado na linha de cache.
-						MCache[i][18] = 1'b1;//Seta 1 no bit de validade.
-						MCache[i][17] = 1'b1;//Seta 1 no bit de sujeira (indica que o dado deve ser escito na memória RAM).
-						MCache[i][16] = 1'b1;//Seta 1 no Bit de LRU, indica que o dado foi acessado recentemente.
-						hit = 1;
-						for(j=0; j<2; j=j+1) begin
-							if(j!=i) begin
-								MCache[j][16] = 1'b0;//Atualiza o bit de LRU das outras posições da cache.
-							end
+			end
+			for(i=0; i<2 && hit==0; i=i+1) begin
+				if(MCache[i][18]==1'b0 || MCache[i][16]==1'b0) begin //Se o dado na cache for inválido.
+					MCache[i][15:8] = address;//Atualiza o endereço do dado na linha de cache.
+					MCache[i][7:0] = dataIn;//Atualiza o dado na linha de cache.
+					MCache[i][18] = 1'b1;//Seta 1 no bit de validade.
+					MCache[i][17] = 1'b1;//Seta 1 no bit de sujeira (indica que o dado deve ser escito na memória RAM).
+					MCache[i][16] = 1'b1;//Seta 1 no Bit de LRU, indica que o dado foi acessado recentemente.
+					hit = 1;
+					for(j=0; j<2; j=j+1) begin
+						if(j!=i) begin
+							MCache[j][16] = 1'b0;//Atualiza o bit de LRU das outras posições da cache.
 						end
 					end
 				end
 			end
+		end
 		if(!write) begin	
 			hit = 0;//Seta a variável "hit" inicialmente como 0 (miss).
 			for(k=0; k<2; k=k+1) begin
@@ -111,12 +111,12 @@ module memoriaCache(clock, address, dataIn, write, dataOut, hit);
 endmodule
 
 module memoriaRAM(clock, address, dataIn, write, dataOut);
-	input clock;//Clock;
-		input [7:0]address;//Endereço de acesso à cache.
-		input [7:0]dataIn;//Dado de entrada da cache.
-		input write;//Bit que indica leitura e escrita (0 habilita leitura e 1 habilita escrita). 
-		output reg [7:0]dataOut;//Dado de saída da cache.
-		integer i;//Variável contadora a ser utilizada dentro do laço for.
+	input clock;//Clock.
+	input [7:0]address;//Endereço de acesso à cache.
+	input [7:0]dataIn;//Dado de entrada da cache.
+	input write;//Bit que indica leitura e escrita (0 habilita leitura e 1 habilita escrita). 
+	output reg [7:0]dataOut;//Dado de saída da cache.
+	integer i;//Variável contadora a ser utilizada dentro do laço for.
 	
 	//[15:8] -> Endereço de acesso à RAM.
 	//[7:0] -> Dado armazenado na linha de RAM.
@@ -125,35 +125,36 @@ module memoriaRAM(clock, address, dataIn, write, dataOut);
 	//Carregamento da memória RAM com os dados especificados no roteiro da prática.
 	initial begin
 		//Dados iniciais da primeira linha de RAM
-		MRAM[0][15:8] = 8'b01100100;//Endereço da primeira linha de RAM (100 em decimal).
-		MRAM[0][7:0] = 8'b00000101;//Dado da primeira linha de RAM (5 em decimal).
+		MRAM[0][15:8] <= 8'b01100100;//Endereço da primeira linha de RAM (100 em decimal).
+		MRAM[0][7:0] <= 8'b00000101;//Dado da primeira linha de RAM (5 em decimal).
 		
 		//Dados iniciais da segunda linha de RAM
-		MRAM[1][15:8] = 8'b01100101;//Endereço da segunda linha de RAM (101 em decimal).
-		MRAM[1][7:0] = 8'b00000011;//Dado da segunda linha de RAM (3 em decimal).
+		MRAM[1][15:8] <= 8'b01100101;//Endereço da segunda linha de RAM (101 em decimal).
+		MRAM[1][7:0] <= 8'b00000011;//Dado da segunda linha de RAM (3 em decimal).
 		
 		//Dados iniciais da terceira linha de RAM
-		MRAM[2][15:8] = 8'b01100110;//Endereço da terceira linha de RAM (102 em decimal).
-		MRAM[2][7:0] = 8'b00000001;//Dado da terceira linha de RAM (1 em decimal).
+		MRAM[2][15:8] <= 8'b01100110;//Endereço da terceira linha de RAM (102 em decimal).
+		MRAM[2][7:0] <= 8'b00000001;//Dado da terceira linha de RAM (1 em decimal).
 		
 		//Dados iniciais da quarta linha de RAM
-		MRAM[3][15:8] = 8'b01100111;//Endereço da quarta linha de RAM (103 em decimal).
-		MRAM[3][7:0] = 8'b00000000;//Dado da quarta linha de RAM (0 em decimal).
+		MRAM[3][15:8] <= 8'b01100111;//Endereço da quarta linha de RAM (103 em decimal).
+		MRAM[3][7:0] <= 8'b00000000;//Dado da quarta linha de RAM (0 em decimal).
 	end
 	
-	//Escritas são realizadas em borda negativa de clock.
-	always @ (posedge clock)
-		begin
-			if(write) // Escrita
-				for(i=0; i<4; i=i+1)
-					if(MRAM[i][15:8]==address)
-						MRAM[i][7:0] = dataIn;//Atualiza o dado na linha de RAM.
-			else // Leitura
-				for(i=0; i<4; i=i+1)
-					if(MRAM[i][15:8]==address)
-						dataOut = MRAM[i][7:0];//Encontrou o dado na RAM.
+	//Escritas e leituras são realizadas quando temos uma mudança de clock; bit write 1 indica escrita e 0 indica leitura.
+	//A memória RAM é diretamente mapeada.
+	always @ (clock) begin
+		if(write) begin
+			for(i=0; i<4; i=i+1)
+			if(MRAM[i][15:8]==address)
+				MRAM[i][7:0] <= dataIn;//Atualiza o dado na linha de RAM.
 		end
-		
+		if(!write) begin
+			for(i=0; i<4; i=i+1)
+				if(MRAM[i][15:8]==address)
+					dataOut = MRAM[i][7:0];//Encontrou o dado na RAM.
+		end
+	end
 endmodule
 
 module hierarquiaMemoria(SW, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, LEDG, hitC, hitR);

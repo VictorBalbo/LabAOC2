@@ -1,5 +1,5 @@
 Flow report for hierarquiaMemoria
-Wed Mar 15 12:34:57 2017
+Wed Mar 15 13:41:47 2017
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Wed Mar 15 12:34:57 2017           ;
+; Flow Status                        ; Successful - Wed Mar 15 13:41:47 2017           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; hierarquiaMemoria                               ;
 ; Top-level Entity Name              ; hierarquiaMemoria                               ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/15/2017 12:34:42 ;
+; Start date & time ; 03/15/2017 13:41:32 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; hierarquiaMemoria   ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+--------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+--------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 10995770589184.148959208205684 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 10995770589184.148959609202572 ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                    ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)      ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                             ; --            ; --          ; --             ;
@@ -93,11 +93,11 @@ applicable agreement for further details.
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 476 MB              ; 00:00:01                           ;
-; Fitter                    ; 00:00:06     ; 1.0                     ; 768 MB              ; 00:00:06                           ;
+; Fitter                    ; 00:00:06     ; 1.0                     ; 766 MB              ; 00:00:06                           ;
 ; Assembler                 ; 00:00:02     ; 1.0                     ; 444 MB              ; 00:00:02                           ;
 ; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 439 MB              ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 396 MB              ; 00:00:00                           ;
-; Total                     ; 00:00:11     ; --                      ; --                  ; 00:00:10                           ;
+; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 396 MB              ; 00:00:00                           ;
+; Total                     ; 00:00:10     ; --                      ; --                  ; 00:00:10                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for hierarquiaMemoria
-Wed Mar 15 12:34:43 2017
+Wed Mar 15 13:41:34 2017
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -19,6 +19,7 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
  11. Port Connectivity Checks: "memoriaCache:MCache1"
  12. Elapsed Time Per Partition
  13. Analysis & Synthesis Messages
+ 14. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -44,7 +45,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Mar 15 12:34:43 2017           ;
+; Analysis & Synthesis Status        ; Successful - Wed Mar 15 13:41:34 2017           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; hierarquiaMemoria                               ;
 ; Top-level Entity Name              ; hierarquiaMemoria                               ;
@@ -310,7 +311,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Mar 15 12:34:42 2017
+    Info: Processing started: Wed Mar 15 13:41:32 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off hierarquiaMemoria -c hierarquiaMemoria
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 4 design units, including 4 entities, in source file hierarquiamemoria.v
@@ -319,9 +320,9 @@ Info (12021): Found 4 design units, including 4 entities, in source file hierarq
     Info (12023): Found entity 3: memoriaRAM
     Info (12023): Found entity 4: hierarquiaMemoria
 Info (12127): Elaborating entity "hierarquiaMemoria" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at hierarquiaMemoria.v(177): truncated value with size 9 to match size of target (8)
-Warning (10034): Output port "LEDG" at hierarquiaMemoria.v(171) has no driver
-Warning (10034): Output port "hitR" at hierarquiaMemoria.v(173) has no driver
+Warning (10230): Verilog HDL assignment warning at hierarquiaMemoria.v(178): truncated value with size 9 to match size of target (8)
+Warning (10034): Output port "LEDG" at hierarquiaMemoria.v(172) has no driver
+Warning (10034): Output port "hitR" at hierarquiaMemoria.v(174) has no driver
 Info (12128): Elaborating entity "memoriaCache" for hierarchy "memoriaCache:MCache1"
 Warning (10036): Verilog HDL or VHDL warning at hierarquiaMemoria.v(39): object "controle" assigned a value but never read
 Warning (10235): Verilog HDL Always Construct warning at hierarquiaMemoria.v(68): variable "write" is read inside the Always Construct but isn't in the Always Construct's Event Control
@@ -446,6 +447,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDG[2]" is stuck at GND
     Warning (13410): Pin "LEDG[3]" is stuck at GND
     Warning (13410): Pin "hitR" is stuck at GND
+Info (144001): Generated suppressed messages file C:/Users/Aluno/Desktop/LabAOC2/TP1/parte3/hierarquiaMemoria/output_files/hierarquiaMemoria.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
@@ -456,8 +458,14 @@ Info (21057): Implemented 178 device resources after synthesis - the final resou
     Info (21061): Implemented 112 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 83 warnings
     Info: Peak virtual memory: 486 megabytes
-    Info: Processing ended: Wed Mar 15 12:34:43 2017
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Wed Mar 15 13:41:34 2017
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Aluno/Desktop/LabAOC2/TP1/parte3/hierarquiaMemoria/output_files/hierarquiaMemoria.map.smsg.
 
 
