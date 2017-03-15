@@ -65,13 +65,15 @@ module memoriaCache(clock, address, dataIn, write, dataOut, hit);
 		//Primeiro pesquisa por um dado inválido, se não encontrar substitui o dado menos recentemente usado (LRU).
 		always @ (posedge clock) begin
 			if(write == 1'b1) begin
-				for(i=0; i<2; i=i+1) begin
+				hit = 0;//Seta a variável "hit" inicialmente como 0 (miss);
+				for(i=0; i<2 && hit==0; i=i+1) begin
 					if(MCache[i][18]==1'b0 || MCache[i][16]==1'b0) begin //Se o dado na cache for inválido.
 						MCache[i][15:8] = address;//Atualiza o endereço do dado na linha de cache.
 						MCache[i][7:0] = dataIn;//Atualiza o dado na linha de cache.
 						MCache[i][18] = 1'b1;//Seta 1 no bit de validade.
 						MCache[i][17] = 1'b1;//Seta 1 no bit de sujeira (indica que o dado deve ser escito na memória RAM).
 						MCache[i][16] = 1'b1;//Seta 1 no Bit de LRU, indica que o dado foi acessado recentemente.
+						hit = 1;
 						for(j=0; j<2; j=j+1) begin
 							if(MCache[j][15:8]!=address) begin
 								MCache[j][16] = 1'b0;//Atualiza o bit de LRU das outras posições da cache.
