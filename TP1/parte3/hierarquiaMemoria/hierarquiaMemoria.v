@@ -75,8 +75,11 @@ module memoriaCache(clock, address, dataIn, write, dataOut, hit);
 						MCache[i][16] = 1'b1;//Seta 1 no Bit de LRU, indica que o dado foi acessado recentemente.
 						hit = 1;
 						for(j=0; j<2; j=j+1) begin
-							if(MCache[j][15:8]!=address) begin
+							if(j!=i) begin
 								MCache[j][16] = 1'b0;//Atualiza o bit de LRU das outras posições da cache.
+								if(MCache[j][15:8]==address) begin
+									MCache[j][18] = 1'b0; // Se existir outra posição com o mesmo endereço, Setar bit como inválido
+								end
 							end
 						end
 					end
