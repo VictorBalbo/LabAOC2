@@ -173,7 +173,7 @@ module hierarquia();
 	wire [7:0]dataOutR;//Dado de saÃ­da.
 	wire hitC, hitR;//Aceso indica hit e apagado miss.
 	wire [7:0]dataAux;//Dado a ser escrito na memória RAM caso ele esteja cheia.
-	wire [7:0]addressRam;//Salva o endereço para atualizar o dado na memória RAM.
+	wire [7:0]addressRAM;//Salva o endereço para atualizar o dado na memória RAM.
 	wire dirty;
 	
 	//Bloco de simulaÃ§Ã£o.
