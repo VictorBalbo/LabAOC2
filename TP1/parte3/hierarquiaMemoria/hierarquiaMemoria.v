@@ -2,7 +2,7 @@
 //A cache L1 é totalmente assiciativa e a memória RAM é diretamente mapeada.
 //Endereços de memória de 8 bits e tamanho de palavra de 8 bits.
 
-//Módulo para utilização do display de 7 segmentos como saída (implementado na terceira prova da disciplina de Sistemas Digitais para Computação)
+//Módulo para utilização do display de 7 segmentos como saída (implementado na terceira prova da disciplina de Sistemas Digitais para Computação).
 module display(num, disp);
 	input [3:0]num;
 	output reg [6:0]disp;
@@ -28,15 +28,15 @@ module display(num, disp);
 		endcase
 endmodule
 
-module memoriaCache(clock, address, dataIn, write, dataOut, hit);
+module memoriaCache(clock, address, dataIn, write, dataOut, hit, dirty);
 		input clock;//Clock.
 		input [7:0]address;//Endereço de acesso à cache.
 		input [7:0]dataIn;//Dado de entrada da cache.
 		input write;//Bit que indica leitura e escrita (0 habilita leitura e 1 habilita escrita). 
 		output reg [7:0]dataOut;//Dado de saída da cache.
 		output reg hit;//Valor de saída (0 para miss e 1 para hit).
-		integer h, i, j, k, l; //Variável contadora a ser utilizada dentro do laço for.
-		reg controle = 1;
+		output reg dirty;//Bit que indica se o valor precisa ser salvo na memória.
+		integer h, i, j, k, l;//Variáveis contadoras a serem utilizadas dentro dos laços for.
 		
 		//[18] -> Bit de validade (quando ALTO indica que o dado presente na linha de cache é válido).
 		//[17] -> Bit de sujeira (quando ALTO indica inconsistência entre o dado presente na cache e na memória RAM).
@@ -66,42 +66,44 @@ module memoriaCache(clock, address, dataIn, write, dataOut, hit);
 		//Primeiro pesquisa por um dado inválido, se não encontrar substitui o dado menos recentemente usado (LRU).
 	always @ (clock) begin	
 		if(write) begin
-			hit = 0;//Seta a variável "hit" inicialmente como 0 (miss).
+			hit <= 0;//Seta a variável "hit" inicialmente como 0 (miss).
 			for(h=0; h<2 && hit==0; h=h+1) begin
 				if(MCache[h][15:8]==address) begin
-					MCache[h][7:0] = dataIn;//Atualiza o dado na linha de cache; não precisa atualizar o endereço já que é o mesmo.
-					MCache[h][18] = 1'b1;//Seta 1 no bit de validade.
-					MCache[h][17] = 1'b1;//Seta 1 no bit de sujeira (indica que o dado deve ser escito na memória RAM).
-					MCache[h][16] = 1'b1;//Seta 1 no Bit de LRU, indica que o dado foi acessado recentemente.
-							hit = 1;
+					dirty <= MCache[h][17];//Atualiza o bit dirty que indica se o dado precisa ser escrito na memória ou não.
+					MCache[h][7:0] <= dataIn;//Atualiza o dado na linha de cache; não precisa atualizar o endereço já que é o mesmo.
+					MCache[h][18] <= 1'b1;//Seta 1 no bit de validade.
+					MCache[h][17] <= 1'b1;//Seta 1 no bit de sujeira (indica que o dado deve ser escito na memória RAM).
+					MCache[h][16] <= 1'b1;//Seta 1 no Bit de LRU, indica que o dado foi acessado recentemente.
+							hit <= 1;
 				end
 			end
 			for(i=0; i<2 && hit==0; i=i+1) begin
 				if(MCache[i][18]==1'b0 || MCache[i][16]==1'b0) begin //Se o dado na cache for inválido.
-					MCache[i][15:8] = address;//Atualiza o endereço do dado na linha de cache.
-					MCache[i][7:0] = dataIn;//Atualiza o dado na linha de cache.
-					MCache[i][18] = 1'b1;//Seta 1 no bit de validade.
-					MCache[i][17] = 1'b1;//Seta 1 no bit de sujeira (indica que o dado deve ser escito na memória RAM).
-					MCache[i][16] = 1'b1;//Seta 1 no Bit de LRU, indica que o dado foi acessado recentemente.
-					hit = 1;
+					MCache[i][15:8] <= address;//Atualiza o endereço do dado na linha de cache.
+					dirty <= MCache[i][17];//Atualiza o bit dirty que indica se o dado precisa ser escrito na memória ou não.
+					MCache[i][7:0] <= dataIn;//Atualiza o dado na linha de cache.
+					MCache[i][18] <= 1'b1;//Seta 1 no bit de validade.
+					MCache[i][17] <= 1'b1;//Seta 1 no bit de sujeira (indica que o dado deve ser escito na memória RAM).
+					MCache[i][16] <= 1'b1;//Seta 1 no Bit de LRU, indica que o dado foi acessado recentemente.
+					hit <= 1;
 					for(j=0; j<2; j=j+1) begin
 						if(j!=i) begin
-							MCache[j][16] = 1'b0;//Atualiza o bit de LRU das outras posições da cache.
+							MCache[j][16] <= 1'b0;//Atualiza o bit de LRU das outras posições da cache.
 						end
 					end
 				end
 			end
 		end
 		if(!write) begin	
-			hit = 0;//Seta a variável "hit" inicialmente como 0 (miss).
+			hit <= 0;//Seta a variável "hit" inicialmente como 0 (miss).
 			for(k=0; k<2; k=k+1) begin
 				if(MCache[k][15:8]==address && MCache[k][18]==1'b1) begin
-					dataOut = MCache[k][7:0];//Encontrou o dado na cache.
-					MCache[k][16] = 1'b1;//Seta 1 no Bit de LRU, indica que o dado foi acessado recentemente.
-					hit = 1;//Hit (o dado foi lido da cache).
+					dataOut <= MCache[k][7:0];//Encontrou o dado na cache.
+					MCache[k][16] <= 1'b1;//Seta 1 no Bit de LRU, indica que o dado foi acessado recentemente.
+					hit <= 1;//Hit (o dado foi lido da cache).
 					for(l=0; l<2; l=l+1) begin
 						if(MCache[l][15:8]!=address) begin
-							MCache[l][16] = 1'b0;//Atualiza o bit de LRU das outras posições da cache.
+							MCache[l][16] <= 1'b0;//Atualiza o bit de LRU das outras posições da cache.
 						end
 					end
 				end
@@ -117,7 +119,7 @@ module memoriaRAM(clock, address, dataIn, write, dataOut, hit);
 	input write;//Bit que indica leitura e escrita (0 habilita leitura e 1 habilita escrita). 
 	output reg [7:0]dataOut;//Dado de saída da cache.
 	output reg hit;//Valor de saída (0 para miss e 1 para hit).
-	integer i, j, l;//Variável contadora a ser utilizada dentro do laço for.
+	integer i, j, l;//Variáveis contadoras a serem utilizadas dentro dos laços for.
 	
 	//[15:8] -> Endereço de acesso à RAM.
 	//[7:0] -> Dado armazenado na linha de RAM.
@@ -146,27 +148,27 @@ module memoriaRAM(clock, address, dataIn, write, dataOut, hit);
 	//A memória RAM é diretamente mapeada.
 	always @ (clock) begin
 		if(write) begin
-		  hit = 0;//Seta a variável "hit" inicialmente como 0 (miss).
+		  hit <= 0;//Seta a variável "hit" inicialmente como 0 (miss).
 			for(i=0; i<4 && hit==0; i=i+1)
 			if(MRAM[i][15:8]==address) begin
 				MRAM[i][7:0] <= dataIn;//Atualiza o dado na linha de RAM.
-				hit = 1;
+				hit <= 1;
 			end
 		end
 		if(!write) begin
-		  hit = 0;//Seta a variável "hit" inicialmente como 0 (miss).
+		  hit <= 0;//Seta a variável "hit" inicialmente como 0 (miss).
 			for(l=0; l<4 && hit==0; l=l+1)
 				if(MRAM[l][15:8]==address) begin 
 					dataOut <= MRAM[l][7:0];//Encontrou o dado na RAM.
-					hit = 1;
+					hit <= 1;
 				end
 		end
 	end
 endmodule
 
 module hierarquiaMemoria(SW, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, LEDG, hitC, hitR);
-	//SW[17] -> write.
-	//SW[16] -> clock.
+	//SW[17] -> clock;
+	//SW[16] -> writeC (write enable da memória cache, utilizado para switch entre modo de escrita e de leitura na cache).
 	//SW[15:7] -> endereço de acesso à memória.
 	//SW[7:0] -> dado a ser escrito na memória.
 	input [17:0]SW;
@@ -177,19 +179,20 @@ module hierarquiaMemoria(SW, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, LEDG, hitC, hit
 	output [0:6]HEX4;
 	output [0:6]HEX5;
 	output [3:0]LEDG;
-	output hitC;//Indica acerto no acesso à cache.
-	output hitR;//Indica falha no acesso à cache.
+	output hitC;//Indica acerto (1) ou falha (0) na cache. 
+	output hitR;//Indica acerto (1) ou falha (0) na RAM.
 
-	wire write = SW[17];
-	wire clock = SW[16];
+	wire clock = SW[17];
+	wire write = SW[16];
 	wire [7:0]address = SW[15:7];
 	wire [7:0]dataIn = SW[7:0];
-	wire [7:0]dataOut;//Dado de saída.
+	wire [7:0]dataOutC;//Dado de saída da Cache.
+	wire [7:0]dataOutR;//Dado de saída da RAM.
+	wire dirty;//Bit que indica se um bloco sujo deve ser escrito na RAM ou não. Este bit é utilizado como write enable da RAM.
 
 	//Instanciação dos blocos de memória.
-	memoriaCache MCache1(clock, address, dataIn, write, dataOut, hitC);
-	//memoriaRAM MRAM1(clock, address, dataIn, write, dataOut, hitC);
-	
+	memoriaCache MCache1(clock, address, dataIn, writeC, dataOutC, hitC, dirty);
+	memoriaRAM MRAM1(clock, address, dataOutC, dirty, dataOutR, hitR);
 	
 	//Impressão do endereço de acesso no dislay de 7 segmentos.
 	display dispAddress1(SW[15:12], HEX5);
@@ -200,6 +203,6 @@ module hierarquiaMemoria(SW, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, LEDG, hitC, hit
 	display dispDataIn0(SW[3:0], HEX2);
 	
 	//Impressão do dado de saida no display de 7 segmentos.
-	display dispDataOut1(dataOut[7:4], HEX1);
-	display dispDataOut0(dataOut[3:1], HEX0);
+	display dispDataOut1(dataOutC[7:4], HEX1);
+	display dispDataOut0(dataOutC[3:0], HEX0);
 endmodule

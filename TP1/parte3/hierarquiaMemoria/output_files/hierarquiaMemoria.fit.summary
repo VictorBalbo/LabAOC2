@@ -1,12 +1,12 @@
-Fitter Status : Successful - Wed Mar 15 19:36:50 2017
+Fitter Status : Successful - Wed Mar 15 22:58:39 2017
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : hierarquiaMemoria
 Top-level Entity Name : hierarquiaMemoria
 Family : Cyclone II
 Device : EP2C35F672C6
 Timing Models : Final
-Total logic elements : 112 / 33,216 ( < 1 % )
-    Total combinational functions : 112 / 33,216 ( < 1 % )
+Total logic elements : 34 / 33,216 ( < 1 % )
+    Total combinational functions : 34 / 33,216 ( < 1 % )
     Dedicated logic registers : 0 / 33,216 ( 0 % )
 Total registers : 0
 Total pins : 66 / 475 ( 14 % )
