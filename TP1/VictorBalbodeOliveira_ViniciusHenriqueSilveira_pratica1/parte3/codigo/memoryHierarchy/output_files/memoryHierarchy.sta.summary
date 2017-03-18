@@ -1,0 +1,53 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'SW[10]'
+Slack : -13.483
+TNS   : -561.889
+
+Type  : Slow Model Setup 'memoriaCache:MCache1|addressRAM[2]'
+Slack : -8.573
+TNS   : -317.301
+
+Type  : Slow Model Hold 'SW[10]'
+Slack : -4.905
+TNS   : -132.424
+
+Type  : Slow Model Hold 'memoriaCache:MCache1|addressRAM[2]'
+Slack : -2.295
+TNS   : -17.001
+
+Type  : Slow Model Minimum Pulse Width 'SW[10]'
+Slack : -3.107
+TNS   : -1237.130
+
+Type  : Slow Model Minimum Pulse Width 'memoriaCache:MCache1|addressRAM[2]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Setup 'SW[10]'
+Slack : -5.896
+TNS   : -236.146
+
+Type  : Fast Model Setup 'memoriaCache:MCache1|addressRAM[2]'
+Slack : -3.559
+TNS   : -129.850
+
+Type  : Fast Model Hold 'SW[10]'
+Slack : -2.297
+TNS   : -64.535
+
+Type  : Fast Model Hold 'memoriaCache:MCache1|addressRAM[2]'
+Slack : -1.413
+TNS   : -10.665
+
+Type  : Fast Model Minimum Pulse Width 'SW[10]'
+Slack : -1.380
+TNS   : -366.822
+
+Type  : Fast Model Minimum Pulse Width 'memoriaCache:MCache1|addressRAM[2]'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

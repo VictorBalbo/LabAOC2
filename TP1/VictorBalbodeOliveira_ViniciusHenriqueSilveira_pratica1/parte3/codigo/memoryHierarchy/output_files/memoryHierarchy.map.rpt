@@ -1,0 +1,677 @@
+Analysis & Synthesis report for memoryHierarchy
+Fri Mar 17 21:49:40 2017
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Mar 17 21:49:40 2017           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; memoryHierarchy                                 ;
+; Top-level Entity Name              ; memoryHierarchy                                 ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 320                                             ;
+;     Total combinational functions  ; 320                                             ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 62                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                      ; memoryHierarchy    ; memoryHierarchy    ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                           ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                             ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------+---------+
+; memoryHierarchy.v                ; yes             ; User Verilog HDL File  ; C:/Users/vinic/Desktop/memoryHierarchy/memoryHierarchy.v ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------+---------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 320    ;
+;                                             ;        ;
+; Total combinational functions               ; 320    ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 164    ;
+;     -- 3 input functions                    ; 153    ;
+;     -- <=2 input functions                  ; 3      ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 320    ;
+;     -- arithmetic mode                      ; 0      ;
+;                                             ;        ;
+; Total registers                             ; 0      ;
+;     -- Dedicated logic registers            ; 0      ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 62     ;
+; Embedded Multiplier 9-bit elements          ; 0      ;
+; Maximum fan-out node                        ; SW[16] ;
+; Maximum fan-out                             ; 35     ;
+; Total fan-out                               ; 1165   ;
+; Average fan-out                             ; 3.05   ;
++---------------------------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                  ;
++-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------+--------------+
+; Compilation Hierarchy Node    ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                       ; Library Name ;
++-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------+--------------+
+; |memoryHierarchy              ; 320 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 62   ; 0            ; |memoryHierarchy                          ; work         ;
+;    |display:dispAddress0|     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |memoryHierarchy|display:dispAddress0     ; work         ;
+;    |display:dispAddress1|     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |memoryHierarchy|display:dispAddress1     ; work         ;
+;    |display:dispDataInCache0| ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |memoryHierarchy|display:dispDataInCache0 ; work         ;
+;    |display:dispDataInCache1| ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |memoryHierarchy|display:dispDataInCache1 ; work         ;
+;    |display:dispOutCache0|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |memoryHierarchy|display:dispOutCache0    ; work         ;
+;    |display:dispOutCache1|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |memoryHierarchy|display:dispOutCache1    ; work         ;
+;    |memoriaCache:MCache1|     ; 213 (213)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |memoryHierarchy|memoriaCache:MCache1     ; work         ;
+;    |memoriaRAM:MRAM1|         ; 65 (65)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |memoryHierarchy|memoriaRAM:MRAM1         ; work         ;
++-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                               ;
++-----------------------------------------------------+------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------------------+------------------------+
+; memoriaCache:MCache1|dataOut[0]                     ; memoriaCache:MCache1|dataOut[7]    ; yes                    ;
+; memoriaCache:MCache1|dataOut[1]                     ; memoriaCache:MCache1|dataOut[7]    ; yes                    ;
+; memoriaCache:MCache1|dataOut[2]                     ; memoriaCache:MCache1|dataOut[7]    ; yes                    ;
+; memoriaCache:MCache1|dataOut[3]                     ; memoriaCache:MCache1|dataOut[7]    ; yes                    ;
+; memoriaCache:MCache1|dataOut[4]                     ; memoriaCache:MCache1|dataOut[7]    ; yes                    ;
+; memoriaCache:MCache1|dataOut[5]                     ; memoriaCache:MCache1|dataOut[7]    ; yes                    ;
+; memoriaCache:MCache1|dataOut[6]                     ; memoriaCache:MCache1|dataOut[7]    ; yes                    ;
+; memoriaCache:MCache1|dataOut[7]                     ; memoriaCache:MCache1|dataOut[7]    ; yes                    ;
+; memoriaCache:MCache1|MCache[1][8]                   ; memoriaCache:MCache1|MCache[1][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][8]                   ; memoriaCache:MCache1|MCache[0][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][9]                   ; memoriaCache:MCache1|MCache[0][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][10]                  ; memoriaCache:MCache1|MCache[0][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][11]                  ; memoriaCache:MCache1|MCache[0][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][12]                  ; memoriaCache:MCache1|MCache[0][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][13]                  ; memoriaCache:MCache1|MCache[0][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][14]                  ; memoriaCache:MCache1|MCache[0][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][15]                  ; memoriaCache:MCache1|MCache[0][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][9]                   ; memoriaCache:MCache1|MCache[1][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][10]                  ; memoriaCache:MCache1|MCache[1][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][11]                  ; memoriaCache:MCache1|MCache[1][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][12]                  ; memoriaCache:MCache1|MCache[1][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][13]                  ; memoriaCache:MCache1|MCache[1][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][14]                  ; memoriaCache:MCache1|MCache[1][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][15]                  ; memoriaCache:MCache1|MCache[1][15] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][16]                  ; memoriaCache:MCache1|MCache[0][16] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][16]                  ; memoriaCache:MCache1|MCache[0][16] ; yes                    ;
+; memoriaCache:MCache1|addressRAM[7]                  ; memoriaCache:MCache1|dataAux[7]    ; yes                    ;
+; memoriaCache:MCache1|addressRAM[6]                  ; memoriaCache:MCache1|dataAux[7]    ; yes                    ;
+; memoriaCache:MCache1|addressRAM[5]                  ; memoriaCache:MCache1|dataAux[7]    ; yes                    ;
+; memoriaCache:MCache1|addressRAM[4]                  ; memoriaCache:MCache1|dataAux[7]    ; yes                    ;
+; memoriaCache:MCache1|addressRAM[3]                  ; memoriaCache:MCache1|dataAux[7]    ; yes                    ;
+; memoriaCache:MCache1|addressRAM[2]                  ; memoriaCache:MCache1|dataAux[7]    ; yes                    ;
+; memoriaCache:MCache1|addressRAM[1]                  ; memoriaCache:MCache1|dataAux[7]    ; yes                    ;
+; memoriaCache:MCache1|addressRAM[0]                  ; memoriaCache:MCache1|dataAux[7]    ; yes                    ;
+; memoriaCache:MCache1|MCache[0][0]                   ; memoriaCache:MCache1|MCache[0][18] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][0]                   ; memoriaCache:MCache1|MCache[1][18] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][1]                   ; memoriaCache:MCache1|MCache[0][18] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][1]                   ; memoriaCache:MCache1|MCache[1][18] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][2]                   ; memoriaCache:MCache1|MCache[0][18] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][2]                   ; memoriaCache:MCache1|MCache[1][18] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][3]                   ; memoriaCache:MCache1|MCache[0][18] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][3]                   ; memoriaCache:MCache1|MCache[1][18] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][4]                   ; memoriaCache:MCache1|MCache[0][18] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][4]                   ; memoriaCache:MCache1|MCache[1][18] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][5]                   ; memoriaCache:MCache1|MCache[0][18] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][5]                   ; memoriaCache:MCache1|MCache[1][18] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][6]                   ; memoriaCache:MCache1|MCache[0][18] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][6]                   ; memoriaCache:MCache1|MCache[1][18] ; yes                    ;
+; memoriaCache:MCache1|MCache[0][7]                   ; memoriaCache:MCache1|MCache[0][18] ; yes                    ;
+; memoriaCache:MCache1|MCache[1][7]                   ; memoriaCache:MCache1|MCache[1][18] ; yes                    ;
+; memoriaRAM:MRAM1|dataOut[0]                         ; memoriaRAM:MRAM1|dataOut[7]        ; yes                    ;
+; memoriaRAM:MRAM1|dataOut[1]                         ; memoriaRAM:MRAM1|dataOut[7]        ; yes                    ;
+; memoriaRAM:MRAM1|dataOut[2]                         ; memoriaRAM:MRAM1|dataOut[7]        ; yes                    ;
+; memoriaRAM:MRAM1|dataOut[3]                         ; memoriaRAM:MRAM1|dataOut[7]        ; yes                    ;
+; memoriaRAM:MRAM1|dataOut[4]                         ; memoriaRAM:MRAM1|dataOut[7]        ; yes                    ;
+; memoriaRAM:MRAM1|dataOut[5]                         ; memoriaRAM:MRAM1|dataOut[7]        ; yes                    ;
+; memoriaRAM:MRAM1|dataOut[6]                         ; memoriaRAM:MRAM1|dataOut[7]        ; yes                    ;
+; memoriaRAM:MRAM1|dataOut[7]                         ; memoriaRAM:MRAM1|dataOut[7]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[2][0]                         ; memoriaRAM:MRAM1|MRAM[2][5]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[1][0]                         ; memoriaRAM:MRAM1|MRAM[1][7]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[3][0]                         ; memoriaRAM:MRAM1|MRAM[3][0]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[0][0]                         ; memoriaRAM:MRAM1|MRAM[0][7]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[1][1]                         ; memoriaRAM:MRAM1|MRAM[1][7]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[2][1]                         ; memoriaRAM:MRAM1|MRAM[2][5]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[3][1]                         ; memoriaRAM:MRAM1|MRAM[3][0]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[0][1]                         ; memoriaRAM:MRAM1|MRAM[0][7]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[2][2]                         ; memoriaRAM:MRAM1|MRAM[2][5]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[1][2]                         ; memoriaRAM:MRAM1|MRAM[1][7]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[3][2]                         ; memoriaRAM:MRAM1|MRAM[3][0]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[0][2]                         ; memoriaRAM:MRAM1|MRAM[0][7]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[1][3]                         ; memoriaRAM:MRAM1|MRAM[1][7]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[2][3]                         ; memoriaRAM:MRAM1|MRAM[2][5]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[3][3]                         ; memoriaRAM:MRAM1|MRAM[3][0]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[0][3]                         ; memoriaRAM:MRAM1|MRAM[0][7]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[2][4]                         ; memoriaRAM:MRAM1|MRAM[2][5]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[1][4]                         ; memoriaRAM:MRAM1|MRAM[1][7]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[3][4]                         ; memoriaRAM:MRAM1|MRAM[3][0]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[0][4]                         ; memoriaRAM:MRAM1|MRAM[0][7]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[1][5]                         ; memoriaRAM:MRAM1|MRAM[1][7]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[2][5]                         ; memoriaRAM:MRAM1|MRAM[2][5]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[3][5]                         ; memoriaRAM:MRAM1|MRAM[3][0]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[0][5]                         ; memoriaRAM:MRAM1|MRAM[0][7]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[2][6]                         ; memoriaRAM:MRAM1|MRAM[2][5]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[1][6]                         ; memoriaRAM:MRAM1|MRAM[1][7]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[3][6]                         ; memoriaRAM:MRAM1|MRAM[3][0]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[0][6]                         ; memoriaRAM:MRAM1|MRAM[0][7]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[1][7]                         ; memoriaRAM:MRAM1|MRAM[1][7]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[2][7]                         ; memoriaRAM:MRAM1|MRAM[2][5]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[3][7]                         ; memoriaRAM:MRAM1|MRAM[3][0]        ; yes                    ;
+; memoriaRAM:MRAM1|MRAM[0][7]                         ; memoriaRAM:MRAM1|MRAM[0][7]        ; yes                    ;
+; memoriaCache:MCache1|dataAux[0]                     ; memoriaCache:MCache1|dataAux[7]    ; yes                    ;
+; memoriaCache:MCache1|dirty                          ; memoriaCache:MCache1|dirty         ; yes                    ;
+; memoriaCache:MCache1|dataAux[1]                     ; memoriaCache:MCache1|dataAux[7]    ; yes                    ;
+; memoriaCache:MCache1|dataAux[2]                     ; memoriaCache:MCache1|dataAux[7]    ; yes                    ;
+; memoriaCache:MCache1|dataAux[3]                     ; memoriaCache:MCache1|dataAux[7]    ; yes                    ;
+; memoriaCache:MCache1|dataAux[4]                     ; memoriaCache:MCache1|dataAux[7]    ; yes                    ;
+; memoriaCache:MCache1|dataAux[5]                     ; memoriaCache:MCache1|dataAux[7]    ; yes                    ;
+; memoriaCache:MCache1|dataAux[6]                     ; memoriaCache:MCache1|dataAux[7]    ; yes                    ;
+; memoriaCache:MCache1|dataAux[7]                     ; memoriaCache:MCache1|dataAux[7]    ; yes                    ;
+; Number of user-specified and inferred latches = 99  ;                                    ;                        ;
++-----------------------------------------------------+------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |memoryHierarchy|memoriaCache:MCache1|MCache        ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |memoryHierarchy|memoriaCache:MCache1|MCache[0][16] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |memoryHierarchy|memoriaCache:MCache1|MCache        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |memoryHierarchy|memoriaCache:MCache1|MCache        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |memoryHierarchy|memoriaCache:MCache1|MCache        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |memoryHierarchy|memoriaCache:MCache1|MCache        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |memoryHierarchy|memoriaCache:MCache1|MCache        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |memoryHierarchy|memoriaCache:MCache1|MCache[0][2]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |memoryHierarchy|memoriaCache:MCache1|MCache[1][2]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |memoryHierarchy|memoriaRAM:MRAM1|dataOut[6]        ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |memoryHierarchy|memoriaCache:MCache1|addressRAM[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Mar 17 21:49:38 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off memoryHierarchy -c memoryHierarchy
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 4 design units, including 4 entities, in source file memoryhierarchy.v
+    Info (12023): Found entity 1: display
+    Info (12023): Found entity 2: memoriaCache
+    Info (12023): Found entity 3: memoriaRAM
+    Info (12023): Found entity 4: memoryHierarchy
+Info (12127): Elaborating entity "memoryHierarchy" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at memoryHierarchy.v(231): truncated value with size 9 to match size of target (8)
+Info (12128): Elaborating entity "memoriaCache" for hierarchy "memoriaCache:MCache1"
+Warning (10235): Verilog HDL Always Construct warning at memoryHierarchy.v(74): variable "write" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at memoryHierarchy.v(78): variable "address" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at memoryHierarchy.v(80): variable "dataIn" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at memoryHierarchy.v(99): variable "address" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at memoryHierarchy.v(100): variable "dataIn" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at memoryHierarchy.v(113): variable "write" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at memoryHierarchy.v(117): variable "address" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at memoryHierarchy.v(122): variable "address" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at memoryHierarchy.v(138): variable "address" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at memoryHierarchy.v(139): variable "dataInRam" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at memoryHierarchy.v(73): inferring latch(es) for variable "hit", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at memoryHierarchy.v(73): inferring latch(es) for variable "flag", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at memoryHierarchy.v(73): inferring latch(es) for variable "g", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at memoryHierarchy.v(73): inferring latch(es) for variable "dirty", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at memoryHierarchy.v(73): inferring latch(es) for variable "h", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at memoryHierarchy.v(73): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at memoryHierarchy.v(73): inferring latch(es) for variable "addressRAM", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at memoryHierarchy.v(73): inferring latch(es) for variable "dataAux", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at memoryHierarchy.v(73): inferring latch(es) for variable "j", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at memoryHierarchy.v(73): inferring latch(es) for variable "memRead", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at memoryHierarchy.v(73): inferring latch(es) for variable "k", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at memoryHierarchy.v(73): inferring latch(es) for variable "dataOut", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at memoryHierarchy.v(73): inferring latch(es) for variable "l", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at memoryHierarchy.v(73): inferring latch(es) for variable "m", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at memoryHierarchy.v(73): inferring latch(es) for variable "n", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "dataAux[0]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "dataAux[1]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "dataAux[2]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "dataAux[3]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "dataAux[4]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "dataAux[5]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "dataAux[6]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "dataAux[7]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "addressRAM[0]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "addressRAM[1]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "addressRAM[2]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "addressRAM[3]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "addressRAM[4]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "addressRAM[5]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "addressRAM[6]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "addressRAM[7]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "dirty" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[0][0]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[0][1]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[0][2]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[0][3]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[0][4]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[0][5]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[0][6]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[0][7]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[0][8]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[0][9]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[0][10]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[0][11]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[0][12]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[0][13]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[0][14]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[0][15]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[0][16]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[0][17]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[0][18]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[1][0]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[1][1]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[1][2]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[1][3]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[1][4]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[1][5]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[1][6]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[1][7]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[1][8]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[1][9]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[1][10]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[1][11]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[1][12]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[1][13]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[1][14]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[1][15]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[1][16]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[1][17]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "MCache[1][18]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "dataOut[0]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "dataOut[1]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "dataOut[2]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "dataOut[3]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "dataOut[4]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "dataOut[5]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "dataOut[6]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "dataOut[7]" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "hit" at memoryHierarchy.v(113)
+Info (10041): Inferred latch for "memRead" at memoryHierarchy.v(113)
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:MRAM1"
+Warning (10235): Verilog HDL Always Construct warning at memoryHierarchy.v(194): variable "writeEnable" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at memoryHierarchy.v(197): variable "address" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at memoryHierarchy.v(198): variable "dataIn" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at memoryHierarchy.v(203): variable "readEnable" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at memoryHierarchy.v(206): variable "address" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at memoryHierarchy.v(193): inferring latch(es) for variable "hit", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at memoryHierarchy.v(193): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at memoryHierarchy.v(193): inferring latch(es) for variable "j", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at memoryHierarchy.v(193): inferring latch(es) for variable "dataOut", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "dataOut[0]" at memoryHierarchy.v(203)
+Info (10041): Inferred latch for "dataOut[1]" at memoryHierarchy.v(203)
+Info (10041): Inferred latch for "dataOut[2]" at memoryHierarchy.v(203)
+Info (10041): Inferred latch for "dataOut[3]" at memoryHierarchy.v(203)
+Info (10041): Inferred latch for "dataOut[4]" at memoryHierarchy.v(203)
+Info (10041): Inferred latch for "dataOut[5]" at memoryHierarchy.v(203)
+Info (10041): Inferred latch for "dataOut[6]" at memoryHierarchy.v(203)
+Info (10041): Inferred latch for "dataOut[7]" at memoryHierarchy.v(203)
+Info (10041): Inferred latch for "hit" at memoryHierarchy.v(203)
+Info (10041): Inferred latch for "MRAM[0][0]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[0][1]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[0][2]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[0][3]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[0][4]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[0][5]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[0][6]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[0][7]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[1][0]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[1][1]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[1][2]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[1][3]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[1][4]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[1][5]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[1][6]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[1][7]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[2][0]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[2][1]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[2][2]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[2][3]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[2][4]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[2][5]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[2][6]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[2][7]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[3][0]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[3][1]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[3][2]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[3][3]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[3][4]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[3][5]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[3][6]" at memoryHierarchy.v(194)
+Info (10041): Inferred latch for "MRAM[3][7]" at memoryHierarchy.v(194)
+Info (12128): Elaborating entity "display" for hierarchy "display:dispAddress1"
+Warning (14026): LATCH primitive "memoriaRAM:MRAM1|hit" is permanently enabled
+Warning (13012): Latch memoriaCache:MCache1|dataOut[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|dataOut[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|dataOut[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|dataOut[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|dataOut[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|dataOut[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|dataOut[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|dataOut[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[7]
+Warning (13012): Latch memoriaCache:MCache1|MCache[1][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[7]
+Warning (13012): Latch memoriaCache:MCache1|MCache[0][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[7]
+Warning (13012): Latch memoriaCache:MCache1|MCache[0][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[8]
+Warning (13012): Latch memoriaCache:MCache1|MCache[0][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[9]
+Warning (13012): Latch memoriaCache:MCache1|MCache[0][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[10]
+Warning (13012): Latch memoriaCache:MCache1|MCache[0][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[11]
+Warning (13012): Latch memoriaCache:MCache1|MCache[0][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[12]
+Warning (13012): Latch memoriaCache:MCache1|MCache[0][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[13]
+Warning (13012): Latch memoriaCache:MCache1|MCache[0][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[14]
+Warning (13012): Latch memoriaCache:MCache1|MCache[1][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[8]
+Warning (13012): Latch memoriaCache:MCache1|MCache[1][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[9]
+Warning (13012): Latch memoriaCache:MCache1|MCache[1][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[10]
+Warning (13012): Latch memoriaCache:MCache1|MCache[1][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[11]
+Warning (13012): Latch memoriaCache:MCache1|MCache[1][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[12]
+Warning (13012): Latch memoriaCache:MCache1|MCache[1][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[13]
+Warning (13012): Latch memoriaCache:MCache1|MCache[1][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[14]
+Warning (13012): Latch memoriaCache:MCache1|MCache[0][16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|MCache[1][16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|addressRAM[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal memoriaCache:MCache1|MCache[0][15]
+Warning (13012): Latch memoriaCache:MCache1|addressRAM[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal memoriaCache:MCache1|MCache[0][14]
+Warning (13012): Latch memoriaCache:MCache1|addressRAM[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal memoriaCache:MCache1|MCache[0][13]
+Warning (13012): Latch memoriaCache:MCache1|addressRAM[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal memoriaCache:MCache1|MCache[1][12]
+Warning (13012): Latch memoriaCache:MCache1|addressRAM[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal memoriaCache:MCache1|MCache[0][11]
+Warning (13012): Latch memoriaCache:MCache1|addressRAM[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal memoriaCache:MCache1|MCache[1][10]
+Warning (13012): Latch memoriaCache:MCache1|addressRAM[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal memoriaCache:MCache1|MCache[0][9]
+Warning (13012): Latch memoriaCache:MCache1|addressRAM[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal memoriaCache:MCache1|MCache[1][8]
+Warning (13012): Latch memoriaCache:MCache1|MCache[0][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|MCache[1][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|MCache[0][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|MCache[1][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|MCache[0][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|MCache[1][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|MCache[0][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|MCache[1][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|MCache[0][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|MCache[1][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|MCache[0][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|MCache[1][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|MCache[0][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|MCache[1][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|MCache[0][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[7]
+Warning (13012): Latch memoriaCache:MCache1|MCache[1][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[7]
+Warning (13012): Latch memoriaRAM:MRAM1|dataOut[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal memoriaCache:MCache1|addressRAM[7]
+Warning (13012): Latch memoriaRAM:MRAM1|dataOut[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal memoriaCache:MCache1|addressRAM[7]
+Warning (13012): Latch memoriaRAM:MRAM1|dataOut[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal memoriaCache:MCache1|addressRAM[7]
+Warning (13012): Latch memoriaRAM:MRAM1|dataOut[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal memoriaCache:MCache1|addressRAM[7]
+Warning (13012): Latch memoriaRAM:MRAM1|dataOut[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal memoriaCache:MCache1|addressRAM[7]
+Warning (13012): Latch memoriaRAM:MRAM1|dataOut[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal memoriaCache:MCache1|addressRAM[7]
+Warning (13012): Latch memoriaRAM:MRAM1|dataOut[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal memoriaCache:MCache1|addressRAM[7]
+Warning (13012): Latch memoriaRAM:MRAM1|dataOut[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal memoriaCache:MCache1|addressRAM[7]
+Warning (13012): Latch memoriaCache:MCache1|dataAux[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|dirty has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|dataAux[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|dataAux[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|dataAux[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|dataAux[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|dataAux[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|dataAux[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
+Warning (13012): Latch memoriaCache:MCache1|dataAux[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[7]
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[15]"
+    Warning (15610): No output dependent on input pin "SW[17]"
+Info (21057): Implemented 382 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 18 input pins
+    Info (21059): Implemented 44 output pins
+    Info (21061): Implemented 320 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 174 warnings
+    Info: Peak virtual memory: 475 megabytes
+    Info: Processing ended: Fri Mar 17 21:49:40 2017
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

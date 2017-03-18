@@ -1,0 +1,66 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\vinic\Desktop\VictorBalbo_ViniciusSilveira_pratica1\parte2\codigo\simulation\modelsim
+vdisplay
+!i10b 1
+!s100 iHVLCOf6DB6JeWMGajDI43
+II;8Ef<5=9J50E<bU]`UIi0
+VzJBZ<?]CEFRZ2XCVzO[m40
+Z1 dC:\Users\vinic\Desktop\VictorBalbo_ViniciusSilveira_pratica1\parte2\codigo\simulation\modelsim
+Z2 w1488546524
+Z3 8C:/Users/vinic/Desktop/VictorBalbo_ViniciusSilveira_pratica1/parte2/codigo/RAM_parte2.v
+Z4 FC:/Users/vinic/Desktop/VictorBalbo_ViniciusSilveira_pratica1/parte2/codigo/RAM_parte2.v
+L0 2
+Z5 OV;L;10.1d;51
+r1
+!s85 0
+31
+Z6 !s108 1489799172.151000
+Z7 !s107 C:/Users/vinic/Desktop/VictorBalbo_ViniciusSilveira_pratica1/parte2/codigo/RAM_parte2.v|
+Z8 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/vinic/Desktop/VictorBalbo_ViniciusSilveira_pratica1/parte2/codigo|C:/Users/vinic/Desktop/VictorBalbo_ViniciusSilveira_pratica1/parte2/codigo/RAM_parte2.v|
+!s101 -O0
+Z9 o-vlog01compat -work work -O0
+Z10 !s92 -vlog01compat -work work +incdir+C:/Users/vinic/Desktop/VictorBalbo_ViniciusSilveira_pratica1/parte2/codigo -O0
+vRAM_parte2
+!i10b 1
+!s100 A]jTY_[LUc]C2?dAN75Ok3
+IF^K4DIU=adj;DflajO=<J3
+Vd3BbC@`L7WEPlGSMSTfNJ2
+R1
+R2
+R3
+R4
+L0 27
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!s101 -O0
+R9
+R10
+n@r@a@m_parte2
+vramlpm
+IRRZi@1ll2OIOkG3@@Ub190
+VR:=61PRUnAZWihg=S@JO<2
+R1
+R2
+8C:/Users/vinic/Desktop/VictorBalbo_ViniciusSilveira_pratica1/parte2/codigo/ramlpm.v
+FC:/Users/vinic/Desktop/VictorBalbo_ViniciusSilveira_pratica1/parte2/codigo/ramlpm.v
+L0 39
+R5
+r1
+31
+R9
+!i10b 1
+!s100 NLejbAD1d8z@:zVI9=F;^3
+!s85 0
+!s108 1489799172.010000
+!s107 C:/Users/vinic/Desktop/VictorBalbo_ViniciusSilveira_pratica1/parte2/codigo/ramlpm.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/vinic/Desktop/VictorBalbo_ViniciusSilveira_pratica1/parte2/codigo|C:/Users/vinic/Desktop/VictorBalbo_ViniciusSilveira_pratica1/parte2/codigo/ramlpm.v|
+!s101 -O0
+R10

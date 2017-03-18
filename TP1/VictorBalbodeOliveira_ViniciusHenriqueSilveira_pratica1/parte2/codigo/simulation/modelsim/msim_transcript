@@ -1,0 +1,26 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do RAM_parte2_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/vinic/Desktop/VictorBalbo_ViniciusSilveira_pratica1/parte2/codigo {C:/Users/vinic/Desktop/VictorBalbo_ViniciusSilveira_pratica1/parte2/codigo/ramlpm.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ramlpm
+# 
+# Top level modules:
+# 	ramlpm
+# vlog -vlog01compat -work work +incdir+C:/Users/vinic/Desktop/VictorBalbo_ViniciusSilveira_pratica1/parte2/codigo {C:/Users/vinic/Desktop/VictorBalbo_ViniciusSilveira_pratica1/parte2/codigo/RAM_parte2.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module display
+# -- Compiling module RAM_parte2
+# 
+# Top level modules:
+# 	RAM_parte2
+# 

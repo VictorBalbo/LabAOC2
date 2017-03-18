@@ -1,0 +1,1375 @@
+TimeQuest Timing Analyzer report for RAM_parte2
+Fri Mar 17 22:05:12 2017
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'SW[14]'
+ 12. Slow Model Hold: 'SW[14]'
+ 13. Slow Model Minimum Pulse Width: 'SW[14]'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Propagation Delay
+ 19. Minimum Propagation Delay
+ 20. Fast Model Setup Summary
+ 21. Fast Model Hold Summary
+ 22. Fast Model Recovery Summary
+ 23. Fast Model Removal Summary
+ 24. Fast Model Minimum Pulse Width Summary
+ 25. Fast Model Setup: 'SW[14]'
+ 26. Fast Model Hold: 'SW[14]'
+ 27. Fast Model Minimum Pulse Width: 'SW[14]'
+ 28. Setup Times
+ 29. Hold Times
+ 30. Clock to Output Times
+ 31. Minimum Clock to Output Times
+ 32. Propagation Delay
+ 33. Minimum Propagation Delay
+ 34. Multicorner Timing Analysis Summary
+ 35. Setup Times
+ 36. Hold Times
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Progagation Delay
+ 40. Minimum Progagation Delay
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; RAM_parte2                                                        ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                             ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets    ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; SW[14]     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { SW[14] } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                           ;
++------------+-----------------+------------+-------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                  ;
++------------+-----------------+------------+-------------------------------------------------------+
+; 343.17 MHz ; 200.0 MHz       ; SW[14]     ; limit due to high minimum pulse width violation (tch) ;
++------------+-----------------+------------+-------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Slow Model Setup Summary        ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; SW[14] ; -1.914 ; -15.312       ;
++--------+--------+---------------+
+
+
++--------------------------------+
+; Slow Model Hold Summary        ;
++--------+-------+---------------+
+; Clock  ; Slack ; End Point TNS ;
++--------+-------+---------------+
+; SW[14] ; 2.645 ; 0.000         ;
++--------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++--------+--------+----------------------+
+; Clock  ; Slack  ; End Point TNS        ;
++--------+--------+----------------------+
+; SW[14] ; -2.000 ; -89.222              ;
++--------+--------+----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'SW[14]'                                                                                                                                                                                                                                                                                 ;
++--------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                                    ; To Node                                                                                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.914 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg0 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 1.000        ; -0.025     ; 2.854      ;
+; -1.914 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg1 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a1~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 1.000        ; -0.025     ; 2.854      ;
+; -1.914 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg2 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a2~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 1.000        ; -0.025     ; 2.854      ;
+; -1.914 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg3 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a3~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 1.000        ; -0.025     ; 2.854      ;
+; -1.914 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg4 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a4~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 1.000        ; -0.025     ; 2.854      ;
+; -1.914 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg5 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a5~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 1.000        ; -0.025     ; 2.854      ;
+; -1.914 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg6 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a6~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 1.000        ; -0.025     ; 2.854      ;
+; -1.914 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg7 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a7~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 1.000        ; -0.025     ; 2.854      ;
++--------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'SW[14]'                                                                                                                                                                                                                                                                                 ;
++-------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                                                    ; To Node                                                                                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 2.645 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg0 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 0.000        ; -0.025     ; 2.854      ;
+; 2.645 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg1 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a1~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 0.000        ; -0.025     ; 2.854      ;
+; 2.645 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg2 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a2~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 0.000        ; -0.025     ; 2.854      ;
+; 2.645 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg3 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a3~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 0.000        ; -0.025     ; 2.854      ;
+; 2.645 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg4 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a4~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 0.000        ; -0.025     ; 2.854      ;
+; 2.645 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg5 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a5~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 0.000        ; -0.025     ; 2.854      ;
+; 2.645 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg6 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a6~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 0.000        ; -0.025     ; 2.854      ;
+; 2.645 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg7 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a7~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 0.000        ; -0.025     ; 2.854      ;
++-------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'SW[14]'                                                                                                                                                        ;
++--------+--------------+----------------+------------------+--------+------------+---------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                                                                                                        ;
++--------+--------------+----------------+------------------+--------+------------+---------------------------------------------------------------------------------------------------------------+
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_address_reg1 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_address_reg1 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_address_reg2 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_address_reg2 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_address_reg3 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_address_reg3 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_address_reg4 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_address_reg4 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg1  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg1  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg2  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg2  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg3  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg3  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg4  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg4  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg5  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg5  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg6  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg6  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg7  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg7  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_we_reg       ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_we_reg       ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a1~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a1~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a2~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a2~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a3~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a3~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a4~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a4~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a5~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a5~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a6~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a6~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a7~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a7~porta_memory_reg0  ;
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; SW[14] ; Rise       ; SW[14]                                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[14] ; Rise       ; SW[14]|combout                                                                                                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[14] ; Rise       ; SW[14]|combout                                                                                                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm1|altsyncram_component|auto_generated|ram_block1a0|clk0                                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm1|altsyncram_component|auto_generated|ram_block1a0|clk0                                                 ;
++--------+--------------+----------------+------------------+--------+------------+---------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; SW[14]     ; 3.739  ; 3.739  ; Rise       ; SW[14]          ;
+;  SW[0]    ; SW[14]     ; 0.113  ; 0.113  ; Rise       ; SW[14]          ;
+;  SW[1]    ; SW[14]     ; 0.130  ; 0.130  ; Rise       ; SW[14]          ;
+;  SW[2]    ; SW[14]     ; 0.899  ; 0.899  ; Rise       ; SW[14]          ;
+;  SW[3]    ; SW[14]     ; 0.214  ; 0.214  ; Rise       ; SW[14]          ;
+;  SW[4]    ; SW[14]     ; -0.087 ; -0.087 ; Rise       ; SW[14]          ;
+;  SW[5]    ; SW[14]     ; 0.298  ; 0.298  ; Rise       ; SW[14]          ;
+;  SW[6]    ; SW[14]     ; -0.004 ; -0.004 ; Rise       ; SW[14]          ;
+;  SW[7]    ; SW[14]     ; 0.338  ; 0.338  ; Rise       ; SW[14]          ;
+;  SW[8]    ; SW[14]     ; 1.306  ; 1.306  ; Rise       ; SW[14]          ;
+;  SW[9]    ; SW[14]     ; 0.269  ; 0.269  ; Rise       ; SW[14]          ;
+;  SW[10]   ; SW[14]     ; -0.019 ; -0.019 ; Rise       ; SW[14]          ;
+;  SW[11]   ; SW[14]     ; -0.005 ; -0.005 ; Rise       ; SW[14]          ;
+;  SW[12]   ; SW[14]     ; 0.027  ; 0.027  ; Rise       ; SW[14]          ;
+;  SW[13]   ; SW[14]     ; 3.739  ; 3.739  ; Rise       ; SW[14]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; SW[14]     ; 0.356  ; 0.356  ; Rise       ; SW[14]          ;
+;  SW[0]    ; SW[14]     ; 0.156  ; 0.156  ; Rise       ; SW[14]          ;
+;  SW[1]    ; SW[14]     ; 0.139  ; 0.139  ; Rise       ; SW[14]          ;
+;  SW[2]    ; SW[14]     ; -0.630 ; -0.630 ; Rise       ; SW[14]          ;
+;  SW[3]    ; SW[14]     ; 0.055  ; 0.055  ; Rise       ; SW[14]          ;
+;  SW[4]    ; SW[14]     ; 0.356  ; 0.356  ; Rise       ; SW[14]          ;
+;  SW[5]    ; SW[14]     ; -0.029 ; -0.029 ; Rise       ; SW[14]          ;
+;  SW[6]    ; SW[14]     ; 0.273  ; 0.273  ; Rise       ; SW[14]          ;
+;  SW[7]    ; SW[14]     ; -0.069 ; -0.069 ; Rise       ; SW[14]          ;
+;  SW[8]    ; SW[14]     ; -1.037 ; -1.037 ; Rise       ; SW[14]          ;
+;  SW[9]    ; SW[14]     ; 0.000  ; 0.000  ; Rise       ; SW[14]          ;
+;  SW[10]   ; SW[14]     ; 0.288  ; 0.288  ; Rise       ; SW[14]          ;
+;  SW[11]   ; SW[14]     ; 0.274  ; 0.274  ; Rise       ; SW[14]          ;
+;  SW[12]   ; SW[14]     ; 0.242  ; 0.242  ; Rise       ; SW[14]          ;
+;  SW[13]   ; SW[14]     ; -3.470 ; -3.470 ; Rise       ; SW[14]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; HEX0[*]   ; SW[14]     ; 11.670 ; 11.670 ; Rise       ; SW[14]          ;
+;  HEX0[0]  ; SW[14]     ; 11.670 ; 11.670 ; Rise       ; SW[14]          ;
+;  HEX0[1]  ; SW[14]     ; 11.643 ; 11.643 ; Rise       ; SW[14]          ;
+;  HEX0[2]  ; SW[14]     ; 11.616 ; 11.616 ; Rise       ; SW[14]          ;
+;  HEX0[3]  ; SW[14]     ; 11.423 ; 11.423 ; Rise       ; SW[14]          ;
+;  HEX0[4]  ; SW[14]     ; 11.419 ; 11.419 ; Rise       ; SW[14]          ;
+;  HEX0[5]  ; SW[14]     ; 11.411 ; 11.411 ; Rise       ; SW[14]          ;
+;  HEX0[6]  ; SW[14]     ; 11.410 ; 11.410 ; Rise       ; SW[14]          ;
+; HEX1[*]   ; SW[14]     ; 13.462 ; 13.462 ; Rise       ; SW[14]          ;
+;  HEX1[0]  ; SW[14]     ; 13.433 ; 13.433 ; Rise       ; SW[14]          ;
+;  HEX1[1]  ; SW[14]     ; 13.462 ; 13.462 ; Rise       ; SW[14]          ;
+;  HEX1[2]  ; SW[14]     ; 13.069 ; 13.069 ; Rise       ; SW[14]          ;
+;  HEX1[3]  ; SW[14]     ; 13.026 ; 13.026 ; Rise       ; SW[14]          ;
+;  HEX1[4]  ; SW[14]     ; 13.047 ; 13.047 ; Rise       ; SW[14]          ;
+;  HEX1[5]  ; SW[14]     ; 13.311 ; 13.311 ; Rise       ; SW[14]          ;
+;  HEX1[6]  ; SW[14]     ; 13.273 ; 13.273 ; Rise       ; SW[14]          ;
+; LEDG[*]   ; SW[14]     ; 9.811  ; 9.811  ; Rise       ; SW[14]          ;
+;  LEDG[0]  ; SW[14]     ; 9.811  ; 9.811  ; Rise       ; SW[14]          ;
+; LEDG[*]   ; SW[14]     ; 9.811  ; 9.811  ; Fall       ; SW[14]          ;
+;  LEDG[0]  ; SW[14]     ; 9.811  ; 9.811  ; Fall       ; SW[14]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; HEX0[*]   ; SW[14]     ; 11.101 ; 11.101 ; Rise       ; SW[14]          ;
+;  HEX0[0]  ; SW[14]     ; 11.370 ; 11.370 ; Rise       ; SW[14]          ;
+;  HEX0[1]  ; SW[14]     ; 11.343 ; 11.343 ; Rise       ; SW[14]          ;
+;  HEX0[2]  ; SW[14]     ; 11.342 ; 11.342 ; Rise       ; SW[14]          ;
+;  HEX0[3]  ; SW[14]     ; 11.113 ; 11.113 ; Rise       ; SW[14]          ;
+;  HEX0[4]  ; SW[14]     ; 11.109 ; 11.109 ; Rise       ; SW[14]          ;
+;  HEX0[5]  ; SW[14]     ; 11.110 ; 11.110 ; Rise       ; SW[14]          ;
+;  HEX0[6]  ; SW[14]     ; 11.101 ; 11.101 ; Rise       ; SW[14]          ;
+; HEX1[*]   ; SW[14]     ; 12.184 ; 12.184 ; Rise       ; SW[14]          ;
+;  HEX1[0]  ; SW[14]     ; 12.599 ; 12.599 ; Rise       ; SW[14]          ;
+;  HEX1[1]  ; SW[14]     ; 12.622 ; 12.622 ; Rise       ; SW[14]          ;
+;  HEX1[2]  ; SW[14]     ; 12.228 ; 12.228 ; Rise       ; SW[14]          ;
+;  HEX1[3]  ; SW[14]     ; 12.184 ; 12.184 ; Rise       ; SW[14]          ;
+;  HEX1[4]  ; SW[14]     ; 12.211 ; 12.211 ; Rise       ; SW[14]          ;
+;  HEX1[5]  ; SW[14]     ; 12.448 ; 12.448 ; Rise       ; SW[14]          ;
+;  HEX1[6]  ; SW[14]     ; 12.432 ; 12.432 ; Rise       ; SW[14]          ;
+; LEDG[*]   ; SW[14]     ; 9.811  ; 9.811  ; Rise       ; SW[14]          ;
+;  LEDG[0]  ; SW[14]     ; 9.811  ; 9.811  ; Rise       ; SW[14]          ;
+; LEDG[*]   ; SW[14]     ; 9.811  ; 9.811  ; Fall       ; SW[14]          ;
+;  LEDG[0]  ; SW[14]     ; 9.811  ; 9.811  ; Fall       ; SW[14]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------+
+; Propagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[0]      ; HEX4[0]     ; 7.568 ; 7.568 ; 7.568 ; 7.568 ;
+; SW[0]      ; HEX4[1]     ; 7.693 ; 7.693 ; 7.693 ; 7.693 ;
+; SW[0]      ; HEX4[2]     ;       ; 7.677 ; 7.677 ;       ;
+; SW[0]      ; HEX4[3]     ; 7.400 ; 7.400 ; 7.400 ; 7.400 ;
+; SW[0]      ; HEX4[4]     ; 7.411 ;       ;       ; 7.411 ;
+; SW[0]      ; HEX4[5]     ; 7.426 ;       ;       ; 7.426 ;
+; SW[0]      ; HEX4[6]     ; 7.588 ; 7.588 ; 7.588 ; 7.588 ;
+; SW[1]      ; HEX4[0]     ; 7.508 ; 7.508 ; 7.508 ; 7.508 ;
+; SW[1]      ; HEX4[1]     ; 7.632 ; 7.632 ; 7.632 ; 7.632 ;
+; SW[1]      ; HEX4[2]     ; 7.633 ;       ;       ; 7.633 ;
+; SW[1]      ; HEX4[3]     ; 7.339 ; 7.339 ; 7.339 ; 7.339 ;
+; SW[1]      ; HEX4[4]     ;       ; 7.346 ; 7.346 ;       ;
+; SW[1]      ; HEX4[5]     ; 7.357 ; 7.357 ; 7.357 ; 7.357 ;
+; SW[1]      ; HEX4[6]     ; 7.513 ; 7.513 ; 7.513 ; 7.513 ;
+; SW[2]      ; HEX4[0]     ; 7.267 ; 7.267 ; 7.267 ; 7.267 ;
+; SW[2]      ; HEX4[1]     ; 7.391 ;       ;       ; 7.391 ;
+; SW[2]      ; HEX4[2]     ; 7.391 ; 7.391 ; 7.391 ; 7.391 ;
+; SW[2]      ; HEX4[3]     ; 7.097 ; 7.097 ; 7.097 ; 7.097 ;
+; SW[2]      ; HEX4[4]     ; 7.106 ; 7.106 ; 7.106 ; 7.106 ;
+; SW[2]      ; HEX4[5]     ; 7.115 ; 7.115 ; 7.115 ; 7.115 ;
+; SW[2]      ; HEX4[6]     ; 7.265 ; 7.265 ; 7.265 ; 7.265 ;
+; SW[3]      ; HEX4[0]     ; 6.804 ; 6.804 ; 6.804 ; 6.804 ;
+; SW[3]      ; HEX4[1]     ; 6.928 ; 6.928 ; 6.928 ; 6.928 ;
+; SW[3]      ; HEX4[2]     ; 6.930 ; 6.930 ; 6.930 ; 6.930 ;
+; SW[3]      ; HEX4[3]     ; 6.636 ; 6.636 ; 6.636 ; 6.636 ;
+; SW[3]      ; HEX4[4]     ;       ; 6.644 ; 6.644 ;       ;
+; SW[3]      ; HEX4[5]     ; 6.653 ; 6.653 ; 6.653 ; 6.653 ;
+; SW[3]      ; HEX4[6]     ; 6.803 ; 6.803 ; 6.803 ; 6.803 ;
+; SW[4]      ; HEX5[0]     ; 6.493 ; 6.493 ; 6.493 ; 6.493 ;
+; SW[4]      ; HEX5[1]     ; 6.473 ; 6.473 ; 6.473 ; 6.473 ;
+; SW[4]      ; HEX5[2]     ;       ; 6.461 ; 6.461 ;       ;
+; SW[4]      ; HEX5[3]     ; 6.786 ; 6.786 ; 6.786 ; 6.786 ;
+; SW[4]      ; HEX5[4]     ; 6.627 ;       ;       ; 6.627 ;
+; SW[4]      ; HEX5[5]     ; 6.752 ;       ;       ; 6.752 ;
+; SW[4]      ; HEX5[6]     ; 6.782 ; 6.782 ; 6.782 ; 6.782 ;
+; SW[5]      ; HEX5[0]     ; 6.825 ; 6.825 ; 6.825 ; 6.825 ;
+; SW[5]      ; HEX5[1]     ; 6.815 ; 6.815 ; 6.815 ; 6.815 ;
+; SW[5]      ; HEX5[2]     ; 6.798 ;       ;       ; 6.798 ;
+; SW[5]      ; HEX5[3]     ; 7.125 ; 7.125 ; 7.125 ; 7.125 ;
+; SW[5]      ; HEX5[4]     ;       ; 6.982 ; 6.982 ;       ;
+; SW[5]      ; HEX5[5]     ; 7.106 ; 7.106 ; 7.106 ; 7.106 ;
+; SW[5]      ; HEX5[6]     ; 7.130 ; 7.130 ; 7.130 ; 7.130 ;
+; SW[6]      ; HEX5[0]     ; 6.234 ; 6.234 ; 6.234 ; 6.234 ;
+; SW[6]      ; HEX5[1]     ; 6.216 ;       ;       ; 6.216 ;
+; SW[6]      ; HEX5[2]     ; 6.205 ; 6.205 ; 6.205 ; 6.205 ;
+; SW[6]      ; HEX5[3]     ; 6.529 ; 6.529 ; 6.529 ; 6.529 ;
+; SW[6]      ; HEX5[4]     ; 6.378 ; 6.378 ; 6.378 ; 6.378 ;
+; SW[6]      ; HEX5[5]     ; 6.501 ; 6.501 ; 6.501 ; 6.501 ;
+; SW[6]      ; HEX5[6]     ; 6.523 ; 6.523 ; 6.523 ; 6.523 ;
+; SW[7]      ; HEX5[0]     ; 6.925 ; 6.925 ; 6.925 ; 6.925 ;
+; SW[7]      ; HEX5[1]     ; 6.914 ; 6.914 ; 6.914 ; 6.914 ;
+; SW[7]      ; HEX5[2]     ; 6.874 ; 6.874 ; 6.874 ; 6.874 ;
+; SW[7]      ; HEX5[3]     ; 7.222 ; 7.222 ; 7.222 ; 7.222 ;
+; SW[7]      ; HEX5[4]     ;       ; 7.085 ; 7.085 ;       ;
+; SW[7]      ; HEX5[5]     ; 7.184 ; 7.184 ; 7.184 ; 7.184 ;
+; SW[7]      ; HEX5[6]     ; 7.228 ; 7.228 ; 7.228 ; 7.228 ;
+; SW[8]      ; HEX6[0]     ; 6.837 ; 6.837 ; 6.837 ; 6.837 ;
+; SW[8]      ; HEX6[1]     ; 6.852 ; 6.852 ; 6.852 ; 6.852 ;
+; SW[8]      ; HEX6[2]     ;       ; 6.813 ; 6.813 ;       ;
+; SW[8]      ; HEX6[3]     ; 7.371 ; 7.371 ; 7.371 ; 7.371 ;
+; SW[8]      ; HEX6[4]     ; 7.399 ;       ;       ; 7.399 ;
+; SW[8]      ; HEX6[5]     ; 7.353 ;       ;       ; 7.353 ;
+; SW[8]      ; HEX6[6]     ; 7.358 ; 7.358 ; 7.358 ; 7.358 ;
+; SW[9]      ; HEX6[0]     ; 6.718 ; 6.718 ; 6.718 ; 6.718 ;
+; SW[9]      ; HEX6[1]     ; 6.732 ; 6.732 ; 6.732 ; 6.732 ;
+; SW[9]      ; HEX6[2]     ; 6.719 ;       ;       ; 6.719 ;
+; SW[9]      ; HEX6[3]     ; 7.254 ; 7.254 ; 7.254 ; 7.254 ;
+; SW[9]      ; HEX6[4]     ;       ; 7.278 ; 7.278 ;       ;
+; SW[9]      ; HEX6[5]     ; 7.236 ; 7.236 ; 7.236 ; 7.236 ;
+; SW[9]      ; HEX6[6]     ; 7.237 ; 7.237 ; 7.237 ; 7.237 ;
+; SW[10]     ; HEX6[0]     ; 4.936 ; 4.936 ; 4.936 ; 4.936 ;
+; SW[10]     ; HEX6[1]     ; 4.954 ;       ;       ; 4.954 ;
+; SW[10]     ; HEX6[2]     ; 4.936 ; 4.936 ; 4.936 ; 4.936 ;
+; SW[10]     ; HEX6[3]     ; 5.486 ; 5.486 ; 5.486 ; 5.486 ;
+; SW[10]     ; HEX6[4]     ; 5.501 ; 5.501 ; 5.501 ; 5.501 ;
+; SW[10]     ; HEX6[5]     ; 5.461 ; 5.461 ; 5.461 ; 5.461 ;
+; SW[10]     ; HEX6[6]     ; 5.469 ; 5.469 ; 5.469 ; 5.469 ;
+; SW[11]     ; HEX6[0]     ; 5.207 ; 5.207 ; 5.207 ; 5.207 ;
+; SW[11]     ; HEX6[1]     ; 5.226 ; 5.226 ; 5.226 ; 5.226 ;
+; SW[11]     ; HEX6[2]     ; 5.184 ; 5.184 ; 5.184 ; 5.184 ;
+; SW[11]     ; HEX6[3]     ; 5.756 ; 5.756 ; 5.756 ; 5.756 ;
+; SW[11]     ; HEX6[4]     ;       ; 5.771 ; 5.771 ;       ;
+; SW[11]     ; HEX6[5]     ; 5.702 ; 5.702 ; 5.702 ; 5.702 ;
+; SW[11]     ; HEX6[6]     ; 5.739 ; 5.739 ; 5.739 ; 5.739 ;
+; SW[12]     ; HEX7[0]     ; 4.659 ;       ;       ; 4.659 ;
+; SW[12]     ; HEX7[3]     ; 4.629 ;       ;       ; 4.629 ;
+; SW[12]     ; HEX7[4]     ; 4.629 ;       ;       ; 4.629 ;
+; SW[12]     ; HEX7[5]     ; 4.667 ;       ;       ; 4.667 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Propagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[0]      ; HEX4[0]     ; 7.568 ; 7.568 ; 7.568 ; 7.568 ;
+; SW[0]      ; HEX4[1]     ; 7.693 ; 7.693 ; 7.693 ; 7.693 ;
+; SW[0]      ; HEX4[2]     ;       ; 7.677 ; 7.677 ;       ;
+; SW[0]      ; HEX4[3]     ; 7.400 ; 7.400 ; 7.400 ; 7.400 ;
+; SW[0]      ; HEX4[4]     ; 7.411 ;       ;       ; 7.411 ;
+; SW[0]      ; HEX4[5]     ; 7.426 ;       ;       ; 7.426 ;
+; SW[0]      ; HEX4[6]     ; 7.588 ; 7.588 ; 7.588 ; 7.588 ;
+; SW[1]      ; HEX4[0]     ; 7.508 ; 7.508 ; 7.508 ; 7.508 ;
+; SW[1]      ; HEX4[1]     ; 7.632 ; 7.632 ; 7.632 ; 7.632 ;
+; SW[1]      ; HEX4[2]     ; 7.633 ;       ;       ; 7.633 ;
+; SW[1]      ; HEX4[3]     ; 7.339 ; 7.339 ; 7.339 ; 7.339 ;
+; SW[1]      ; HEX4[4]     ;       ; 7.346 ; 7.346 ;       ;
+; SW[1]      ; HEX4[5]     ; 7.357 ; 7.357 ; 7.357 ; 7.357 ;
+; SW[1]      ; HEX4[6]     ; 7.513 ; 7.513 ; 7.513 ; 7.513 ;
+; SW[2]      ; HEX4[0]     ; 7.267 ; 7.267 ; 7.267 ; 7.267 ;
+; SW[2]      ; HEX4[1]     ; 7.391 ;       ;       ; 7.391 ;
+; SW[2]      ; HEX4[2]     ; 7.391 ; 7.391 ; 7.391 ; 7.391 ;
+; SW[2]      ; HEX4[3]     ; 7.097 ; 7.097 ; 7.097 ; 7.097 ;
+; SW[2]      ; HEX4[4]     ; 7.106 ; 7.106 ; 7.106 ; 7.106 ;
+; SW[2]      ; HEX4[5]     ; 7.115 ; 7.115 ; 7.115 ; 7.115 ;
+; SW[2]      ; HEX4[6]     ; 7.265 ; 7.265 ; 7.265 ; 7.265 ;
+; SW[3]      ; HEX4[0]     ; 6.804 ; 6.804 ; 6.804 ; 6.804 ;
+; SW[3]      ; HEX4[1]     ; 6.928 ; 6.928 ; 6.928 ; 6.928 ;
+; SW[3]      ; HEX4[2]     ; 6.930 ; 6.930 ; 6.930 ; 6.930 ;
+; SW[3]      ; HEX4[3]     ; 6.636 ; 6.636 ; 6.636 ; 6.636 ;
+; SW[3]      ; HEX4[4]     ;       ; 6.644 ; 6.644 ;       ;
+; SW[3]      ; HEX4[5]     ; 6.653 ; 6.653 ; 6.653 ; 6.653 ;
+; SW[3]      ; HEX4[6]     ; 6.803 ; 6.803 ; 6.803 ; 6.803 ;
+; SW[4]      ; HEX5[0]     ; 6.493 ; 6.493 ; 6.493 ; 6.493 ;
+; SW[4]      ; HEX5[1]     ; 6.473 ; 6.473 ; 6.473 ; 6.473 ;
+; SW[4]      ; HEX5[2]     ;       ; 6.461 ; 6.461 ;       ;
+; SW[4]      ; HEX5[3]     ; 6.786 ; 6.786 ; 6.786 ; 6.786 ;
+; SW[4]      ; HEX5[4]     ; 6.627 ;       ;       ; 6.627 ;
+; SW[4]      ; HEX5[5]     ; 6.752 ;       ;       ; 6.752 ;
+; SW[4]      ; HEX5[6]     ; 6.782 ; 6.782 ; 6.782 ; 6.782 ;
+; SW[5]      ; HEX5[0]     ; 6.825 ; 6.825 ; 6.825 ; 6.825 ;
+; SW[5]      ; HEX5[1]     ; 6.815 ; 6.815 ; 6.815 ; 6.815 ;
+; SW[5]      ; HEX5[2]     ; 6.798 ;       ;       ; 6.798 ;
+; SW[5]      ; HEX5[3]     ; 7.125 ; 7.125 ; 7.125 ; 7.125 ;
+; SW[5]      ; HEX5[4]     ;       ; 6.982 ; 6.982 ;       ;
+; SW[5]      ; HEX5[5]     ; 7.106 ; 7.106 ; 7.106 ; 7.106 ;
+; SW[5]      ; HEX5[6]     ; 7.130 ; 7.130 ; 7.130 ; 7.130 ;
+; SW[6]      ; HEX5[0]     ; 6.234 ; 6.234 ; 6.234 ; 6.234 ;
+; SW[6]      ; HEX5[1]     ; 6.216 ;       ;       ; 6.216 ;
+; SW[6]      ; HEX5[2]     ; 6.205 ; 6.205 ; 6.205 ; 6.205 ;
+; SW[6]      ; HEX5[3]     ; 6.529 ; 6.529 ; 6.529 ; 6.529 ;
+; SW[6]      ; HEX5[4]     ; 6.378 ; 6.378 ; 6.378 ; 6.378 ;
+; SW[6]      ; HEX5[5]     ; 6.501 ; 6.501 ; 6.501 ; 6.501 ;
+; SW[6]      ; HEX5[6]     ; 6.523 ; 6.523 ; 6.523 ; 6.523 ;
+; SW[7]      ; HEX5[0]     ; 6.925 ; 6.925 ; 6.925 ; 6.925 ;
+; SW[7]      ; HEX5[1]     ; 6.914 ; 6.914 ; 6.914 ; 6.914 ;
+; SW[7]      ; HEX5[2]     ; 6.874 ; 6.874 ; 6.874 ; 6.874 ;
+; SW[7]      ; HEX5[3]     ; 7.222 ; 7.222 ; 7.222 ; 7.222 ;
+; SW[7]      ; HEX5[4]     ;       ; 7.085 ; 7.085 ;       ;
+; SW[7]      ; HEX5[5]     ; 7.184 ; 7.184 ; 7.184 ; 7.184 ;
+; SW[7]      ; HEX5[6]     ; 7.228 ; 7.228 ; 7.228 ; 7.228 ;
+; SW[8]      ; HEX6[0]     ; 6.837 ; 6.837 ; 6.837 ; 6.837 ;
+; SW[8]      ; HEX6[1]     ; 6.852 ; 6.852 ; 6.852 ; 6.852 ;
+; SW[8]      ; HEX6[2]     ;       ; 6.813 ; 6.813 ;       ;
+; SW[8]      ; HEX6[3]     ; 7.371 ; 7.371 ; 7.371 ; 7.371 ;
+; SW[8]      ; HEX6[4]     ; 7.399 ;       ;       ; 7.399 ;
+; SW[8]      ; HEX6[5]     ; 7.353 ;       ;       ; 7.353 ;
+; SW[8]      ; HEX6[6]     ; 7.358 ; 7.358 ; 7.358 ; 7.358 ;
+; SW[9]      ; HEX6[0]     ; 6.718 ; 6.718 ; 6.718 ; 6.718 ;
+; SW[9]      ; HEX6[1]     ; 6.732 ; 6.732 ; 6.732 ; 6.732 ;
+; SW[9]      ; HEX6[2]     ; 6.719 ;       ;       ; 6.719 ;
+; SW[9]      ; HEX6[3]     ; 7.254 ; 7.254 ; 7.254 ; 7.254 ;
+; SW[9]      ; HEX6[4]     ;       ; 7.278 ; 7.278 ;       ;
+; SW[9]      ; HEX6[5]     ; 7.236 ; 7.236 ; 7.236 ; 7.236 ;
+; SW[9]      ; HEX6[6]     ; 7.237 ; 7.237 ; 7.237 ; 7.237 ;
+; SW[10]     ; HEX6[0]     ; 4.936 ; 4.936 ; 4.936 ; 4.936 ;
+; SW[10]     ; HEX6[1]     ; 4.954 ;       ;       ; 4.954 ;
+; SW[10]     ; HEX6[2]     ; 4.936 ; 4.936 ; 4.936 ; 4.936 ;
+; SW[10]     ; HEX6[3]     ; 5.486 ; 5.486 ; 5.486 ; 5.486 ;
+; SW[10]     ; HEX6[4]     ; 5.501 ; 5.501 ; 5.501 ; 5.501 ;
+; SW[10]     ; HEX6[5]     ; 5.461 ; 5.461 ; 5.461 ; 5.461 ;
+; SW[10]     ; HEX6[6]     ; 5.469 ; 5.469 ; 5.469 ; 5.469 ;
+; SW[11]     ; HEX6[0]     ; 5.207 ; 5.207 ; 5.207 ; 5.207 ;
+; SW[11]     ; HEX6[1]     ; 5.226 ; 5.226 ; 5.226 ; 5.226 ;
+; SW[11]     ; HEX6[2]     ; 5.184 ; 5.184 ; 5.184 ; 5.184 ;
+; SW[11]     ; HEX6[3]     ; 5.756 ; 5.756 ; 5.756 ; 5.756 ;
+; SW[11]     ; HEX6[4]     ;       ; 5.771 ; 5.771 ;       ;
+; SW[11]     ; HEX6[5]     ; 5.702 ; 5.702 ; 5.702 ; 5.702 ;
+; SW[11]     ; HEX6[6]     ; 5.739 ; 5.739 ; 5.739 ; 5.739 ;
+; SW[12]     ; HEX7[0]     ; 4.659 ;       ;       ; 4.659 ;
+; SW[12]     ; HEX7[3]     ; 4.629 ;       ;       ; 4.629 ;
+; SW[12]     ; HEX7[4]     ; 4.629 ;       ;       ; 4.629 ;
+; SW[12]     ; HEX7[5]     ; 4.667 ;       ;       ; 4.667 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++---------------------------------+
+; Fast Model Setup Summary        ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; SW[14] ; -1.460 ; -11.680       ;
++--------+--------+---------------+
+
+
++--------------------------------+
+; Fast Model Hold Summary        ;
++--------+-------+---------------+
+; Clock  ; Slack ; End Point TNS ;
++--------+-------+---------------+
+; SW[14] ; 2.321 ; 0.000         ;
++--------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++--------+--------+----------------------+
+; Clock  ; Slack  ; End Point TNS        ;
++--------+--------+----------------------+
+; SW[14] ; -2.000 ; -89.222              ;
++--------+--------+----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'SW[14]'                                                                                                                                                                                                                                                                                 ;
++--------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                                    ; To Node                                                                                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.460 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg0 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 1.000        ; -0.017     ; 2.442      ;
+; -1.460 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg1 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a1~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 1.000        ; -0.017     ; 2.442      ;
+; -1.460 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg2 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a2~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 1.000        ; -0.017     ; 2.442      ;
+; -1.460 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg3 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a3~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 1.000        ; -0.017     ; 2.442      ;
+; -1.460 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg4 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a4~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 1.000        ; -0.017     ; 2.442      ;
+; -1.460 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg5 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a5~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 1.000        ; -0.017     ; 2.442      ;
+; -1.460 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg6 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a6~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 1.000        ; -0.017     ; 2.442      ;
+; -1.460 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg7 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a7~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 1.000        ; -0.017     ; 2.442      ;
++--------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'SW[14]'                                                                                                                                                                                                                                                                                 ;
++-------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                                                    ; To Node                                                                                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 2.321 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg0 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 0.000        ; -0.017     ; 2.442      ;
+; 2.321 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg1 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a1~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 0.000        ; -0.017     ; 2.442      ;
+; 2.321 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg2 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a2~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 0.000        ; -0.017     ; 2.442      ;
+; 2.321 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg3 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a3~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 0.000        ; -0.017     ; 2.442      ;
+; 2.321 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg4 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a4~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 0.000        ; -0.017     ; 2.442      ;
+; 2.321 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg5 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a5~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 0.000        ; -0.017     ; 2.442      ;
+; 2.321 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg6 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a6~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 0.000        ; -0.017     ; 2.442      ;
+; 2.321 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg7 ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a7~porta_memory_reg0 ; SW[14]       ; SW[14]      ; 0.000        ; -0.017     ; 2.442      ;
++-------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'SW[14]'                                                                                                                                                        ;
++--------+--------------+----------------+------------------+--------+------------+---------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                                                                                                        ;
++--------+--------------+----------------+------------------+--------+------------+---------------------------------------------------------------------------------------------------------------+
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_address_reg1 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_address_reg1 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_address_reg2 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_address_reg2 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_address_reg3 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_address_reg3 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_address_reg4 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_address_reg4 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg1  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg1  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg2  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg2  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg3  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg3  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg4  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg4  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg5  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg5  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg6  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg6  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg7  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_datain_reg7  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_we_reg       ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a0~porta_we_reg       ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a1~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a1~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a2~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a2~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a3~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a3~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a4~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a4~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a5~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a5~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a6~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a6~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a7~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm:ramlpm1|altsyncram:altsyncram_component|altsyncram_vre1:auto_generated|ram_block1a7~porta_memory_reg0  ;
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; SW[14] ; Rise       ; SW[14]                                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[14] ; Rise       ; SW[14]|combout                                                                                                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[14] ; Rise       ; SW[14]|combout                                                                                                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; SW[14] ; Rise       ; ramlpm1|altsyncram_component|auto_generated|ram_block1a0|clk0                                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; SW[14] ; Rise       ; ramlpm1|altsyncram_component|auto_generated|ram_block1a0|clk0                                                 ;
++--------+--------------+----------------+------------------+--------+------------+---------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; SW[14]     ; 2.205  ; 2.205  ; Rise       ; SW[14]          ;
+;  SW[0]    ; SW[14]     ; -0.035 ; -0.035 ; Rise       ; SW[14]          ;
+;  SW[1]    ; SW[14]     ; -0.021 ; -0.021 ; Rise       ; SW[14]          ;
+;  SW[2]    ; SW[14]     ; 0.358  ; 0.358  ; Rise       ; SW[14]          ;
+;  SW[3]    ; SW[14]     ; 0.020  ; 0.020  ; Rise       ; SW[14]          ;
+;  SW[4]    ; SW[14]     ; -0.113 ; -0.113 ; Rise       ; SW[14]          ;
+;  SW[5]    ; SW[14]     ; 0.097  ; 0.097  ; Rise       ; SW[14]          ;
+;  SW[6]    ; SW[14]     ; -0.119 ; -0.119 ; Rise       ; SW[14]          ;
+;  SW[7]    ; SW[14]     ; 0.122  ; 0.122  ; Rise       ; SW[14]          ;
+;  SW[8]    ; SW[14]     ; 0.596  ; 0.596  ; Rise       ; SW[14]          ;
+;  SW[9]    ; SW[14]     ; 0.076  ; 0.076  ; Rise       ; SW[14]          ;
+;  SW[10]   ; SW[14]     ; -0.110 ; -0.110 ; Rise       ; SW[14]          ;
+;  SW[11]   ; SW[14]     ; -0.097 ; -0.097 ; Rise       ; SW[14]          ;
+;  SW[12]   ; SW[14]     ; -0.091 ; -0.091 ; Rise       ; SW[14]          ;
+;  SW[13]   ; SW[14]     ; 2.205  ; 2.205  ; Rise       ; SW[14]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; SW[14]     ; 0.258  ; 0.258  ; Rise       ; SW[14]          ;
+;  SW[0]    ; SW[14]     ; 0.174  ; 0.174  ; Rise       ; SW[14]          ;
+;  SW[1]    ; SW[14]     ; 0.160  ; 0.160  ; Rise       ; SW[14]          ;
+;  SW[2]    ; SW[14]     ; -0.219 ; -0.219 ; Rise       ; SW[14]          ;
+;  SW[3]    ; SW[14]     ; 0.119  ; 0.119  ; Rise       ; SW[14]          ;
+;  SW[4]    ; SW[14]     ; 0.252  ; 0.252  ; Rise       ; SW[14]          ;
+;  SW[5]    ; SW[14]     ; 0.042  ; 0.042  ; Rise       ; SW[14]          ;
+;  SW[6]    ; SW[14]     ; 0.258  ; 0.258  ; Rise       ; SW[14]          ;
+;  SW[7]    ; SW[14]     ; 0.017  ; 0.017  ; Rise       ; SW[14]          ;
+;  SW[8]    ; SW[14]     ; -0.457 ; -0.457 ; Rise       ; SW[14]          ;
+;  SW[9]    ; SW[14]     ; 0.063  ; 0.063  ; Rise       ; SW[14]          ;
+;  SW[10]   ; SW[14]     ; 0.249  ; 0.249  ; Rise       ; SW[14]          ;
+;  SW[11]   ; SW[14]     ; 0.236  ; 0.236  ; Rise       ; SW[14]          ;
+;  SW[12]   ; SW[14]     ; 0.230  ; 0.230  ; Rise       ; SW[14]          ;
+;  SW[13]   ; SW[14]     ; -2.066 ; -2.066 ; Rise       ; SW[14]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; HEX0[*]   ; SW[14]     ; 6.460 ; 6.460 ; Rise       ; SW[14]          ;
+;  HEX0[0]  ; SW[14]     ; 6.460 ; 6.460 ; Rise       ; SW[14]          ;
+;  HEX0[1]  ; SW[14]     ; 6.430 ; 6.430 ; Rise       ; SW[14]          ;
+;  HEX0[2]  ; SW[14]     ; 6.433 ; 6.433 ; Rise       ; SW[14]          ;
+;  HEX0[3]  ; SW[14]     ; 6.340 ; 6.340 ; Rise       ; SW[14]          ;
+;  HEX0[4]  ; SW[14]     ; 6.339 ; 6.339 ; Rise       ; SW[14]          ;
+;  HEX0[5]  ; SW[14]     ; 6.339 ; 6.339 ; Rise       ; SW[14]          ;
+;  HEX0[6]  ; SW[14]     ; 6.332 ; 6.332 ; Rise       ; SW[14]          ;
+; HEX1[*]   ; SW[14]     ; 7.268 ; 7.268 ; Rise       ; SW[14]          ;
+;  HEX1[0]  ; SW[14]     ; 7.268 ; 7.268 ; Rise       ; SW[14]          ;
+;  HEX1[1]  ; SW[14]     ; 7.267 ; 7.267 ; Rise       ; SW[14]          ;
+;  HEX1[2]  ; SW[14]     ; 7.049 ; 7.049 ; Rise       ; SW[14]          ;
+;  HEX1[3]  ; SW[14]     ; 7.020 ; 7.020 ; Rise       ; SW[14]          ;
+;  HEX1[4]  ; SW[14]     ; 7.054 ; 7.054 ; Rise       ; SW[14]          ;
+;  HEX1[5]  ; SW[14]     ; 7.155 ; 7.155 ; Rise       ; SW[14]          ;
+;  HEX1[6]  ; SW[14]     ; 7.150 ; 7.150 ; Rise       ; SW[14]          ;
+; LEDG[*]   ; SW[14]     ; 5.639 ; 5.639 ; Rise       ; SW[14]          ;
+;  LEDG[0]  ; SW[14]     ; 5.639 ; 5.639 ; Rise       ; SW[14]          ;
+; LEDG[*]   ; SW[14]     ; 5.639 ; 5.639 ; Fall       ; SW[14]          ;
+;  LEDG[0]  ; SW[14]     ; 5.639 ; 5.639 ; Fall       ; SW[14]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; HEX0[*]   ; SW[14]     ; 6.202 ; 6.202 ; Rise       ; SW[14]          ;
+;  HEX0[0]  ; SW[14]     ; 6.334 ; 6.334 ; Rise       ; SW[14]          ;
+;  HEX0[1]  ; SW[14]     ; 6.306 ; 6.306 ; Rise       ; SW[14]          ;
+;  HEX0[2]  ; SW[14]     ; 6.308 ; 6.308 ; Rise       ; SW[14]          ;
+;  HEX0[3]  ; SW[14]     ; 6.210 ; 6.210 ; Rise       ; SW[14]          ;
+;  HEX0[4]  ; SW[14]     ; 6.208 ; 6.208 ; Rise       ; SW[14]          ;
+;  HEX0[5]  ; SW[14]     ; 6.205 ; 6.205 ; Rise       ; SW[14]          ;
+;  HEX0[6]  ; SW[14]     ; 6.202 ; 6.202 ; Rise       ; SW[14]          ;
+; HEX1[*]   ; SW[14]     ; 6.659 ; 6.659 ; Rise       ; SW[14]          ;
+;  HEX1[0]  ; SW[14]     ; 6.909 ; 6.909 ; Rise       ; SW[14]          ;
+;  HEX1[1]  ; SW[14]     ; 6.908 ; 6.908 ; Rise       ; SW[14]          ;
+;  HEX1[2]  ; SW[14]     ; 6.691 ; 6.691 ; Rise       ; SW[14]          ;
+;  HEX1[3]  ; SW[14]     ; 6.659 ; 6.659 ; Rise       ; SW[14]          ;
+;  HEX1[4]  ; SW[14]     ; 6.698 ; 6.698 ; Rise       ; SW[14]          ;
+;  HEX1[5]  ; SW[14]     ; 6.795 ; 6.795 ; Rise       ; SW[14]          ;
+;  HEX1[6]  ; SW[14]     ; 6.790 ; 6.790 ; Rise       ; SW[14]          ;
+; LEDG[*]   ; SW[14]     ; 5.639 ; 5.639 ; Rise       ; SW[14]          ;
+;  LEDG[0]  ; SW[14]     ; 5.639 ; 5.639 ; Rise       ; SW[14]          ;
+; LEDG[*]   ; SW[14]     ; 5.639 ; 5.639 ; Fall       ; SW[14]          ;
+;  LEDG[0]  ; SW[14]     ; 5.639 ; 5.639 ; Fall       ; SW[14]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------+
+; Propagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[0]      ; HEX4[0]     ; 3.912 ; 3.912 ; 3.912 ; 3.912 ;
+; SW[0]      ; HEX4[1]     ; 3.972 ; 3.972 ; 3.972 ; 3.972 ;
+; SW[0]      ; HEX4[2]     ;       ; 3.979 ; 3.979 ;       ;
+; SW[0]      ; HEX4[3]     ; 3.833 ; 3.833 ; 3.833 ; 3.833 ;
+; SW[0]      ; HEX4[4]     ; 3.849 ;       ;       ; 3.849 ;
+; SW[0]      ; HEX4[5]     ; 3.859 ;       ;       ; 3.859 ;
+; SW[0]      ; HEX4[6]     ; 3.928 ; 3.928 ; 3.928 ; 3.928 ;
+; SW[1]      ; HEX4[0]     ; 3.879 ; 3.879 ; 3.879 ; 3.879 ;
+; SW[1]      ; HEX4[1]     ; 3.940 ; 3.940 ; 3.940 ; 3.940 ;
+; SW[1]      ; HEX4[2]     ; 3.939 ;       ;       ; 3.939 ;
+; SW[1]      ; HEX4[3]     ; 3.796 ; 3.796 ; 3.796 ; 3.796 ;
+; SW[1]      ; HEX4[4]     ;       ; 3.813 ; 3.813 ;       ;
+; SW[1]      ; HEX4[5]     ; 3.815 ; 3.815 ; 3.815 ; 3.815 ;
+; SW[1]      ; HEX4[6]     ; 3.883 ; 3.883 ; 3.883 ; 3.883 ;
+; SW[2]      ; HEX4[0]     ; 3.774 ; 3.774 ; 3.774 ; 3.774 ;
+; SW[2]      ; HEX4[1]     ; 3.834 ;       ;       ; 3.834 ;
+; SW[2]      ; HEX4[2]     ; 3.831 ; 3.831 ; 3.831 ; 3.831 ;
+; SW[2]      ; HEX4[3]     ; 3.690 ; 3.690 ; 3.690 ; 3.690 ;
+; SW[2]      ; HEX4[4]     ; 3.708 ; 3.708 ; 3.708 ; 3.708 ;
+; SW[2]      ; HEX4[5]     ; 3.707 ; 3.707 ; 3.707 ; 3.707 ;
+; SW[2]      ; HEX4[6]     ; 3.771 ; 3.771 ; 3.771 ; 3.771 ;
+; SW[3]      ; HEX4[0]     ; 3.550 ; 3.550 ; 3.550 ; 3.550 ;
+; SW[3]      ; HEX4[1]     ; 3.610 ; 3.610 ; 3.610 ; 3.610 ;
+; SW[3]      ; HEX4[2]     ; 3.611 ; 3.611 ; 3.611 ; 3.611 ;
+; SW[3]      ; HEX4[3]     ; 3.467 ; 3.467 ; 3.467 ; 3.467 ;
+; SW[3]      ; HEX4[4]     ;       ; 3.484 ; 3.484 ;       ;
+; SW[3]      ; HEX4[5]     ; 3.485 ; 3.485 ; 3.485 ; 3.485 ;
+; SW[3]      ; HEX4[6]     ; 3.549 ; 3.549 ; 3.549 ; 3.549 ;
+; SW[4]      ; HEX5[0]     ; 3.420 ; 3.420 ; 3.420 ; 3.420 ;
+; SW[4]      ; HEX5[1]     ; 3.393 ; 3.393 ; 3.393 ; 3.393 ;
+; SW[4]      ; HEX5[2]     ;       ; 3.389 ; 3.389 ;       ;
+; SW[4]      ; HEX5[3]     ; 3.549 ; 3.549 ; 3.549 ; 3.549 ;
+; SW[4]      ; HEX5[4]     ; 3.464 ;       ;       ; 3.464 ;
+; SW[4]      ; HEX5[5]     ; 3.521 ;       ;       ; 3.521 ;
+; SW[4]      ; HEX5[6]     ; 3.546 ; 3.546 ; 3.546 ; 3.546 ;
+; SW[5]      ; HEX5[0]     ; 3.578 ; 3.578 ; 3.578 ; 3.578 ;
+; SW[5]      ; HEX5[1]     ; 3.557 ; 3.557 ; 3.557 ; 3.557 ;
+; SW[5]      ; HEX5[2]     ; 3.555 ;       ;       ; 3.555 ;
+; SW[5]      ; HEX5[3]     ; 3.711 ; 3.711 ; 3.711 ; 3.711 ;
+; SW[5]      ; HEX5[4]     ;       ; 3.641 ; 3.641 ;       ;
+; SW[5]      ; HEX5[5]     ; 3.697 ; 3.697 ; 3.697 ; 3.697 ;
+; SW[5]      ; HEX5[6]     ; 3.714 ; 3.714 ; 3.714 ; 3.714 ;
+; SW[6]      ; HEX5[0]     ; 3.266 ; 3.266 ; 3.266 ; 3.266 ;
+; SW[6]      ; HEX5[1]     ; 3.238 ;       ;       ; 3.238 ;
+; SW[6]      ; HEX5[2]     ; 3.235 ; 3.235 ; 3.235 ; 3.235 ;
+; SW[6]      ; HEX5[3]     ; 3.394 ; 3.394 ; 3.394 ; 3.394 ;
+; SW[6]      ; HEX5[4]     ; 3.316 ; 3.316 ; 3.316 ; 3.316 ;
+; SW[6]      ; HEX5[5]     ; 3.369 ; 3.369 ; 3.369 ; 3.369 ;
+; SW[6]      ; HEX5[6]     ; 3.392 ; 3.392 ; 3.392 ; 3.392 ;
+; SW[7]      ; HEX5[0]     ; 3.632 ; 3.632 ; 3.632 ; 3.632 ;
+; SW[7]      ; HEX5[1]     ; 3.609 ; 3.609 ; 3.609 ; 3.609 ;
+; SW[7]      ; HEX5[2]     ; 3.612 ; 3.612 ; 3.612 ; 3.612 ;
+; SW[7]      ; HEX5[3]     ; 3.764 ; 3.764 ; 3.764 ; 3.764 ;
+; SW[7]      ; HEX5[4]     ;       ; 3.693 ; 3.693 ;       ;
+; SW[7]      ; HEX5[5]     ; 3.746 ; 3.746 ; 3.746 ; 3.746 ;
+; SW[7]      ; HEX5[6]     ; 3.767 ; 3.767 ; 3.767 ; 3.767 ;
+; SW[8]      ; HEX6[0]     ; 3.562 ; 3.562 ; 3.562 ; 3.562 ;
+; SW[8]      ; HEX6[1]     ; 3.564 ; 3.564 ; 3.564 ; 3.564 ;
+; SW[8]      ; HEX6[2]     ;       ; 3.566 ; 3.566 ;       ;
+; SW[8]      ; HEX6[3]     ; 3.834 ; 3.834 ; 3.834 ; 3.834 ;
+; SW[8]      ; HEX6[4]     ; 3.847 ;       ;       ; 3.847 ;
+; SW[8]      ; HEX6[5]     ; 3.822 ;       ;       ; 3.822 ;
+; SW[8]      ; HEX6[6]     ; 3.815 ; 3.815 ; 3.815 ; 3.815 ;
+; SW[9]      ; HEX6[0]     ; 3.501 ; 3.501 ; 3.501 ; 3.501 ;
+; SW[9]      ; HEX6[1]     ; 3.504 ; 3.504 ; 3.504 ; 3.504 ;
+; SW[9]      ; HEX6[2]     ; 3.503 ;       ;       ; 3.503 ;
+; SW[9]      ; HEX6[3]     ; 3.774 ; 3.774 ; 3.774 ; 3.774 ;
+; SW[9]      ; HEX6[4]     ;       ; 3.787 ; 3.787 ;       ;
+; SW[9]      ; HEX6[5]     ; 3.756 ; 3.756 ; 3.756 ; 3.756 ;
+; SW[9]      ; HEX6[6]     ; 3.755 ; 3.755 ; 3.755 ; 3.755 ;
+; SW[10]     ; HEX6[0]     ; 2.577 ; 2.577 ; 2.577 ; 2.577 ;
+; SW[10]     ; HEX6[1]     ; 2.582 ;       ;       ; 2.582 ;
+; SW[10]     ; HEX6[2]     ; 2.574 ; 2.574 ; 2.574 ; 2.574 ;
+; SW[10]     ; HEX6[3]     ; 2.860 ; 2.860 ; 2.860 ; 2.860 ;
+; SW[10]     ; HEX6[4]     ; 2.866 ; 2.866 ; 2.866 ; 2.866 ;
+; SW[10]     ; HEX6[5]     ; 2.839 ; 2.839 ; 2.839 ; 2.839 ;
+; SW[10]     ; HEX6[6]     ; 2.840 ; 2.840 ; 2.840 ; 2.840 ;
+; SW[11]     ; HEX6[0]     ; 2.695 ; 2.695 ; 2.695 ; 2.695 ;
+; SW[11]     ; HEX6[1]     ; 2.701 ; 2.701 ; 2.701 ; 2.701 ;
+; SW[11]     ; HEX6[2]     ; 2.703 ; 2.703 ; 2.703 ; 2.703 ;
+; SW[11]     ; HEX6[3]     ; 2.978 ; 2.978 ; 2.978 ; 2.978 ;
+; SW[11]     ; HEX6[4]     ;       ; 2.984 ; 2.984 ;       ;
+; SW[11]     ; HEX6[5]     ; 2.957 ; 2.957 ; 2.957 ; 2.957 ;
+; SW[11]     ; HEX6[6]     ; 2.959 ; 2.959 ; 2.959 ; 2.959 ;
+; SW[12]     ; HEX7[0]     ; 2.515 ;       ;       ; 2.515 ;
+; SW[12]     ; HEX7[3]     ; 2.485 ;       ;       ; 2.485 ;
+; SW[12]     ; HEX7[4]     ; 2.485 ;       ;       ; 2.485 ;
+; SW[12]     ; HEX7[5]     ; 2.521 ;       ;       ; 2.521 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Propagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[0]      ; HEX4[0]     ; 3.912 ; 3.912 ; 3.912 ; 3.912 ;
+; SW[0]      ; HEX4[1]     ; 3.972 ; 3.972 ; 3.972 ; 3.972 ;
+; SW[0]      ; HEX4[2]     ;       ; 3.979 ; 3.979 ;       ;
+; SW[0]      ; HEX4[3]     ; 3.833 ; 3.833 ; 3.833 ; 3.833 ;
+; SW[0]      ; HEX4[4]     ; 3.849 ;       ;       ; 3.849 ;
+; SW[0]      ; HEX4[5]     ; 3.859 ;       ;       ; 3.859 ;
+; SW[0]      ; HEX4[6]     ; 3.928 ; 3.928 ; 3.928 ; 3.928 ;
+; SW[1]      ; HEX4[0]     ; 3.879 ; 3.879 ; 3.879 ; 3.879 ;
+; SW[1]      ; HEX4[1]     ; 3.940 ; 3.940 ; 3.940 ; 3.940 ;
+; SW[1]      ; HEX4[2]     ; 3.939 ;       ;       ; 3.939 ;
+; SW[1]      ; HEX4[3]     ; 3.796 ; 3.796 ; 3.796 ; 3.796 ;
+; SW[1]      ; HEX4[4]     ;       ; 3.813 ; 3.813 ;       ;
+; SW[1]      ; HEX4[5]     ; 3.815 ; 3.815 ; 3.815 ; 3.815 ;
+; SW[1]      ; HEX4[6]     ; 3.883 ; 3.883 ; 3.883 ; 3.883 ;
+; SW[2]      ; HEX4[0]     ; 3.774 ; 3.774 ; 3.774 ; 3.774 ;
+; SW[2]      ; HEX4[1]     ; 3.834 ;       ;       ; 3.834 ;
+; SW[2]      ; HEX4[2]     ; 3.831 ; 3.831 ; 3.831 ; 3.831 ;
+; SW[2]      ; HEX4[3]     ; 3.690 ; 3.690 ; 3.690 ; 3.690 ;
+; SW[2]      ; HEX4[4]     ; 3.708 ; 3.708 ; 3.708 ; 3.708 ;
+; SW[2]      ; HEX4[5]     ; 3.707 ; 3.707 ; 3.707 ; 3.707 ;
+; SW[2]      ; HEX4[6]     ; 3.771 ; 3.771 ; 3.771 ; 3.771 ;
+; SW[3]      ; HEX4[0]     ; 3.550 ; 3.550 ; 3.550 ; 3.550 ;
+; SW[3]      ; HEX4[1]     ; 3.610 ; 3.610 ; 3.610 ; 3.610 ;
+; SW[3]      ; HEX4[2]     ; 3.611 ; 3.611 ; 3.611 ; 3.611 ;
+; SW[3]      ; HEX4[3]     ; 3.467 ; 3.467 ; 3.467 ; 3.467 ;
+; SW[3]      ; HEX4[4]     ;       ; 3.484 ; 3.484 ;       ;
+; SW[3]      ; HEX4[5]     ; 3.485 ; 3.485 ; 3.485 ; 3.485 ;
+; SW[3]      ; HEX4[6]     ; 3.549 ; 3.549 ; 3.549 ; 3.549 ;
+; SW[4]      ; HEX5[0]     ; 3.420 ; 3.420 ; 3.420 ; 3.420 ;
+; SW[4]      ; HEX5[1]     ; 3.393 ; 3.393 ; 3.393 ; 3.393 ;
+; SW[4]      ; HEX5[2]     ;       ; 3.389 ; 3.389 ;       ;
+; SW[4]      ; HEX5[3]     ; 3.549 ; 3.549 ; 3.549 ; 3.549 ;
+; SW[4]      ; HEX5[4]     ; 3.464 ;       ;       ; 3.464 ;
+; SW[4]      ; HEX5[5]     ; 3.521 ;       ;       ; 3.521 ;
+; SW[4]      ; HEX5[6]     ; 3.546 ; 3.546 ; 3.546 ; 3.546 ;
+; SW[5]      ; HEX5[0]     ; 3.578 ; 3.578 ; 3.578 ; 3.578 ;
+; SW[5]      ; HEX5[1]     ; 3.557 ; 3.557 ; 3.557 ; 3.557 ;
+; SW[5]      ; HEX5[2]     ; 3.555 ;       ;       ; 3.555 ;
+; SW[5]      ; HEX5[3]     ; 3.711 ; 3.711 ; 3.711 ; 3.711 ;
+; SW[5]      ; HEX5[4]     ;       ; 3.641 ; 3.641 ;       ;
+; SW[5]      ; HEX5[5]     ; 3.697 ; 3.697 ; 3.697 ; 3.697 ;
+; SW[5]      ; HEX5[6]     ; 3.714 ; 3.714 ; 3.714 ; 3.714 ;
+; SW[6]      ; HEX5[0]     ; 3.266 ; 3.266 ; 3.266 ; 3.266 ;
+; SW[6]      ; HEX5[1]     ; 3.238 ;       ;       ; 3.238 ;
+; SW[6]      ; HEX5[2]     ; 3.235 ; 3.235 ; 3.235 ; 3.235 ;
+; SW[6]      ; HEX5[3]     ; 3.394 ; 3.394 ; 3.394 ; 3.394 ;
+; SW[6]      ; HEX5[4]     ; 3.316 ; 3.316 ; 3.316 ; 3.316 ;
+; SW[6]      ; HEX5[5]     ; 3.369 ; 3.369 ; 3.369 ; 3.369 ;
+; SW[6]      ; HEX5[6]     ; 3.392 ; 3.392 ; 3.392 ; 3.392 ;
+; SW[7]      ; HEX5[0]     ; 3.632 ; 3.632 ; 3.632 ; 3.632 ;
+; SW[7]      ; HEX5[1]     ; 3.609 ; 3.609 ; 3.609 ; 3.609 ;
+; SW[7]      ; HEX5[2]     ; 3.612 ; 3.612 ; 3.612 ; 3.612 ;
+; SW[7]      ; HEX5[3]     ; 3.764 ; 3.764 ; 3.764 ; 3.764 ;
+; SW[7]      ; HEX5[4]     ;       ; 3.693 ; 3.693 ;       ;
+; SW[7]      ; HEX5[5]     ; 3.746 ; 3.746 ; 3.746 ; 3.746 ;
+; SW[7]      ; HEX5[6]     ; 3.767 ; 3.767 ; 3.767 ; 3.767 ;
+; SW[8]      ; HEX6[0]     ; 3.562 ; 3.562 ; 3.562 ; 3.562 ;
+; SW[8]      ; HEX6[1]     ; 3.564 ; 3.564 ; 3.564 ; 3.564 ;
+; SW[8]      ; HEX6[2]     ;       ; 3.566 ; 3.566 ;       ;
+; SW[8]      ; HEX6[3]     ; 3.834 ; 3.834 ; 3.834 ; 3.834 ;
+; SW[8]      ; HEX6[4]     ; 3.847 ;       ;       ; 3.847 ;
+; SW[8]      ; HEX6[5]     ; 3.822 ;       ;       ; 3.822 ;
+; SW[8]      ; HEX6[6]     ; 3.815 ; 3.815 ; 3.815 ; 3.815 ;
+; SW[9]      ; HEX6[0]     ; 3.501 ; 3.501 ; 3.501 ; 3.501 ;
+; SW[9]      ; HEX6[1]     ; 3.504 ; 3.504 ; 3.504 ; 3.504 ;
+; SW[9]      ; HEX6[2]     ; 3.503 ;       ;       ; 3.503 ;
+; SW[9]      ; HEX6[3]     ; 3.774 ; 3.774 ; 3.774 ; 3.774 ;
+; SW[9]      ; HEX6[4]     ;       ; 3.787 ; 3.787 ;       ;
+; SW[9]      ; HEX6[5]     ; 3.756 ; 3.756 ; 3.756 ; 3.756 ;
+; SW[9]      ; HEX6[6]     ; 3.755 ; 3.755 ; 3.755 ; 3.755 ;
+; SW[10]     ; HEX6[0]     ; 2.577 ; 2.577 ; 2.577 ; 2.577 ;
+; SW[10]     ; HEX6[1]     ; 2.582 ;       ;       ; 2.582 ;
+; SW[10]     ; HEX6[2]     ; 2.574 ; 2.574 ; 2.574 ; 2.574 ;
+; SW[10]     ; HEX6[3]     ; 2.860 ; 2.860 ; 2.860 ; 2.860 ;
+; SW[10]     ; HEX6[4]     ; 2.866 ; 2.866 ; 2.866 ; 2.866 ;
+; SW[10]     ; HEX6[5]     ; 2.839 ; 2.839 ; 2.839 ; 2.839 ;
+; SW[10]     ; HEX6[6]     ; 2.840 ; 2.840 ; 2.840 ; 2.840 ;
+; SW[11]     ; HEX6[0]     ; 2.695 ; 2.695 ; 2.695 ; 2.695 ;
+; SW[11]     ; HEX6[1]     ; 2.701 ; 2.701 ; 2.701 ; 2.701 ;
+; SW[11]     ; HEX6[2]     ; 2.703 ; 2.703 ; 2.703 ; 2.703 ;
+; SW[11]     ; HEX6[3]     ; 2.978 ; 2.978 ; 2.978 ; 2.978 ;
+; SW[11]     ; HEX6[4]     ;       ; 2.984 ; 2.984 ;       ;
+; SW[11]     ; HEX6[5]     ; 2.957 ; 2.957 ; 2.957 ; 2.957 ;
+; SW[11]     ; HEX6[6]     ; 2.959 ; 2.959 ; 2.959 ; 2.959 ;
+; SW[12]     ; HEX7[0]     ; 2.515 ;       ;       ; 2.515 ;
+; SW[12]     ; HEX7[3]     ; 2.485 ;       ;       ; 2.485 ;
+; SW[12]     ; HEX7[4]     ; 2.485 ;       ;       ; 2.485 ;
+; SW[12]     ; HEX7[5]     ; 2.521 ;       ;       ; 2.521 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -1.914  ; 2.321 ; N/A      ; N/A     ; -2.000              ;
+;  SW[14]          ; -1.914  ; 2.321 ; N/A      ; N/A     ; -2.000              ;
+; Design-wide TNS  ; -15.312 ; 0.0   ; 0.0      ; 0.0     ; -89.222             ;
+;  SW[14]          ; -15.312 ; 0.000 ; N/A      ; N/A     ; -89.222             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; SW[14]     ; 3.739  ; 3.739  ; Rise       ; SW[14]          ;
+;  SW[0]    ; SW[14]     ; 0.113  ; 0.113  ; Rise       ; SW[14]          ;
+;  SW[1]    ; SW[14]     ; 0.130  ; 0.130  ; Rise       ; SW[14]          ;
+;  SW[2]    ; SW[14]     ; 0.899  ; 0.899  ; Rise       ; SW[14]          ;
+;  SW[3]    ; SW[14]     ; 0.214  ; 0.214  ; Rise       ; SW[14]          ;
+;  SW[4]    ; SW[14]     ; -0.087 ; -0.087 ; Rise       ; SW[14]          ;
+;  SW[5]    ; SW[14]     ; 0.298  ; 0.298  ; Rise       ; SW[14]          ;
+;  SW[6]    ; SW[14]     ; -0.004 ; -0.004 ; Rise       ; SW[14]          ;
+;  SW[7]    ; SW[14]     ; 0.338  ; 0.338  ; Rise       ; SW[14]          ;
+;  SW[8]    ; SW[14]     ; 1.306  ; 1.306  ; Rise       ; SW[14]          ;
+;  SW[9]    ; SW[14]     ; 0.269  ; 0.269  ; Rise       ; SW[14]          ;
+;  SW[10]   ; SW[14]     ; -0.019 ; -0.019 ; Rise       ; SW[14]          ;
+;  SW[11]   ; SW[14]     ; -0.005 ; -0.005 ; Rise       ; SW[14]          ;
+;  SW[12]   ; SW[14]     ; 0.027  ; 0.027  ; Rise       ; SW[14]          ;
+;  SW[13]   ; SW[14]     ; 3.739  ; 3.739  ; Rise       ; SW[14]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; SW[14]     ; 0.356  ; 0.356  ; Rise       ; SW[14]          ;
+;  SW[0]    ; SW[14]     ; 0.174  ; 0.174  ; Rise       ; SW[14]          ;
+;  SW[1]    ; SW[14]     ; 0.160  ; 0.160  ; Rise       ; SW[14]          ;
+;  SW[2]    ; SW[14]     ; -0.219 ; -0.219 ; Rise       ; SW[14]          ;
+;  SW[3]    ; SW[14]     ; 0.119  ; 0.119  ; Rise       ; SW[14]          ;
+;  SW[4]    ; SW[14]     ; 0.356  ; 0.356  ; Rise       ; SW[14]          ;
+;  SW[5]    ; SW[14]     ; 0.042  ; 0.042  ; Rise       ; SW[14]          ;
+;  SW[6]    ; SW[14]     ; 0.273  ; 0.273  ; Rise       ; SW[14]          ;
+;  SW[7]    ; SW[14]     ; 0.017  ; 0.017  ; Rise       ; SW[14]          ;
+;  SW[8]    ; SW[14]     ; -0.457 ; -0.457 ; Rise       ; SW[14]          ;
+;  SW[9]    ; SW[14]     ; 0.063  ; 0.063  ; Rise       ; SW[14]          ;
+;  SW[10]   ; SW[14]     ; 0.288  ; 0.288  ; Rise       ; SW[14]          ;
+;  SW[11]   ; SW[14]     ; 0.274  ; 0.274  ; Rise       ; SW[14]          ;
+;  SW[12]   ; SW[14]     ; 0.242  ; 0.242  ; Rise       ; SW[14]          ;
+;  SW[13]   ; SW[14]     ; -2.066 ; -2.066 ; Rise       ; SW[14]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; HEX0[*]   ; SW[14]     ; 11.670 ; 11.670 ; Rise       ; SW[14]          ;
+;  HEX0[0]  ; SW[14]     ; 11.670 ; 11.670 ; Rise       ; SW[14]          ;
+;  HEX0[1]  ; SW[14]     ; 11.643 ; 11.643 ; Rise       ; SW[14]          ;
+;  HEX0[2]  ; SW[14]     ; 11.616 ; 11.616 ; Rise       ; SW[14]          ;
+;  HEX0[3]  ; SW[14]     ; 11.423 ; 11.423 ; Rise       ; SW[14]          ;
+;  HEX0[4]  ; SW[14]     ; 11.419 ; 11.419 ; Rise       ; SW[14]          ;
+;  HEX0[5]  ; SW[14]     ; 11.411 ; 11.411 ; Rise       ; SW[14]          ;
+;  HEX0[6]  ; SW[14]     ; 11.410 ; 11.410 ; Rise       ; SW[14]          ;
+; HEX1[*]   ; SW[14]     ; 13.462 ; 13.462 ; Rise       ; SW[14]          ;
+;  HEX1[0]  ; SW[14]     ; 13.433 ; 13.433 ; Rise       ; SW[14]          ;
+;  HEX1[1]  ; SW[14]     ; 13.462 ; 13.462 ; Rise       ; SW[14]          ;
+;  HEX1[2]  ; SW[14]     ; 13.069 ; 13.069 ; Rise       ; SW[14]          ;
+;  HEX1[3]  ; SW[14]     ; 13.026 ; 13.026 ; Rise       ; SW[14]          ;
+;  HEX1[4]  ; SW[14]     ; 13.047 ; 13.047 ; Rise       ; SW[14]          ;
+;  HEX1[5]  ; SW[14]     ; 13.311 ; 13.311 ; Rise       ; SW[14]          ;
+;  HEX1[6]  ; SW[14]     ; 13.273 ; 13.273 ; Rise       ; SW[14]          ;
+; LEDG[*]   ; SW[14]     ; 9.811  ; 9.811  ; Rise       ; SW[14]          ;
+;  LEDG[0]  ; SW[14]     ; 9.811  ; 9.811  ; Rise       ; SW[14]          ;
+; LEDG[*]   ; SW[14]     ; 9.811  ; 9.811  ; Fall       ; SW[14]          ;
+;  LEDG[0]  ; SW[14]     ; 9.811  ; 9.811  ; Fall       ; SW[14]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; HEX0[*]   ; SW[14]     ; 6.202 ; 6.202 ; Rise       ; SW[14]          ;
+;  HEX0[0]  ; SW[14]     ; 6.334 ; 6.334 ; Rise       ; SW[14]          ;
+;  HEX0[1]  ; SW[14]     ; 6.306 ; 6.306 ; Rise       ; SW[14]          ;
+;  HEX0[2]  ; SW[14]     ; 6.308 ; 6.308 ; Rise       ; SW[14]          ;
+;  HEX0[3]  ; SW[14]     ; 6.210 ; 6.210 ; Rise       ; SW[14]          ;
+;  HEX0[4]  ; SW[14]     ; 6.208 ; 6.208 ; Rise       ; SW[14]          ;
+;  HEX0[5]  ; SW[14]     ; 6.205 ; 6.205 ; Rise       ; SW[14]          ;
+;  HEX0[6]  ; SW[14]     ; 6.202 ; 6.202 ; Rise       ; SW[14]          ;
+; HEX1[*]   ; SW[14]     ; 6.659 ; 6.659 ; Rise       ; SW[14]          ;
+;  HEX1[0]  ; SW[14]     ; 6.909 ; 6.909 ; Rise       ; SW[14]          ;
+;  HEX1[1]  ; SW[14]     ; 6.908 ; 6.908 ; Rise       ; SW[14]          ;
+;  HEX1[2]  ; SW[14]     ; 6.691 ; 6.691 ; Rise       ; SW[14]          ;
+;  HEX1[3]  ; SW[14]     ; 6.659 ; 6.659 ; Rise       ; SW[14]          ;
+;  HEX1[4]  ; SW[14]     ; 6.698 ; 6.698 ; Rise       ; SW[14]          ;
+;  HEX1[5]  ; SW[14]     ; 6.795 ; 6.795 ; Rise       ; SW[14]          ;
+;  HEX1[6]  ; SW[14]     ; 6.790 ; 6.790 ; Rise       ; SW[14]          ;
+; LEDG[*]   ; SW[14]     ; 5.639 ; 5.639 ; Rise       ; SW[14]          ;
+;  LEDG[0]  ; SW[14]     ; 5.639 ; 5.639 ; Rise       ; SW[14]          ;
+; LEDG[*]   ; SW[14]     ; 5.639 ; 5.639 ; Fall       ; SW[14]          ;
+;  LEDG[0]  ; SW[14]     ; 5.639 ; 5.639 ; Fall       ; SW[14]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------+
+; Progagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[0]      ; HEX4[0]     ; 7.568 ; 7.568 ; 7.568 ; 7.568 ;
+; SW[0]      ; HEX4[1]     ; 7.693 ; 7.693 ; 7.693 ; 7.693 ;
+; SW[0]      ; HEX4[2]     ;       ; 7.677 ; 7.677 ;       ;
+; SW[0]      ; HEX4[3]     ; 7.400 ; 7.400 ; 7.400 ; 7.400 ;
+; SW[0]      ; HEX4[4]     ; 7.411 ;       ;       ; 7.411 ;
+; SW[0]      ; HEX4[5]     ; 7.426 ;       ;       ; 7.426 ;
+; SW[0]      ; HEX4[6]     ; 7.588 ; 7.588 ; 7.588 ; 7.588 ;
+; SW[1]      ; HEX4[0]     ; 7.508 ; 7.508 ; 7.508 ; 7.508 ;
+; SW[1]      ; HEX4[1]     ; 7.632 ; 7.632 ; 7.632 ; 7.632 ;
+; SW[1]      ; HEX4[2]     ; 7.633 ;       ;       ; 7.633 ;
+; SW[1]      ; HEX4[3]     ; 7.339 ; 7.339 ; 7.339 ; 7.339 ;
+; SW[1]      ; HEX4[4]     ;       ; 7.346 ; 7.346 ;       ;
+; SW[1]      ; HEX4[5]     ; 7.357 ; 7.357 ; 7.357 ; 7.357 ;
+; SW[1]      ; HEX4[6]     ; 7.513 ; 7.513 ; 7.513 ; 7.513 ;
+; SW[2]      ; HEX4[0]     ; 7.267 ; 7.267 ; 7.267 ; 7.267 ;
+; SW[2]      ; HEX4[1]     ; 7.391 ;       ;       ; 7.391 ;
+; SW[2]      ; HEX4[2]     ; 7.391 ; 7.391 ; 7.391 ; 7.391 ;
+; SW[2]      ; HEX4[3]     ; 7.097 ; 7.097 ; 7.097 ; 7.097 ;
+; SW[2]      ; HEX4[4]     ; 7.106 ; 7.106 ; 7.106 ; 7.106 ;
+; SW[2]      ; HEX4[5]     ; 7.115 ; 7.115 ; 7.115 ; 7.115 ;
+; SW[2]      ; HEX4[6]     ; 7.265 ; 7.265 ; 7.265 ; 7.265 ;
+; SW[3]      ; HEX4[0]     ; 6.804 ; 6.804 ; 6.804 ; 6.804 ;
+; SW[3]      ; HEX4[1]     ; 6.928 ; 6.928 ; 6.928 ; 6.928 ;
+; SW[3]      ; HEX4[2]     ; 6.930 ; 6.930 ; 6.930 ; 6.930 ;
+; SW[3]      ; HEX4[3]     ; 6.636 ; 6.636 ; 6.636 ; 6.636 ;
+; SW[3]      ; HEX4[4]     ;       ; 6.644 ; 6.644 ;       ;
+; SW[3]      ; HEX4[5]     ; 6.653 ; 6.653 ; 6.653 ; 6.653 ;
+; SW[3]      ; HEX4[6]     ; 6.803 ; 6.803 ; 6.803 ; 6.803 ;
+; SW[4]      ; HEX5[0]     ; 6.493 ; 6.493 ; 6.493 ; 6.493 ;
+; SW[4]      ; HEX5[1]     ; 6.473 ; 6.473 ; 6.473 ; 6.473 ;
+; SW[4]      ; HEX5[2]     ;       ; 6.461 ; 6.461 ;       ;
+; SW[4]      ; HEX5[3]     ; 6.786 ; 6.786 ; 6.786 ; 6.786 ;
+; SW[4]      ; HEX5[4]     ; 6.627 ;       ;       ; 6.627 ;
+; SW[4]      ; HEX5[5]     ; 6.752 ;       ;       ; 6.752 ;
+; SW[4]      ; HEX5[6]     ; 6.782 ; 6.782 ; 6.782 ; 6.782 ;
+; SW[5]      ; HEX5[0]     ; 6.825 ; 6.825 ; 6.825 ; 6.825 ;
+; SW[5]      ; HEX5[1]     ; 6.815 ; 6.815 ; 6.815 ; 6.815 ;
+; SW[5]      ; HEX5[2]     ; 6.798 ;       ;       ; 6.798 ;
+; SW[5]      ; HEX5[3]     ; 7.125 ; 7.125 ; 7.125 ; 7.125 ;
+; SW[5]      ; HEX5[4]     ;       ; 6.982 ; 6.982 ;       ;
+; SW[5]      ; HEX5[5]     ; 7.106 ; 7.106 ; 7.106 ; 7.106 ;
+; SW[5]      ; HEX5[6]     ; 7.130 ; 7.130 ; 7.130 ; 7.130 ;
+; SW[6]      ; HEX5[0]     ; 6.234 ; 6.234 ; 6.234 ; 6.234 ;
+; SW[6]      ; HEX5[1]     ; 6.216 ;       ;       ; 6.216 ;
+; SW[6]      ; HEX5[2]     ; 6.205 ; 6.205 ; 6.205 ; 6.205 ;
+; SW[6]      ; HEX5[3]     ; 6.529 ; 6.529 ; 6.529 ; 6.529 ;
+; SW[6]      ; HEX5[4]     ; 6.378 ; 6.378 ; 6.378 ; 6.378 ;
+; SW[6]      ; HEX5[5]     ; 6.501 ; 6.501 ; 6.501 ; 6.501 ;
+; SW[6]      ; HEX5[6]     ; 6.523 ; 6.523 ; 6.523 ; 6.523 ;
+; SW[7]      ; HEX5[0]     ; 6.925 ; 6.925 ; 6.925 ; 6.925 ;
+; SW[7]      ; HEX5[1]     ; 6.914 ; 6.914 ; 6.914 ; 6.914 ;
+; SW[7]      ; HEX5[2]     ; 6.874 ; 6.874 ; 6.874 ; 6.874 ;
+; SW[7]      ; HEX5[3]     ; 7.222 ; 7.222 ; 7.222 ; 7.222 ;
+; SW[7]      ; HEX5[4]     ;       ; 7.085 ; 7.085 ;       ;
+; SW[7]      ; HEX5[5]     ; 7.184 ; 7.184 ; 7.184 ; 7.184 ;
+; SW[7]      ; HEX5[6]     ; 7.228 ; 7.228 ; 7.228 ; 7.228 ;
+; SW[8]      ; HEX6[0]     ; 6.837 ; 6.837 ; 6.837 ; 6.837 ;
+; SW[8]      ; HEX6[1]     ; 6.852 ; 6.852 ; 6.852 ; 6.852 ;
+; SW[8]      ; HEX6[2]     ;       ; 6.813 ; 6.813 ;       ;
+; SW[8]      ; HEX6[3]     ; 7.371 ; 7.371 ; 7.371 ; 7.371 ;
+; SW[8]      ; HEX6[4]     ; 7.399 ;       ;       ; 7.399 ;
+; SW[8]      ; HEX6[5]     ; 7.353 ;       ;       ; 7.353 ;
+; SW[8]      ; HEX6[6]     ; 7.358 ; 7.358 ; 7.358 ; 7.358 ;
+; SW[9]      ; HEX6[0]     ; 6.718 ; 6.718 ; 6.718 ; 6.718 ;
+; SW[9]      ; HEX6[1]     ; 6.732 ; 6.732 ; 6.732 ; 6.732 ;
+; SW[9]      ; HEX6[2]     ; 6.719 ;       ;       ; 6.719 ;
+; SW[9]      ; HEX6[3]     ; 7.254 ; 7.254 ; 7.254 ; 7.254 ;
+; SW[9]      ; HEX6[4]     ;       ; 7.278 ; 7.278 ;       ;
+; SW[9]      ; HEX6[5]     ; 7.236 ; 7.236 ; 7.236 ; 7.236 ;
+; SW[9]      ; HEX6[6]     ; 7.237 ; 7.237 ; 7.237 ; 7.237 ;
+; SW[10]     ; HEX6[0]     ; 4.936 ; 4.936 ; 4.936 ; 4.936 ;
+; SW[10]     ; HEX6[1]     ; 4.954 ;       ;       ; 4.954 ;
+; SW[10]     ; HEX6[2]     ; 4.936 ; 4.936 ; 4.936 ; 4.936 ;
+; SW[10]     ; HEX6[3]     ; 5.486 ; 5.486 ; 5.486 ; 5.486 ;
+; SW[10]     ; HEX6[4]     ; 5.501 ; 5.501 ; 5.501 ; 5.501 ;
+; SW[10]     ; HEX6[5]     ; 5.461 ; 5.461 ; 5.461 ; 5.461 ;
+; SW[10]     ; HEX6[6]     ; 5.469 ; 5.469 ; 5.469 ; 5.469 ;
+; SW[11]     ; HEX6[0]     ; 5.207 ; 5.207 ; 5.207 ; 5.207 ;
+; SW[11]     ; HEX6[1]     ; 5.226 ; 5.226 ; 5.226 ; 5.226 ;
+; SW[11]     ; HEX6[2]     ; 5.184 ; 5.184 ; 5.184 ; 5.184 ;
+; SW[11]     ; HEX6[3]     ; 5.756 ; 5.756 ; 5.756 ; 5.756 ;
+; SW[11]     ; HEX6[4]     ;       ; 5.771 ; 5.771 ;       ;
+; SW[11]     ; HEX6[5]     ; 5.702 ; 5.702 ; 5.702 ; 5.702 ;
+; SW[11]     ; HEX6[6]     ; 5.739 ; 5.739 ; 5.739 ; 5.739 ;
+; SW[12]     ; HEX7[0]     ; 4.659 ;       ;       ; 4.659 ;
+; SW[12]     ; HEX7[3]     ; 4.629 ;       ;       ; 4.629 ;
+; SW[12]     ; HEX7[4]     ; 4.629 ;       ;       ; 4.629 ;
+; SW[12]     ; HEX7[5]     ; 4.667 ;       ;       ; 4.667 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Progagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[0]      ; HEX4[0]     ; 3.912 ; 3.912 ; 3.912 ; 3.912 ;
+; SW[0]      ; HEX4[1]     ; 3.972 ; 3.972 ; 3.972 ; 3.972 ;
+; SW[0]      ; HEX4[2]     ;       ; 3.979 ; 3.979 ;       ;
+; SW[0]      ; HEX4[3]     ; 3.833 ; 3.833 ; 3.833 ; 3.833 ;
+; SW[0]      ; HEX4[4]     ; 3.849 ;       ;       ; 3.849 ;
+; SW[0]      ; HEX4[5]     ; 3.859 ;       ;       ; 3.859 ;
+; SW[0]      ; HEX4[6]     ; 3.928 ; 3.928 ; 3.928 ; 3.928 ;
+; SW[1]      ; HEX4[0]     ; 3.879 ; 3.879 ; 3.879 ; 3.879 ;
+; SW[1]      ; HEX4[1]     ; 3.940 ; 3.940 ; 3.940 ; 3.940 ;
+; SW[1]      ; HEX4[2]     ; 3.939 ;       ;       ; 3.939 ;
+; SW[1]      ; HEX4[3]     ; 3.796 ; 3.796 ; 3.796 ; 3.796 ;
+; SW[1]      ; HEX4[4]     ;       ; 3.813 ; 3.813 ;       ;
+; SW[1]      ; HEX4[5]     ; 3.815 ; 3.815 ; 3.815 ; 3.815 ;
+; SW[1]      ; HEX4[6]     ; 3.883 ; 3.883 ; 3.883 ; 3.883 ;
+; SW[2]      ; HEX4[0]     ; 3.774 ; 3.774 ; 3.774 ; 3.774 ;
+; SW[2]      ; HEX4[1]     ; 3.834 ;       ;       ; 3.834 ;
+; SW[2]      ; HEX4[2]     ; 3.831 ; 3.831 ; 3.831 ; 3.831 ;
+; SW[2]      ; HEX4[3]     ; 3.690 ; 3.690 ; 3.690 ; 3.690 ;
+; SW[2]      ; HEX4[4]     ; 3.708 ; 3.708 ; 3.708 ; 3.708 ;
+; SW[2]      ; HEX4[5]     ; 3.707 ; 3.707 ; 3.707 ; 3.707 ;
+; SW[2]      ; HEX4[6]     ; 3.771 ; 3.771 ; 3.771 ; 3.771 ;
+; SW[3]      ; HEX4[0]     ; 3.550 ; 3.550 ; 3.550 ; 3.550 ;
+; SW[3]      ; HEX4[1]     ; 3.610 ; 3.610 ; 3.610 ; 3.610 ;
+; SW[3]      ; HEX4[2]     ; 3.611 ; 3.611 ; 3.611 ; 3.611 ;
+; SW[3]      ; HEX4[3]     ; 3.467 ; 3.467 ; 3.467 ; 3.467 ;
+; SW[3]      ; HEX4[4]     ;       ; 3.484 ; 3.484 ;       ;
+; SW[3]      ; HEX4[5]     ; 3.485 ; 3.485 ; 3.485 ; 3.485 ;
+; SW[3]      ; HEX4[6]     ; 3.549 ; 3.549 ; 3.549 ; 3.549 ;
+; SW[4]      ; HEX5[0]     ; 3.420 ; 3.420 ; 3.420 ; 3.420 ;
+; SW[4]      ; HEX5[1]     ; 3.393 ; 3.393 ; 3.393 ; 3.393 ;
+; SW[4]      ; HEX5[2]     ;       ; 3.389 ; 3.389 ;       ;
+; SW[4]      ; HEX5[3]     ; 3.549 ; 3.549 ; 3.549 ; 3.549 ;
+; SW[4]      ; HEX5[4]     ; 3.464 ;       ;       ; 3.464 ;
+; SW[4]      ; HEX5[5]     ; 3.521 ;       ;       ; 3.521 ;
+; SW[4]      ; HEX5[6]     ; 3.546 ; 3.546 ; 3.546 ; 3.546 ;
+; SW[5]      ; HEX5[0]     ; 3.578 ; 3.578 ; 3.578 ; 3.578 ;
+; SW[5]      ; HEX5[1]     ; 3.557 ; 3.557 ; 3.557 ; 3.557 ;
+; SW[5]      ; HEX5[2]     ; 3.555 ;       ;       ; 3.555 ;
+; SW[5]      ; HEX5[3]     ; 3.711 ; 3.711 ; 3.711 ; 3.711 ;
+; SW[5]      ; HEX5[4]     ;       ; 3.641 ; 3.641 ;       ;
+; SW[5]      ; HEX5[5]     ; 3.697 ; 3.697 ; 3.697 ; 3.697 ;
+; SW[5]      ; HEX5[6]     ; 3.714 ; 3.714 ; 3.714 ; 3.714 ;
+; SW[6]      ; HEX5[0]     ; 3.266 ; 3.266 ; 3.266 ; 3.266 ;
+; SW[6]      ; HEX5[1]     ; 3.238 ;       ;       ; 3.238 ;
+; SW[6]      ; HEX5[2]     ; 3.235 ; 3.235 ; 3.235 ; 3.235 ;
+; SW[6]      ; HEX5[3]     ; 3.394 ; 3.394 ; 3.394 ; 3.394 ;
+; SW[6]      ; HEX5[4]     ; 3.316 ; 3.316 ; 3.316 ; 3.316 ;
+; SW[6]      ; HEX5[5]     ; 3.369 ; 3.369 ; 3.369 ; 3.369 ;
+; SW[6]      ; HEX5[6]     ; 3.392 ; 3.392 ; 3.392 ; 3.392 ;
+; SW[7]      ; HEX5[0]     ; 3.632 ; 3.632 ; 3.632 ; 3.632 ;
+; SW[7]      ; HEX5[1]     ; 3.609 ; 3.609 ; 3.609 ; 3.609 ;
+; SW[7]      ; HEX5[2]     ; 3.612 ; 3.612 ; 3.612 ; 3.612 ;
+; SW[7]      ; HEX5[3]     ; 3.764 ; 3.764 ; 3.764 ; 3.764 ;
+; SW[7]      ; HEX5[4]     ;       ; 3.693 ; 3.693 ;       ;
+; SW[7]      ; HEX5[5]     ; 3.746 ; 3.746 ; 3.746 ; 3.746 ;
+; SW[7]      ; HEX5[6]     ; 3.767 ; 3.767 ; 3.767 ; 3.767 ;
+; SW[8]      ; HEX6[0]     ; 3.562 ; 3.562 ; 3.562 ; 3.562 ;
+; SW[8]      ; HEX6[1]     ; 3.564 ; 3.564 ; 3.564 ; 3.564 ;
+; SW[8]      ; HEX6[2]     ;       ; 3.566 ; 3.566 ;       ;
+; SW[8]      ; HEX6[3]     ; 3.834 ; 3.834 ; 3.834 ; 3.834 ;
+; SW[8]      ; HEX6[4]     ; 3.847 ;       ;       ; 3.847 ;
+; SW[8]      ; HEX6[5]     ; 3.822 ;       ;       ; 3.822 ;
+; SW[8]      ; HEX6[6]     ; 3.815 ; 3.815 ; 3.815 ; 3.815 ;
+; SW[9]      ; HEX6[0]     ; 3.501 ; 3.501 ; 3.501 ; 3.501 ;
+; SW[9]      ; HEX6[1]     ; 3.504 ; 3.504 ; 3.504 ; 3.504 ;
+; SW[9]      ; HEX6[2]     ; 3.503 ;       ;       ; 3.503 ;
+; SW[9]      ; HEX6[3]     ; 3.774 ; 3.774 ; 3.774 ; 3.774 ;
+; SW[9]      ; HEX6[4]     ;       ; 3.787 ; 3.787 ;       ;
+; SW[9]      ; HEX6[5]     ; 3.756 ; 3.756 ; 3.756 ; 3.756 ;
+; SW[9]      ; HEX6[6]     ; 3.755 ; 3.755 ; 3.755 ; 3.755 ;
+; SW[10]     ; HEX6[0]     ; 2.577 ; 2.577 ; 2.577 ; 2.577 ;
+; SW[10]     ; HEX6[1]     ; 2.582 ;       ;       ; 2.582 ;
+; SW[10]     ; HEX6[2]     ; 2.574 ; 2.574 ; 2.574 ; 2.574 ;
+; SW[10]     ; HEX6[3]     ; 2.860 ; 2.860 ; 2.860 ; 2.860 ;
+; SW[10]     ; HEX6[4]     ; 2.866 ; 2.866 ; 2.866 ; 2.866 ;
+; SW[10]     ; HEX6[5]     ; 2.839 ; 2.839 ; 2.839 ; 2.839 ;
+; SW[10]     ; HEX6[6]     ; 2.840 ; 2.840 ; 2.840 ; 2.840 ;
+; SW[11]     ; HEX6[0]     ; 2.695 ; 2.695 ; 2.695 ; 2.695 ;
+; SW[11]     ; HEX6[1]     ; 2.701 ; 2.701 ; 2.701 ; 2.701 ;
+; SW[11]     ; HEX6[2]     ; 2.703 ; 2.703 ; 2.703 ; 2.703 ;
+; SW[11]     ; HEX6[3]     ; 2.978 ; 2.978 ; 2.978 ; 2.978 ;
+; SW[11]     ; HEX6[4]     ;       ; 2.984 ; 2.984 ;       ;
+; SW[11]     ; HEX6[5]     ; 2.957 ; 2.957 ; 2.957 ; 2.957 ;
+; SW[11]     ; HEX6[6]     ; 2.959 ; 2.959 ; 2.959 ; 2.959 ;
+; SW[12]     ; HEX7[0]     ; 2.515 ;       ;       ; 2.515 ;
+; SW[12]     ; HEX7[3]     ; 2.485 ;       ;       ; 2.485 ;
+; SW[12]     ; HEX7[4]     ; 2.485 ;       ;       ; 2.485 ;
+; SW[12]     ; HEX7[5]     ; 2.521 ;       ;       ; 2.521 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; SW[14]     ; SW[14]   ; 8        ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; SW[14]     ; SW[14]   ; 8        ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 15    ; 15   ;
+; Unconstrained Input Port Paths  ; 103   ; 103  ;
+; Unconstrained Output Ports      ; 40    ; 40   ;
+; Unconstrained Output Port Paths ; 173   ; 173  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Mar 17 22:05:11 2017
+Info: Command: quartus_sta RAM_parte2 -c RAM_parte2
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'RAM_parte2.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name SW[14] SW[14]
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.914
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.914       -15.312 SW[14] 
+Info (332146): Worst-case hold slack is 2.645
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     2.645         0.000 SW[14] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.000       -89.222 SW[14] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.460
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.460       -11.680 SW[14] 
+Info (332146): Worst-case hold slack is 2.321
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     2.321         0.000 SW[14] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.000       -89.222 SW[14] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 421 megabytes
+    Info: Processing ended: Fri Mar 17 22:05:12 2017
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
