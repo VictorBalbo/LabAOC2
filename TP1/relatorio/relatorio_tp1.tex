@@ -1,0 +1,91 @@
+\documentclass[12pt]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\pagestyle {empty}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{xcolor}
+% Definindo novas cores
+\definecolor{verde}{rgb}{0,0.5,0}
+% Configurando layout para mostrar codigos C++
+\usepackage{listings}
+\lstset{
+	language=C++,
+	basicstyle=\ttfamily\small, 
+	keywordstyle=\color{blue}, 
+	stringstyle=\color{verde}, 
+	commentstyle=\color{red}, 
+	extendedchars=true, 
+	showspaces=false, 
+	showstringspaces=false, 
+	numbers=left,
+	numberstyle=\tiny,
+	breaklines=true, 
+	%%backgroundcolor=\color{green!10},
+	breakautoindent=true, 
+	captionpos=b,
+	xleftmargin=0pt,
+}
+
+\begin{document}
+	\begin{center}
+		\textbf{Centro Federal de Educação Tecnológica de Minas Gerais - CEFET-MG\\
+		Curso de Engenharia de Computação\\   
+		Laboratório de Arquitetura e Organização de Computadores II - 2017/1\\
+		Trabalho Prático 1: Hierarquia de Memória\\}
+	\end{center}
+	\begin{flushleft}
+		\textbf{Victor Balbo de Oliveira\\
+				Vinícius Henrique Silveira}
+	\end{flushleft}
+	
+	\begin{center}
+		\textbf{\Large Parte 1}
+	\end{center}
+	
+	O objetivo dessa parte da prática foi testar uma memória RAM que pode ser criada automaticamente no software Quartus II. A memória tem 32 palavras de 8 bits e sendo assim endereçada por 5 bits. Há um sinal de controle que habilita leitura em 0 e escrita em 1 e um dado de saída de 8 bits. A memória foi simulada utilizado-se o software Modelsin e obteve-se a forma de onda abaixo como produto da simulação.
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[scale=0.35]{wave1.png}
+		\caption{Simulação da RAM importada do Quartus II}
+	\end{figure}
+	
+	\begin{center}
+		\textbf{\Large Parte 2}
+	\end{center}
+	
+	Utilizou-se a mesma memória RAM construída na Parte 1, porém, ela foi carregada com valores iniciais a partir de um arquivo \textit{.mif (memory initialization file)}. O resultado da simulação pode ser visto na forma de onda abaixo:
+	\newpage
+	
+	 \begin{figure}[!htb]
+	 	\centering
+	 	\includegraphics[scale=0.35]{wave2.jpg}
+	 	\caption{Simulação da RAM importada do Quartus II utilizando-se um arquivo \textit{.mif}}
+	 \end{figure}
+	 
+	 \begin{center}
+	 	\textbf{\Large Parte 3}
+	 \end{center}
+	 
+	 O objetivo dessa parte da prática foi implementar uma hierarquia de memória com dois níveis (uma cache L1 e uma memória RAM). A cache L1 é totalmente associativa e a memória RAM é diretamente mapeada. Criou-se uma cache de duas linhas de dados e uma memória RAM com quatro linhas de dados. Como a cache é totalmente associativa, o dado é substituído na cache em caso de miss utilizado-se a lógica \textit{LRU (Least Recently Used)}. Utilizou-se um bit adicional na linha de cache para tratar dessa lógica (1 indica dado recentemente acessado e 0 que foi acessado a algum tempo). Há também um bit de validade que indica que o dado naquela posição da cache é válido e um bit de sujeira que indica que o dado na cache é inconsistente com o dado presente na memória RAM. Utilizou-se a politica de escrita write-back para atualizar o dado na RAM, ou seja, sempre que um bloco tiver que ser substituído na cache, verificamos seu bit de sujeira, se ele estiver ativo indica que o dado precisa ser salvo na memória RAM antes de ser substutuido. A hierarquia de memória foi implementada em Verilog HDL e simulada no software Modelsin. O resultado da simulação pode ser visto na forma de onda e no display de dados abaixo:
+	 
+	 \begin{figure}[!htb]
+	 	\centering
+	 	\includegraphics[scale=0.45]{wave3.png}
+	 \end{figure}
+	 \newpage
+	 
+	 \begin{figure}[!htb]
+	 	\centering
+	 	\includegraphics[scale=0.35]{print1.png}
+	 \end{figure}
+	 
+	 \begin{figure}[!htb]
+	 	\centering
+	 	\includegraphics[scale=0.35]{print2.jpg}
+	 \end{figure}
+\end{document}
