@@ -15,7 +15,7 @@ module Processor(input [15:0]DIN, input Resetn, input Clock, input Run, output r
 	dec3to8 decX (IR[5:3], 1'b1, RegX); // Decodifica endereço do primeiro registrador usado
 	dec3to8 decY (IR[2:0], 1'b1, RegY); // Decodifica endereço do segundo registrador usado
 	
-	Counter Tstep (Resetn, Clock, step); // Contador de passos da instrução
+	Counter Tstep (Clock, Resetn, step); // Contador de passos da instrução
 	
 	assign OpCode = IR[8:6];
 
@@ -77,18 +77,17 @@ module Processor(input [15:0]DIN, input Resetn, input Clock, input Run, output r
 	regn reg_6 (BusWires, Rin[6], Clock, R6);
 	regn reg_7 (BusWires, Rin[7], Clock, R7);
 	regn reg_A (BusWires, Ain, Clock, A);
-	regn reg_G (BusWires, Gin, Clock, G);
 	
-	ALU alu (A, BusWires, OpCode, Gin, G);
+	ALU alu (A, BusWires, OpCode, Gin, Clock, G);
+	
+	mux m (Rout, DINout, Gout, R0, R1, R2, R3, R4, R5, R6, R7, G, DIN, BusWires);
 
 endmodule
 
 module mux (Rout, DINout, Gout, R0, R1, R2, R3, R4, R5, R6, R7, G, DIN, Bus);
 	input [7:0]Rout;
 	input DINout, Gout;
-	input [15:0]R0, R1, R2, R3, R4, R5, R6, R7;
-	input G;
-	input [15:0]DIN;
+	input [15:0]R0, R1, R2, R3, R4, R5, R6, R7, G, DIN;
 	output reg [15:0]Bus;
 	
 	always @(Rout, DINout, Gout) begin
@@ -137,8 +136,8 @@ module dec3to8(W, En, Y);
 	end
 endmodule
 
-module ALU(input [15:0]a, input [15:0]b, input [3:0] operacao, input Gin, output reg[15:0]result);
-	always @(Gin) begin
+module ALU(input [15:0]a, input [15:0]b, input [2:0] operacao, input Gin, input Clock, output reg[15:0]result);
+	always @(negedge Clock) begin
 		if(Gin == 1'b1) begin
 			case (operacao)
 				3'b010: result = a + b;  //add
@@ -162,7 +161,7 @@ module regn(R, Rin, Clock, Q);
 	input Rin, Clock;
 	output Q;
 	reg[n-1:0] Q = 0;
-	always @(posedge Clock)
+	always @(negedge Clock)
 		if (Rin)
 		begin
 			Q <= R;
@@ -171,9 +170,9 @@ endmodule
 
 module Counter(input clock, input clear, output reg[1:0] out);
 	initial 
-		out <= 2'b00;
+		out = 2'b11; // Garante que o primeiro pulso de clock deixe o contador com 00
 	always @(posedge clock)
-		if (clear)
+		if (clear == 1)
 			out <= 2'b00;
 		else
 			out <= out + 1'b1;
@@ -184,6 +183,6 @@ module Tp2(SW, LEDR, KEY);
 	input [17:0]LEDR; // LEDR 15:0 para Bus, LEG 17 para Done
 	input [1:0]KEY; // Key 0 para Reset, Key 1 para Clock
 	
-	Processor p (SW[15:0], KEY[0], KEY[1], SW[17], LEDR[17], SW[15:0]);
+	Processor p (SW[15:0], KEY[0], KEY[1], SW[17], LEDR[17], LEDR[15:0]);
 	
 endmodule
