@@ -15,7 +15,7 @@ module Processor(input [15:0]DIN, input Resetn, input Clock, input Run, output r
 	dec3to8 decX (IR[5:3], 1'b1, RegX); // Decodifica endereço do primeiro registrador usado
 	dec3to8 decY (IR[2:0], 1'b1, RegY); // Decodifica endereço do segundo registrador usado
 	
-	Counter Tstep (Clock, Resetn, step); // Contador de passos da instrução
+	Counter Tstep (Clock, Resetn, Done, step); // Contador de passos da instrução
 	
 	assign OpCode = IR[8:6];
 
@@ -168,11 +168,11 @@ module regn(R, Rin, Clock, Q);
 		end 
 endmodule 
 
-module Counter(input clock, input clear, output reg[1:0] out);
+module Counter(input clock, input clear, input Done, output reg[1:0] out);
 	initial 
 		out = 2'b11; // Garante que o primeiro pulso de clock deixe o contador com 00
 	always @(posedge clock)
-		if (clear == 1)
+		if (clear == 1 || Done == 1)
 			out <= 2'b00;
 		else
 			out <= out + 1'b1;
