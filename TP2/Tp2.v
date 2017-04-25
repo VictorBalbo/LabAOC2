@@ -15,7 +15,7 @@ module Processor(input [15:0]DIN, input Resetn, input Clock, input Run, output r
 	dec3to8 decX (IR[5:3], 1'b1, RegX); // Decodifica endereço do primeiro registrador usado
 	dec3to8 decY (IR[2:0], 1'b1, RegY); // Decodifica endereço do segundo registrador usado
 	
-	Counter Tstep (Clock, Resetn, Done, step); // Contador de passos da instrução
+	Counter Tstep (Clock, Resetn, Done, Run, step); // Contador de passos da instrução
 	
 	assign OpCode = IR[8:6];
 
@@ -27,45 +27,43 @@ module Processor(input [15:0]DIN, input Resetn, input Clock, input Run, output r
 		Ain = 1'b0;
 		Gin = 1'b0;
 		Gout = 1'b0;
-		if(Run) begin
-			case (step)
-				2'b00: //step 0
-				begin
-					IR = DIN[8:0]; //Os 9 bits menos significativos são a instrucao
+		case (step)
+			2'b00: //step 0
+			begin
+				IR = DIN[8:0]; //Os 9 bits menos significativos são a instrucao
+			end
+			2'b01: //step 1
+				case (OpCode)
+					3'b000: // mv
+						begin
+							Rin = RegX;
+							Rout = RegY;
+							Done = 1'b1;
+						end
+					3'b001: // mvi
+						begin
+							Rin = RegX;
+							DINout = 1'b1;
+							Done = 1'b1;
+						end
+					default: // add, sub, and, slt, sll, srl
+						begin
+							Rout = RegX;
+							Ain = 1'b1;
+						end
+				endcase
+			2'b10: //step 2
+				if (OpCode != 3'b000 & OpCode != 3'b001) begin // OpCode não for mv or mvi
+					Rout = RegY;
+					Gin = 1'b1;
 				end
-				2'b01: //step 1
-					case (OpCode)
-						3'b000: // mv
-							begin
-								Rin = RegX;
-								Rout = RegY;
-								Done = 1'b1;
-							end
-						3'b001: // mvi
-							begin
-								Rin = RegX;
-								DINout = 1'b1;
-								Done = 1'b1;
-							end
-						default: // add, sub, and, slt, sll, srl
-							begin
-								Rout = RegX;
-								Ain = 1'b1;
-							end
-					endcase
-				2'b10: //step 2
-					if (OpCode != 3'b000 & OpCode != 3'b001) begin // OpCode não for mv or mvi
-						Rout = RegY;
-						Gin = 1'b1;
-					end
-				2'b11: //step 3
-					if (OpCode !=3'b000 & OpCode!=3'b001) begin // OpCode não for mv or mvi
-						Gout = 1'b1;
-						Rin = RegX;
-						Done = 1'b1;
-					end
-			endcase
-		end
+			2'b11: //step 3
+				if (OpCode !=3'b000 & OpCode!=3'b001) begin // OpCode não for mv or mvi
+					Gout = 1'b1;
+					Rin = RegX;
+					Done = 1'b1;
+				end
+		endcase
 	end
 	
 	regn reg_0 (BusWires, Rin[0], Clock, R0);
@@ -168,14 +166,17 @@ module regn(R, Rin, Clock, Q);
 		end 
 endmodule 
 
-module Counter(input clock, input clear, input Done, output reg[1:0] out);
+module Counter(input clock, input clear, input Done, input Run, output reg[1:0] out);
 	initial 
 		out = 2'b11; // Garante que o primeiro pulso de clock deixe o contador com 00
-	always @(posedge clock)
-		if (clear == 1 || Done == 1)
-			out <= 2'b00;
-		else
-			out <= out + 1'b1;
+	always @(posedge clock) begin 
+		if(Run) begin // Only change step if run is active
+			if (clear == 1 || Done == 1)
+				out <= 2'b00;
+			else
+				out <= out + 1'b1;
+		end
+	end
 endmodule
 
 module Tp2(SW, LEDR, KEY);
