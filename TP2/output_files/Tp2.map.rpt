@@ -1,6 +1,6 @@
 Analysis & Synthesis report for Tp2
-Thu Apr 20 19:58:57 2017
-Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+Mon Apr 24 20:50:13 2017
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -23,22 +23,11 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
  15. Parameter Settings for User Entity Instance: Processor:p|regn:reg_6
  16. Parameter Settings for User Entity Instance: Processor:p|regn:reg_7
  17. Parameter Settings for User Entity Instance: Processor:p|regn:reg_A
- 18. Parameter Settings for User Entity Instance: Processor:p|regn:reg_G
- 19. Port Connectivity Checks: "Processor:p|ALU:alu"
- 20. Port Connectivity Checks: "Processor:p|regn:reg_G"
- 21. Port Connectivity Checks: "Processor:p|regn:reg_7"
- 22. Port Connectivity Checks: "Processor:p|regn:reg_6"
- 23. Port Connectivity Checks: "Processor:p|regn:reg_5"
- 24. Port Connectivity Checks: "Processor:p|regn:reg_4"
- 25. Port Connectivity Checks: "Processor:p|regn:reg_3"
- 26. Port Connectivity Checks: "Processor:p|regn:reg_2"
- 27. Port Connectivity Checks: "Processor:p|regn:reg_1"
- 28. Port Connectivity Checks: "Processor:p|regn:reg_0"
- 29. Port Connectivity Checks: "Processor:p|dec3to8:decY"
- 30. Port Connectivity Checks: "Processor:p|dec3to8:decX"
- 31. Port Connectivity Checks: "Processor:p"
- 32. Elapsed Time Per Partition
- 33. Analysis & Synthesis Messages
+ 18. Port Connectivity Checks: "Processor:p|dec3to8:decY"
+ 19. Port Connectivity Checks: "Processor:p|dec3to8:decX"
+ 20. Port Connectivity Checks: "Processor:p"
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
 
 
 
@@ -61,24 +50,24 @@ applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                    ;
-+------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Apr 20 19:58:57 2017      ;
-; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
-; Revision Name                      ; Tp2                                        ;
-; Top-level Entity Name              ; Tp2                                        ;
-; Family                             ; Cyclone II                                 ;
-; Total logic elements               ; 0                                          ;
-;     Total combinational functions  ; 0                                          ;
-;     Dedicated logic registers      ; 0                                          ;
-; Total registers                    ; 0                                          ;
-; Total pins                         ; 38                                         ;
-; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 0                                          ;
-; Embedded Multiplier 9-bit elements ; 0                                          ;
-; Total PLLs                         ; 0                                          ;
-+------------------------------------+--------------------------------------------+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Apr 24 20:50:13 2017           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; Tp2                                             ;
+; Top-level Entity Name              ; Tp2                                             ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 0                                               ;
+;     Total combinational functions  ; 0                                               ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 38                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -177,13 +166,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                               ;
-+----------------------------------+-----------------+------------------------+------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path ; Library ;
-+----------------------------------+-----------------+------------------------+------------------------------+---------+
-; processor.v                      ; yes             ; User Verilog HDL File  ; C:/TP2/processor.v           ;         ;
-+----------------------------------+-----------------+------------------------+------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                           ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                             ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------+---------+
+; Tp2.v                            ; yes             ; User Verilog HDL File  ; C:/Users/VictorBalbo/OneDrive/Documentos/Cefet/4/laoc2/LabAOC2/TP2/Tp2.v ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -216,7 +205,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |Tp2                       ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 38   ; 0            ; |Tp2                ;              ;
+; |Tp2                       ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 38   ; 0            ; |Tp2                ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -326,114 +315,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Processor:p|regn:reg_G ;
-+----------------+-------+--------------------------------------------+
-; Parameter Name ; Value ; Type                                       ;
-+----------------+-------+--------------------------------------------+
-; n              ; 16    ; Signed Integer                             ;
-+----------------+-------+--------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Processor:p|ALU:alu"                                                                                                                                ;
-+----------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port     ; Type  ; Severity ; Details                                                                                                                                          ;
-+----------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; operacao ; Input ; Warning  ; Input port expression (3 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "operacao[3..3]" will be connected to GND. ;
-+----------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Processor:p|regn:reg_G"                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Processor:p|regn:reg_7"                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Processor:p|regn:reg_6"                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Processor:p|regn:reg_5"                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Processor:p|regn:reg_4"                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Processor:p|regn:reg_3"                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Processor:p|regn:reg_2"                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Processor:p|regn:reg_1"                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Processor:p|regn:reg_0"                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Processor:p|dec3to8:decY"                                                           ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; En   ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; Y    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++------------------------------------------------------+
+; Port Connectivity Checks: "Processor:p|dec3to8:decY" ;
++------+-------+----------+----------------------------+
+; Port ; Type  ; Severity ; Details                    ;
++------+-------+----------+----------------------------+
+; En   ; Input ; Info     ; Stuck at VCC               ;
++------+-------+----------+----------------------------+
 
 
 +------------------------------------------------------+
@@ -445,13 +333,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+----------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Processor:p"                                                                        ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Done ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Processor:p"                                                                            ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Done     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; BusWires ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -459,7 +348,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -468,12 +357,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Thu Apr 20 19:58:56 2017
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Mon Apr 24 20:50:00 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Tp2 -c Tp2
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Warning (12090): Entity "mux" obtained from "processor.v" instead of from Quartus II megafunction library
-Info (12021): Found 7 design units, including 7 entities, in source file processor.v
+Warning (12090): Entity "mux" obtained from "Tp2.v" instead of from Quartus II megafunction library
+Info (12021): Found 7 design units, including 7 entities, in source file tp2.v
     Info (12023): Found entity 1: Processor
     Info (12023): Found entity 2: mux
     Info (12023): Found entity 3: dec3to8
@@ -481,78 +370,56 @@ Info (12021): Found 7 design units, including 7 entities, in source file process
     Info (12023): Found entity 5: regn
     Info (12023): Found entity 6: Counter
     Info (12023): Found entity 7: Tp2
-Warning (10227): Verilog HDL Port Declaration warning at processor.v(164): data type declaration for "Q" declares packed dimensions but the port declaration declaration does not
-Info (10499): HDL info at processor.v(163): see declaration for object "Q"
+Warning (10227): Verilog HDL Port Declaration warning at Tp2.v(163): data type declaration for "Q" declares packed dimensions but the port declaration declaration does not
+Info (10499): HDL info at Tp2.v(162): see declaration for object "Q"
 Info (12127): Elaborating entity "Tp2" for the top level hierarchy
 Info (12128): Elaborating entity "Processor" for hierarchy "Processor:p"
-Warning (10036): Verilog HDL or VHDL warning at processor.v(2): object "Gout" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at processor.v(4): object "DINout" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at processor.v(6): object "Rout" assigned a value but never read
-Warning (10235): Verilog HDL Always Construct warning at processor.v(30): variable "Run" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at processor.v(34): variable "DIN" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10240): Verilog HDL Always Construct warning at processor.v(22): inferring latch(es) for variable "IR", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "IR[0]" at processor.v(30)
-Info (10041): Inferred latch for "IR[1]" at processor.v(30)
-Info (10041): Inferred latch for "IR[2]" at processor.v(30)
-Info (10041): Inferred latch for "IR[3]" at processor.v(30)
-Info (10041): Inferred latch for "IR[4]" at processor.v(30)
-Info (10041): Inferred latch for "IR[5]" at processor.v(30)
-Info (10041): Inferred latch for "IR[6]" at processor.v(30)
-Info (10041): Inferred latch for "IR[7]" at processor.v(30)
-Info (10041): Inferred latch for "IR[8]" at processor.v(30)
+Warning (10235): Verilog HDL Always Construct warning at Tp2.v(30): variable "Run" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Tp2.v(34): variable "DIN" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at Tp2.v(22): inferring latch(es) for variable "IR", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "IR[0]" at Tp2.v(30)
+Info (10041): Inferred latch for "IR[1]" at Tp2.v(30)
+Info (10041): Inferred latch for "IR[2]" at Tp2.v(30)
+Info (10041): Inferred latch for "IR[3]" at Tp2.v(30)
+Info (10041): Inferred latch for "IR[4]" at Tp2.v(30)
+Info (10041): Inferred latch for "IR[5]" at Tp2.v(30)
+Info (10041): Inferred latch for "IR[6]" at Tp2.v(30)
+Info (10041): Inferred latch for "IR[7]" at Tp2.v(30)
+Info (10041): Inferred latch for "IR[8]" at Tp2.v(30)
 Info (12128): Elaborating entity "dec3to8" for hierarchy "Processor:p|dec3to8:decX"
 Info (12128): Elaborating entity "Counter" for hierarchy "Processor:p|Counter:Tstep"
 Info (12128): Elaborating entity "regn" for hierarchy "Processor:p|regn:reg_0"
 Info (12128): Elaborating entity "ALU" for hierarchy "Processor:p|ALU:alu"
-Warning (10235): Verilog HDL Always Construct warning at processor.v(143): variable "operacao" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at processor.v(144): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at processor.v(144): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at processor.v(145): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at processor.v(145): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at processor.v(146): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at processor.v(146): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at processor.v(148): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at processor.v(148): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at processor.v(152): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at processor.v(152): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at processor.v(153): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at processor.v(153): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10270): Verilog HDL Case Statement warning at processor.v(143): incomplete case statement has no default case item
-Warning (10240): Verilog HDL Always Construct warning at processor.v(141): inferring latch(es) for variable "result", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "result[0]" at processor.v(142)
-Info (10041): Inferred latch for "result[1]" at processor.v(142)
-Info (10041): Inferred latch for "result[2]" at processor.v(142)
-Info (10041): Inferred latch for "result[3]" at processor.v(142)
-Info (10041): Inferred latch for "result[4]" at processor.v(142)
-Info (10041): Inferred latch for "result[5]" at processor.v(142)
-Info (10041): Inferred latch for "result[6]" at processor.v(142)
-Info (10041): Inferred latch for "result[7]" at processor.v(142)
-Info (10041): Inferred latch for "result[8]" at processor.v(142)
-Info (10041): Inferred latch for "result[9]" at processor.v(142)
-Info (10041): Inferred latch for "result[10]" at processor.v(142)
-Info (10041): Inferred latch for "result[11]" at processor.v(142)
-Info (10041): Inferred latch for "result[12]" at processor.v(142)
-Info (10041): Inferred latch for "result[13]" at processor.v(142)
-Info (10041): Inferred latch for "result[14]" at processor.v(142)
-Info (10041): Inferred latch for "result[15]" at processor.v(142)
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "Processor:p|BusWires[15]" is missing source, defaulting to GND
-    Warning (12110): Net "Processor:p|BusWires[14]" is missing source, defaulting to GND
-    Warning (12110): Net "Processor:p|BusWires[13]" is missing source, defaulting to GND
-    Warning (12110): Net "Processor:p|BusWires[12]" is missing source, defaulting to GND
-    Warning (12110): Net "Processor:p|BusWires[11]" is missing source, defaulting to GND
-    Warning (12110): Net "Processor:p|BusWires[10]" is missing source, defaulting to GND
-    Warning (12110): Net "Processor:p|BusWires[9]" is missing source, defaulting to GND
-    Warning (12110): Net "Processor:p|BusWires[8]" is missing source, defaulting to GND
-    Warning (12110): Net "Processor:p|BusWires[7]" is missing source, defaulting to GND
-    Warning (12110): Net "Processor:p|BusWires[6]" is missing source, defaulting to GND
-    Warning (12110): Net "Processor:p|BusWires[5]" is missing source, defaulting to GND
-    Warning (12110): Net "Processor:p|BusWires[4]" is missing source, defaulting to GND
-    Warning (12110): Net "Processor:p|BusWires[3]" is missing source, defaulting to GND
-    Warning (12110): Net "Processor:p|BusWires[2]" is missing source, defaulting to GND
-    Warning (12110): Net "Processor:p|BusWires[1]" is missing source, defaulting to GND
-    Warning (12110): Net "Processor:p|BusWires[0]" is missing source, defaulting to GND
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (12128): Elaborating entity "mux" for hierarchy "Processor:p|mux:m"
+Warning (10235): Verilog HDL Always Construct warning at Tp2.v(96): variable "R0" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Tp2.v(97): variable "R1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Tp2.v(98): variable "R2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Tp2.v(99): variable "R3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Tp2.v(100): variable "R4" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Tp2.v(101): variable "R5" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Tp2.v(102): variable "R6" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Tp2.v(103): variable "R7" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10270): Verilog HDL Case Statement warning at Tp2.v(95): incomplete case statement has no default case item
+Info (10264): Verilog HDL Case Statement information at Tp2.v(95): all case item expressions in this case statement are onehot
+Warning (10235): Verilog HDL Always Construct warning at Tp2.v(107): variable "DIN" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Tp2.v(110): variable "G" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at Tp2.v(93): inferring latch(es) for variable "Bus", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "Bus[0]" at Tp2.v(106)
+Info (10041): Inferred latch for "Bus[1]" at Tp2.v(106)
+Info (10041): Inferred latch for "Bus[2]" at Tp2.v(106)
+Info (10041): Inferred latch for "Bus[3]" at Tp2.v(106)
+Info (10041): Inferred latch for "Bus[4]" at Tp2.v(106)
+Info (10041): Inferred latch for "Bus[5]" at Tp2.v(106)
+Info (10041): Inferred latch for "Bus[6]" at Tp2.v(106)
+Info (10041): Inferred latch for "Bus[7]" at Tp2.v(106)
+Info (10041): Inferred latch for "Bus[8]" at Tp2.v(106)
+Info (10041): Inferred latch for "Bus[9]" at Tp2.v(106)
+Info (10041): Inferred latch for "Bus[10]" at Tp2.v(106)
+Info (10041): Inferred latch for "Bus[11]" at Tp2.v(106)
+Info (10041): Inferred latch for "Bus[12]" at Tp2.v(106)
+Info (10041): Inferred latch for "Bus[13]" at Tp2.v(106)
+Info (10041): Inferred latch for "Bus[14]" at Tp2.v(106)
+Info (10041): Inferred latch for "Bus[15]" at Tp2.v(106)
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 38 input pin(s) that do not drive logic
@@ -597,10 +464,10 @@ Warning (21074): Design contains 38 input pin(s) that do not drive logic
 Info (21057): Implemented 38 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 38 input pins
     Info (21059): Implemented 0 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 81 warnings
-    Info: Peak virtual memory: 463 megabytes
-    Info: Processing ended: Thu Apr 20 19:58:57 2017
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 57 warnings
+    Info: Peak virtual memory: 486 megabytes
+    Info: Processing ended: Mon Apr 24 20:50:14 2017
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:06
 
 

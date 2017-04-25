@@ -1,0 +1,149 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\VictorBalbo\OneDrive\Documentos\Cefet\4\laoc2\LabAOC2\TP2\simulation\modelsim
+vALU
+!i10b 1
+!s100 ?NX6o[e;TzNUhg<hS`5nH0
+IKGN8XlM=86MX2KRZ=BD?P1
+VMML_m25n8DJ:nh@`?eXW_0
+Z1 dC:\Users\VictorBalbo\OneDrive\Documentos\Cefet\4\laoc2\LabAOC2\TP2\simulation\modelsim
+Z2 w1493077794
+Z3 8C:/Users/VictorBalbo/OneDrive/Documentos/Cefet/4/laoc2/LabAOC2/TP2/Tp2.v
+Z4 FC:/Users/VictorBalbo/OneDrive/Documentos/Cefet/4/laoc2/LabAOC2/TP2/Tp2.v
+L0 139
+Z5 OV;L;10.1d;51
+r1
+!s85 0
+31
+Z6 !s108 1493077982.341000
+Z7 !s107 C:/Users/VictorBalbo/OneDrive/Documentos/Cefet/4/laoc2/LabAOC2/TP2/Tp2.v|
+Z8 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/VictorBalbo/OneDrive/Documentos/Cefet/4/laoc2/LabAOC2/TP2|C:/Users/VictorBalbo/OneDrive/Documentos/Cefet/4/laoc2/LabAOC2/TP2/Tp2.v|
+!s101 -O0
+Z9 o-vlog01compat -work work -O0
+Z10 !s92 -vlog01compat -work work +incdir+C:/Users/VictorBalbo/OneDrive/Documentos/Cefet/4/laoc2/LabAOC2/TP2 -O0
+n@a@l@u
+vCounter
+!i10b 1
+!s100 A<K[n9FacV;h>L^ohbaO;1
+IVn1D>W0D76RK[AcEL9e_g3
+V6_OfUfhi0GSM[aHEC`6Jb1
+R1
+R2
+R3
+R4
+L0 171
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!s101 -O0
+R9
+R10
+n@counter
+vdec3to8
+!i10b 1
+!s100 60BccVi9?Gb6f@zd[BIXz1
+IPa^YnQQYXzJ]0`NW4;OBj0
+V2U@bIaW;LG20I9][;hcGb3
+R1
+R2
+R3
+R4
+L0 116
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!s101 -O0
+R9
+R10
+vmux
+!i10b 1
+!s100 VL;9KJk4f3h7kl<>GRdfY2
+I:3aSeedaf;mUlW`=zoYdM1
+V=jJCCVZb0:N<hAMiYBLR<2
+R1
+R2
+R3
+R4
+L0 87
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!s101 -O0
+R9
+R10
+vProcessor
+!i10b 1
+!s100 AhAHh;Q3f<3AR81bCETbY3
+I4cO4UzaUW3Gm>n;XD4?l=3
+V8@QJb[LSJ`RTb2FBgnBf72
+R1
+R2
+R3
+R4
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!s101 -O0
+R9
+R10
+n@processor
+vregn
+!i10b 1
+!s100 ^GY^;0oLh3LfI<[?FHBej1
+Iizo=ZWVEL0UT]d;R3=K863
+VUc6I3VM5DDQ[zOJ4a2HfK0
+R1
+R2
+R3
+R4
+L0 158
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!s101 -O0
+R9
+R10
+vTp2
+!i10b 1
+!s100 I0Xe0G;IzjC:cojF73IM41
+Iihfgoje337ZVS[Q0Z0C6A3
+VG7HABo?<9PO[mdcPUQm2m0
+R1
+R2
+R3
+R4
+L0 181
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!s101 -O0
+R9
+R10
+n@tp2

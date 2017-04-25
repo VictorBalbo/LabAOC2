@@ -1,6 +1,6 @@
 EDA Netlist Writer report for Tp2
-Thu Apr 20 19:59:09 2017
-Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+Mon Apr 24 20:51:17 2017
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu Apr 20 19:59:09 2017 ;
+; EDA Netlist Writer Status ; Successful - Mon Apr 24 20:51:17 2017 ;
 ; Revision Name             ; Tp2                                   ;
 ; Top-level Entity Name     ; Tp2                                   ;
 ; Family                    ; Cyclone II                            ;
@@ -66,16 +66,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+-------------------------------------------+
-; Simulation Generated Files                ;
-+-------------------------------------------+
-; Generated Files                           ;
-+-------------------------------------------+
-; C:/TP2/simulation/modelsim/Tp2.vo         ;
-; C:/TP2/simulation/modelsim/Tp2_fast.vo    ;
-; C:/TP2/simulation/modelsim/Tp2_v.sdo      ;
-; C:/TP2/simulation/modelsim/Tp2_v_fast.sdo ;
-+-------------------------------------------+
++-------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                            ;
++-------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                       ;
++-------------------------------------------------------------------------------------------------------+
+; C:/Users/VictorBalbo/OneDrive/Documentos/Cefet/4/laoc2/LabAOC2/TP2/simulation/modelsim/Tp2.vo         ;
+; C:/Users/VictorBalbo/OneDrive/Documentos/Cefet/4/laoc2/LabAOC2/TP2/simulation/modelsim/Tp2_fast.vo    ;
+; C:/Users/VictorBalbo/OneDrive/Documentos/Cefet/4/laoc2/LabAOC2/TP2/simulation/modelsim/Tp2_v.sdo      ;
+; C:/Users/VictorBalbo/OneDrive/Documentos/Cefet/4/laoc2/LabAOC2/TP2/simulation/modelsim/Tp2_v_fast.sdo ;
++-------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -83,14 +83,14 @@ applicable agreement for further details.
 +-----------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
-    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Thu Apr 20 19:59:09 2017
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Mon Apr 24 20:51:15 2017
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off Tp2 -c Tp2
-Info (204026): Generated files "Tp2.vo", "Tp2_fast.vo", "Tp2_v.sdo" and "Tp2_v_fast.sdo" in directory "C:/TP2/simulation/modelsim/" for EDA simulation tool
+Info (204026): Generated files "Tp2.vo", "Tp2_fast.vo", "Tp2_v.sdo" and "Tp2_v_fast.sdo" in directory "C:/Users/VictorBalbo/OneDrive/Documentos/Cefet/4/laoc2/LabAOC2/TP2/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 390 megabytes
-    Info: Processing ended: Thu Apr 20 19:59:09 2017
-    Info: Elapsed time: 00:00:00
-    Info: Total CPU time (on all processors): 00:00:00
+    Info: Peak virtual memory: 413 megabytes
+    Info: Processing ended: Mon Apr 24 20:51:18 2017
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 
