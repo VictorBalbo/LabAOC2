@@ -1,0 +1,125 @@
+\documentclass[12pt]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\pagestyle {empty}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{xcolor}
+% Definindo novas cores
+\definecolor{verde}{rgb}{0,0.5,0}
+% Configurando layout para mostrar codigos C++
+\usepackage{listings}
+\lstset{
+	language=C++,
+	basicstyle=\ttfamily\small, 
+	keywordstyle=\color{blue}, 
+	stringstyle=\color{verde}, 
+	commentstyle=\color{red}, 
+	extendedchars=true, 
+	showspaces=false, 
+	showstringspaces=false, 
+	numbers=left,
+	numberstyle=\tiny,
+	breaklines=true, 
+	%%backgroundcolor=\color{green!10},
+	breakautoindent=true, 
+	captionpos=b,
+	xleftmargin=0pt,
+}
+
+\begin{document}
+	\begin{center}
+		\textbf{Centro Federal de Educação Tecnológica de Minas Gerais - CEFET-MG\\
+		Curso de Engenharia de Computação\\   
+		Laboratório de Arquitetura e Organização de Computadores II - 2017/1\\
+		Trabalho Prático 2: Processador Multiciclo\\}
+	\end{center}
+	\begin{flushleft}
+		\textbf{Victor Balbo de Oliveira\\
+				Vinícius Henrique Silveira}
+	\end{flushleft}
+	
+	O objetivo dessa prática foi a implementação de um processador multiciclo conectado a uma memória de uma porta (apenas leitura) que contém as instruções que serão executadas pelo processador. Um contador é ligado ao módulo de memória para indicar qual instrução deve ser despachada. O esquema do processador pode ser observado nas figuras abaixo:
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[scale=0.75]{1.png}
+		\caption{Módulo do processador}
+	\end{figure}
+	\newpage
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[scale=0.75]{2.png}
+		\caption{Módulo do processador}
+	\end{figure}
+	
+	O processador é capaz de operar as seguintes instruções:
+	
+	\begin{table}[!htb]
+		\centering	
+		\caption{Instruções suportadas pelo processador}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			Operações & Função Realizada & Opcode \\ \hline
+			mv R0, R1 & R0 = R1 & 000 \\ \hline
+			mvi R0, \#I & R0 = \#I & 001 \\ \hline
+			add R0, R1 & R0 = R0 + R1 & 010 \\ \hline
+			sub R0, R1 & R0 = R0 - R1 & 011 \\ \hline
+			and R0, R1 & R0 = R0 \& R1 & 100 \\ \hline
+			slt R0, R1 & if(R0 $<$ R1) R0 = 1 else R0 = 0 & 101 \\ \hline
+			sll R0, R1 & R0 = R0 $<<$ R1 & 110 \\ \hline
+			srl R0, R1 & R0 = R0 $>>$ R1 & 111 \\ \hline
+		\end{tabular}
+		\label{}
+	\end{table}
+	
+	Apesar de DIN (entrada do processador) ter 16 bits de entrada, as instruções são de 9 bits, sendo 3 bits de opcode, 3 para referenciar o primeiro registrador e 3 para referenciar o segundo registrador. Na instrução de mvi, os 3 bits menos significativos da instrução não têm significado, e o imediato de 16 bits é passado para DIN no próximo ciclo de clock.
+	
+	As instruções de mv e mvi demoram dois ciclos cada uma. As demais instruções demoram 4 ciclos.
+	
+	As imagens abaixo mostram o funcionamento do processador. As instruções são lidas a partir de um arquivo .mif (Memory Initialization File). Utilizou-se o simulador Modelsin Altera versão 10.1b:
+	\newpage
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[scale=0.35]{mvi_and_add.png}
+		\caption{mvi seguido de add}
+	\end{figure}
+		
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[scale=0.35]{mvi_and_sub.png}
+		\caption{mvi seguido de sub}
+	\end{figure}
+	\newpage
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[scale=0.35]{and.png}
+		\caption{mvi seguido de and}
+	\end{figure}
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[scale=0.35]{mvi_and_slt.png}
+		\caption{mvi seguido de slt}
+	\end{figure}
+	\newpage
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[scale=0.35]{sll.png}
+		\caption{mvi seguido de sll}
+	\end{figure}
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[scale=0.35]{srl.png}
+		\caption{mvi seguido de srl}
+	\end{figure}
+	
+	
+\end{document}

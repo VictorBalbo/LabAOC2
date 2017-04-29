@@ -1,0 +1,190 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Aluno\Downloads\LabAOC2-master\LabAOC2-master\LabAOC2-master\TP2\simulation\modelsim
+vALU
+Ij7`z<cjd=c[IG]c9zEZV[0
+VMML_m25n8DJ:nh@`?eXW_0
+Z1 dC:\Users\Aluno\Downloads\LabAOC2-master\LabAOC2-master\LabAOC2-master\TP2\simulation\modelsim
+Z2 w1493301422
+Z3 8C:/Users/Aluno/Downloads/LabAOC2-master/LabAOC2-master/LabAOC2-master/TP2/Tp2.v
+Z4 FC:/Users/Aluno/Downloads/LabAOC2-master/LabAOC2-master/LabAOC2-master/TP2/Tp2.v
+L0 137
+Z5 OV;L;10.1d;51
+r1
+31
+Z6 !s108 1493309915.466000
+Z7 !s107 C:/Users/Aluno/Downloads/LabAOC2-master/LabAOC2-master/LabAOC2-master/TP2/Tp2.v|
+Z8 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Aluno/Downloads/LabAOC2-master/LabAOC2-master/LabAOC2-master/TP2|C:/Users/Aluno/Downloads/LabAOC2-master/LabAOC2-master/LabAOC2-master/TP2/Tp2.v|
+Z9 o-vlog01compat -work work -O0
+Z10 !s92 -vlog01compat -work work +incdir+C:/Users/Aluno/Downloads/LabAOC2-master/LabAOC2-master/LabAOC2-master/TP2 -O0
+n@a@l@u
+!i10b 1
+!s100 7[g>FQGKWBDJ3O68gW0:83
+!s85 0
+!s101 -O0
+vCounter
+IW@o]`:L;FZGI1GcffSPf[2
+V@e0^>W61L>WUcSWihR6BW1
+R1
+R2
+R3
+R4
+L0 169
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+n@counter
+!i10b 1
+!s100 zbnhaK]5VGG2z[GdG8Wa?1
+!s85 0
+!s101 -O0
+vdec3to8
+I>HC>>J2Xcn4k6cdiAI>cn3
+V2U@bIaW;LG20I9][;hcGb3
+R1
+R2
+R3
+R4
+L0 114
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+!i10b 1
+!s100 :1LgUY?>nURKLZDlV79kH2
+!s85 0
+!s101 -O0
+vinst_mem
+!i10b 1
+!s100 V]U@MSOd=c3Ig5I4Of]`30
+IjJNA^Nj3N_kWZliV>5iFI0
+VV>C=nzhKo>G^z7d^`nhZG1
+R1
+w1493295348
+8C:/Users/Aluno/Downloads/LabAOC2-master/LabAOC2-master/LabAOC2-master/TP2/inst_mem.v
+FC:/Users/Aluno/Downloads/LabAOC2-master/LabAOC2-master/LabAOC2-master/TP2/inst_mem.v
+L0 39
+R5
+r1
+!s85 0
+31
+!s108 1493309916.060000
+!s107 C:/Users/Aluno/Downloads/LabAOC2-master/LabAOC2-master/LabAOC2-master/TP2/inst_mem.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Aluno/Downloads/LabAOC2-master/LabAOC2-master/LabAOC2-master/TP2|C:/Users/Aluno/Downloads/LabAOC2-master/LabAOC2-master/LabAOC2-master/TP2/inst_mem.v|
+!s101 -O0
+R9
+R10
+vInstCounter
+IZ@:No=4hQOabJZgf6;7K_1
+V9WF8kd_k695hN`e5UC1323
+R1
+R2
+R3
+R4
+L0 182
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+n@inst@counter
+!i10b 1
+!s100 OO>:Sn@n?3cFOj9IDSBbG0
+!s85 0
+!s101 -O0
+vmux
+IfKP[:=V73TT<W8M<anC5h1
+V=jJCCVZb0:N<hAMiYBLR<2
+R1
+R2
+R3
+R4
+L0 85
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+!i10b 1
+!s100 k3WcJJnIMb4P8gPEn7DbV3
+!s85 0
+!s101 -O0
+vProcessor
+I0H52iMc1_;deWZJ>@PaB[3
+V8@QJb[LSJ`RTb2FBgnBf72
+R1
+R2
+R3
+R4
+L0 1
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+n@processor
+!i10b 1
+!s100 ;9M3:ROCjif[9[NN9^W5Y2
+!s85 0
+!s101 -O0
+vregn
+I:Je;>O0Cbnj7L7?=MComg1
+VUc6I3VM5DDQ[zOJ4a2HfK0
+R1
+R2
+R3
+R4
+L0 156
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+!i10b 1
+!s100 TRkf>ZKFH]A[8MHb8gM7z0
+!s85 0
+!s101 -O0
+vTp2
+I72JUiFGHlXX;LM4Kia5kH2
+Vmc5?7K=F0T:=aLU:Mb^A82
+R1
+R2
+R3
+R4
+L0 193
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+n@tp2
+!i10b 1
+!s100 jJaOg`<ncG>la@A>fLEH02
+!s85 0
+!s101 -O0

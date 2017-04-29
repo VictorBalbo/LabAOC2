@@ -1,0 +1,116 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do Tp2_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Aluno/Downloads/LabAOC2-master/LabAOC2-master/LabAOC2-master/TP2 {C:/Users/Aluno/Downloads/LabAOC2-master/LabAOC2-master/LabAOC2-master/TP2/Tp2.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Processor
+# -- Compiling module mux
+# -- Compiling module dec3to8
+# -- Compiling module ALU
+# -- Compiling module regn
+# -- Compiling module Counter
+# -- Compiling module InstCounter
+# -- Compiling module Tp2
+# 
+# Top level modules:
+# 	Tp2
+# vlog -vlog01compat -work work +incdir+C:/Users/Aluno/Downloads/LabAOC2-master/LabAOC2-master/LabAOC2-master/TP2 {C:/Users/Aluno/Downloads/LabAOC2-master/LabAOC2-master/LabAOC2-master/TP2/inst_mem.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module inst_mem
+# 
+# Top level modules:
+# 	inst_mem
+# 
+vsim +altera -L altera_mf_ver -do Tp2_run_msim_rtl_verilog.do -l msim_transcript -gui work.Tp2
+# vsim +altera -L altera_mf_ver -do Tp2_run_msim_rtl_verilog.do -l msim_transcript -gui work.Tp2 
+# Loading work.Tp2
+# Loading work.Processor
+# Loading work.dec3to8
+# Loading work.Counter
+# Loading work.regn
+# Loading work.ALU
+# Loading work.mux
+# Loading work.InstCounter
+# Loading work.inst_mem
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# do Tp2_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Aluno/Downloads/LabAOC2-master/LabAOC2-master/LabAOC2-master/TP2 {C:/Users/Aluno/Downloads/LabAOC2-master/LabAOC2-master/LabAOC2-master/TP2/Tp2.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Processor
+# -- Compiling module mux
+# -- Compiling module dec3to8
+# -- Compiling module ALU
+# -- Compiling module regn
+# -- Compiling module Counter
+# -- Compiling module InstCounter
+# -- Compiling module Tp2
+# 
+# Top level modules:
+# 	Tp2
+# vlog -vlog01compat -work work +incdir+C:/Users/Aluno/Downloads/LabAOC2-master/LabAOC2-master/LabAOC2-master/TP2 {C:/Users/Aluno/Downloads/LabAOC2-master/LabAOC2-master/LabAOC2-master/TP2/inst_mem.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module inst_mem
+# 
+# Top level modules:
+# 	inst_mem
+# 
+add wave -position insertpoint  \
+sim:/Tp2/SW \
+sim:/Tp2/LEDR \
+sim:/Tp2/KEY \
+sim:/Tp2/Resetn \
+sim:/Tp2/MClock \
+sim:/Tp2/PClock \
+sim:/Tp2/inst_address \
+sim:/Tp2/mem_out
+add wave -position insertpoint  \
+sim:/Tp2/p/DIN \
+sim:/Tp2/p/Resetn \
+sim:/Tp2/p/Clock \
+sim:/Tp2/p/Run \
+sim:/Tp2/p/Done \
+sim:/Tp2/p/BusWires \
+sim:/Tp2/p/step \
+sim:/Tp2/p/R0 \
+sim:/Tp2/p/R1 \
+sim:/Tp2/p/R2 \
+sim:/Tp2/p/R3 \
+sim:/Tp2/p/R4 \
+sim:/Tp2/p/R5 \
+sim:/Tp2/p/R6 \
+sim:/Tp2/p/R7 \
+sim:/Tp2/p/A \
+sim:/Tp2/p/G
+force -freeze sim:/Tp2/Resetn 0 0
+force -freeze sim:/Tp2/MClock 1 0, 0 {50 ps} -r 100
+force -freeze sim:/Tp2/PClock 0 0, 1 {50 ps} -r 100
+force -freeze sim:/Tp2/p/Run 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run

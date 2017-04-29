@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.4.22)  28 APR 2017 21:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.4.22)  28 APR 2017 22:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**relatorio_tp1.tex
-(./relatorio_tp1.tex
+**relatorio_tp2.tex
+(./relatorio_tp2.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 4 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -226,8 +226,8 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
-(./relatorio_tp1.aux)
-\openout1 = `relatorio_tp1.aux'.
+(./relatorio_tp2.aux)
+\openout1 = `relatorio_tp2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
 LaTeX Font Info:    ... okay on input line 33.
@@ -335,71 +335,113 @@ e
 ))
 \c@lstlisting=\count118
 
-<wave1.png, id=1, 1445.4pt x 813.0375pt>
-File: wave1.png Graphic file (type png)
- <use wave1.png>
-Package pdftex.def Info: wave1.png used on input line 53.
-(pdftex.def)             Requested size: 505.89758pt x 284.56738pt.
+<1.png, id=1, 685.8122pt x 539.76656pt>
+File: 1.png Graphic file (type png)
+ <use 1.png>
+Package pdftex.def Info: 1.png used on input line 49.
+(pdftex.def)             Requested size: 514.3579pt x 404.82393pt.
 
-Overfull \hbox (5.41359pt too wide) in paragraph at lines 53--54
+Overfull \hbox (13.8739pt too wide) in paragraph at lines 49--50
  [][] 
  []
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./wave1.png>]
-<wave2.jpg, id=10, 1445.4pt x 813.0375pt>
-File: wave2.jpg Graphic file (type jpg)
- <use wave2.jpg>
-Package pdftex.def Info: wave2.jpg used on input line 66.
-(pdftex.def)             Requested size: 505.89758pt x 284.56738pt.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./1.png>]
+<2.png, id=11, 516.42938pt x 239.39438pt>
+File: 2.png Graphic file (type png)
+ <use 2.png>
+Package pdftex.def Info: 2.png used on input line 56.
+(pdftex.def)             Requested size: 387.32108pt x 179.54533pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 65.
 
-Overfull \hbox (5.41359pt too wide) in paragraph at lines 66--67
- [][] 
- []
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 65.
 
-<wave3.png, id=11, 1099.7085pt x 158.994pt>
-File: wave3.png Graphic file (type png)
- <use wave3.png>
-Package pdftex.def Info: wave3.png used on input line 78.
-(pdftex.def)             Requested size: 494.86426pt x 71.54663pt.
- [2 <./wave2.jpg> <./wave3.png>] <print1.png, id=15, 1445.4pt x 813.0375pt>
-File: print1.png Graphic file (type png)
- <use print1.png>
-Package pdftex.def Info: print1.png used on input line 84.
-(pdftex.def)             Requested size: 505.89758pt x 284.56738pt.
-
-Overfull \hbox (5.41359pt too wide) in paragraph at lines 84--85
- [][] 
- []
-
-<print2.jpg, id=16, 1445.4pt x 813.0375pt>
-File: print2.jpg Graphic file (type jpg)
- <use print2.jpg>
-Package pdftex.def Info: print2.jpg used on input line 89.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [2 <./2.png>]
+<mvi_and_add.png, id=17, 1445.4pt x 813.0375pt>
+File: mvi_and_add.png Graphic file (type png)
+ <use mvi_and_add.png>
+Package pdftex.def Info: mvi_and_add.png used on input line 89.
 (pdftex.def)             Requested size: 505.89758pt x 284.56738pt.
 
 Overfull \hbox (5.41359pt too wide) in paragraph at lines 89--90
  [][] 
  []
 
-[3 <./print1.png> <./print2.jpg>] (./relatorio_tp1.aux) ) 
+<mvi_and_sub.png, id=18, 1465.90906pt x 629.92094pt>
+File: mvi_and_sub.png Graphic file (type png)
+ <use mvi_and_sub.png>
+Package pdftex.def Info: mvi_and_sub.png used on input line 95.
+(pdftex.def)             Requested size: 513.07587pt x 220.47563pt.
+
+Overfull \hbox (12.59187pt too wide) in paragraph at lines 95--96
+ [][] 
+ []
+
+[3 <./mvi_and_add.png> <./mvi_and_sub.png>]
+<and.png, id=23, 1465.90906pt x 629.92094pt>
+File: and.png Graphic file (type png)
+ <use and.png>
+Package pdftex.def Info: and.png used on input line 102.
+(pdftex.def)             Requested size: 513.07587pt x 220.47563pt.
+
+Overfull \hbox (12.59187pt too wide) in paragraph at lines 102--103
+ [][] 
+ []
+
+<mvi_and_slt.png, id=24, 1465.90906pt x 629.92094pt>
+File: mvi_and_slt.png Graphic file (type png)
+ <use mvi_and_slt.png>
+Package pdftex.def Info: mvi_and_slt.png used on input line 108.
+(pdftex.def)             Requested size: 513.07587pt x 220.47563pt.
+
+Overfull \hbox (12.59187pt too wide) in paragraph at lines 108--109
+ [][] 
+ []
+
+[4 <./and.png> <./mvi_and_slt.png>]
+<sll.png, id=28, 1465.90906pt x 629.92094pt>
+File: sll.png Graphic file (type png)
+ <use sll.png>
+Package pdftex.def Info: sll.png used on input line 114.
+(pdftex.def)             Requested size: 513.07587pt x 220.47563pt.
+
+Overfull \hbox (12.59187pt too wide) in paragraph at lines 114--115
+ [][] 
+ []
+
+<srl.png, id=29, 1465.90906pt x 629.92094pt>
+File: srl.png Graphic file (type png)
+ <use srl.png>
+Package pdftex.def Info: srl.png used on input line 120.
+(pdftex.def)             Requested size: 513.07587pt x 220.47563pt.
+
+Overfull \hbox (12.59187pt too wide) in paragraph at lines 120--121
+ [][] 
+ []
+
+[5 <./sll.png> <./srl.png>] (./relatorio_tp2.aux) ) 
 Here is how much of TeX's memory you used:
- 5199 strings out of 494929
- 69959 string characters out of 6180142
- 161062 words of memory out of 5000000
- 8423 multiletter control sequences out of 15000+600000
- 4899 words of font info for 18 fonts, out of 8000000 for 9000
+ 5253 strings out of 494929
+ 70736 string characters out of 6180142
+ 163062 words of memory out of 5000000
+ 8458 multiletter control sequences out of 15000+600000
+ 8592 words of font info for 33 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 38i,7n,58p,1250b,229s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on relatorio_tp1.pdf (3 pages, 1856096 bytes).
+ 38i,9n,58p,387b,229s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr12.pfb>
+Output written on relatorio_tp2.pdf (5 pages, 484075 bytes).
 PDF statistics:
- 31 PDF objects out of 1000 (max. 8388607)
- 17 compressed objects within 1 object stream
+ 44 PDF objects out of 1000 (max. 8388607)
+ 22 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
