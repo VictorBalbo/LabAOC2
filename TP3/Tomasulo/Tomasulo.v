@@ -221,23 +221,28 @@ module mulDiv (input clock, input exec, input [3:0] dataa, input [3:0] datab, in
 	always @(posedge clock)	begin
 		if (exec) begin
 			case (estado)
-				4'b00, 4'b01, 4'b10, 4'b11, 4'b100, 4'b110, 4'b111, 4'b1000, 4'b1001, 4'b1010: begin
+				4'b00, 4'b01, 4'b10, 4'b11, 4'b100, 4'b110, 4'b111, 4'b1000, 4'b1001: begin
 					// stall
 					mulDone = 0;
 					mulOcup = 1;
 					estado = estado + 1'b1;
 				end
 				4'b101: begin
-					if(op == 1'b1) begin // Mul 
+					if(op == 1'b0) begin // Mul 
 						mulDone = 1;
 						mulOcup = 0;
 						estado = 4'b0;
 						result = dataa * datab;
 						tag_out = mulTag;
 					end
+					else begin
+						mulDone = 0;
+						mulOcup = 1;
+						estado = estado + 1'b1;
+					end
 				end
-				4'b1011: begin
-					if(op == 1'b0) begin // Div 
+				4'b1010: begin
+					if(op == 1'b1) begin // Div 
 						mulDone = 1;
 						mulOcup = 0;
 						estado = 4'b0;
