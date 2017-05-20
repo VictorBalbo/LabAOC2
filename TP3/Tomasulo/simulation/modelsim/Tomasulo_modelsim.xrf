@@ -1,0 +1,5 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/VictorBalbo/OneDrive/Documentos/Cefet/4/laoc2/LabAoc2/TP3/Tomasulo/Tomasulo.v
+source_file = 1, C:/Users/VictorBalbo/OneDrive/Documentos/Cefet/4/laoc2/LabAoc2/TP3/Tomasulo/db/Tomasulo.cbx.xml
+design_name = Tomasulo
+instance = comp, \SW~I , SW, Tomasulo, 1
