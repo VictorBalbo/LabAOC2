@@ -37,13 +37,13 @@ module processador(input clock, input [1:0]codigoProc, input [6:0]instrucao, inp
 	wire [1:0]estado;
 	
 	//opcode
-	parameter read = 0;
-	parameter write = 1;
+	parameter read = 1'b0;
+	parameter write = 1'b1;
 	//estados
-	parameter invalid = 00;
-	parameter shared = 01;
-	parameter exclusive = 10;
-	parameter modified = 11;
+	parameter invalid = 2'b00;
+	parameter shared = 2'b01;
+	parameter exclusive = 2'b10;
+	parameter modified = 2'b11;
 	//Bus Message
 	parameter readMissMsg = 2'b01; // Pede um dado aos outros processadores
 	parameter invalidate = 2'b10; // Sinal para invalidar um dado
@@ -165,9 +165,9 @@ module memoria(input clock, input [10:0]msgBusIn, output reg [10:0]msgBusOut);
 		end
 		if(msgBusIn[7] == 1)begin
 			if(msgBusIn[6] == 0) begin
-				memoria[0][2:0] = msgBusOut[2:0];
+				memoria[0][2:0] = msgBusIn[2:0];
 			end else begin
-				memoria[1][2:0] = msgBusOut[2:0];
+				memoria[1][2:0] = msgBusIn[2:0];
 			end
 		end
 	end
